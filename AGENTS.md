@@ -65,11 +65,18 @@ Flutter SDK is installed on this machine (`flutter` on PATH). Usual workflow:
 ```bash
 flutter pub get          # install dependencies
 flutter analyze          # static analysis (must stay clean)
-flutter test             # runs tests (see note below — no tests exist yet)
+flutter test             # run all tests
 flutter run              # run on a connected device/emulator (Android) or web
 flutter run -d chrome    # run on web
 flutter build apk        # Android release APK
 flutter build web        # web release build (output in build/web)
+```
+
+Running one test file or one test case:
+
+```bash
+flutter test test/tajweed_test.dart
+flutter test test/tajweed_test.dart --plain-name 'iqlab before'   # substring of the test name
 ```
 
 ## Testing instructions
@@ -77,6 +84,16 @@ flutter build web        # web release build (output in build/web)
 - `test/tajweed_test.dart` covers the tajweed parser. There are no widget tests yet; add them under `test/` when making behavioral changes.
 - `flutter analyze` and `flutter test` must both be clean before considering any change done.
 - When testing bookmark behavior, note that `BookmarkStore` uses the `shared_preferences` plugin — in widget tests, call `SharedPreferences.setMockInitialValues({})` first.
+
+## Editing content (`assets/data/ruqyah.json`)
+
+The JSON asset is the app's whole database, and three couplings in it are not visible from the file itself:
+
+- **Item `id`s are a single flat namespace, not per-category.** `BookmarkStore` persists bare item ids, and `DataService.findItem` returns the first match across all categories, so two items sharing an id in different categories would bookmark and resolve as one. Prefix ids when a passage is repeated across sections (the `sword` category reuses passages as `sword-fatihah`, `sword-ikhlas`, …).
+- **A category's `icon` is a string key, not an icon name.** It is resolved by the `switch` in `categoryIcon()` in `category_list_screen.dart`; an unrecognised key silently falls back to a bookmark outline. Adding a category with a new icon means editing that function too.
+- **`repeat` drives UI, not just display.** `ayat_detail_screen.dart` shows a progress bar and a tap counter only when `repeat > 1`; `item_list_screen.dart` shows an `×N` chip on the same condition.
+
+Prefer editing this file with a script (Python's `json` module round-trips it cleanly with `ensure_ascii=False, indent=2`) over hand-editing Arabic strings, and reuse existing `arabic`/`transliteration`/`translation` values verbatim when a passage already appears elsewhere in the file rather than retyping them. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
 
 ## Security and content considerations
 
