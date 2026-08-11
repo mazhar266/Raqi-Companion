@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../bookmarks.dart';
-import '../main.dart';
 import '../models.dart';
+import '../tajweed.dart';
 
 class AyatDetailScreen extends StatefulWidget {
   final List<RuqyahItem> items;
@@ -56,6 +56,11 @@ class _AyatDetailScreenState extends State<AyatDetailScreen> {
         title: Text(item.reference),
         actions: [
           IconButton(
+            tooltip: 'Tajweed colours',
+            icon: const Icon(Icons.palette_outlined),
+            onPressed: () => showTajweedLegend(context),
+          ),
+          IconButton(
             icon: Icon(saved ? Icons.bookmark : Icons.bookmark_outline),
             onPressed: () => widget.bookmarks.toggle(item.id),
           ),
@@ -67,14 +72,7 @@ class _AyatDetailScreenState extends State<AyatDetailScreen> {
             child: ListView(
               padding: const EdgeInsets.all(20),
               children: [
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: Text(
-                    item.arabic,
-                    textAlign: TextAlign.right,
-                    style: arabicStyle(context),
-                  ),
-                ),
+                arabicText(context, item.arabic),
                 if (item.transliteration.isNotEmpty) ...[
                   const SizedBox(height: 20),
                   Text(item.transliteration,

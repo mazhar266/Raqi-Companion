@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../bookmarks.dart';
-import '../main.dart';
 import '../models.dart';
+import '../tajweed.dart';
 import 'ayat_detail_screen.dart';
 
 class ItemListScreen extends StatelessWidget {
@@ -69,16 +69,8 @@ class ItemListScreen extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 8),
-                        Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: Text(
-                            item.arabic,
-                            textAlign: TextAlign.right,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: arabicStyle(context, size: 20),
-                          ),
-                        ),
+                        arabicText(context, item.arabic,
+                            size: 20, maxLines: 2),
                       ],
                     ),
                   ),

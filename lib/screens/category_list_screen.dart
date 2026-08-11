@@ -20,6 +20,8 @@ IconData categoryIcon(String name) {
       return Icons.wb_sunny_outlined;
     case 'favorite':
       return Icons.favorite_outline;
+    case 'sword':
+      return Icons.security_outlined;
     default:
       return Icons.bookmark_outline;
   }

@@ -31,13 +31,16 @@ lib/
   models.dart                      RuqyahItem and Category data classes with fromJson factories
   data_service.dart                DataService: loads/caches assets/data/ruqyah.json, findItem lookup
   bookmarks.dart                   BookmarkStore (ChangeNotifier) backed by shared_preferences
+  tajweed.dart                     Tajweed rule parser (parseTajweed), rule colours,
+                                   arabicText() widget helper, and the legend sheet
   screens/
     category_list_screen.dart      Home screen; also maps category icon names to IconData
     item_list_screen.dart          Items of one category with bookmark toggles
     ayat_detail_screen.dart        Full item view with prev/next navigation and repeat counter
     session_screen.dart            Guided checklist across all categories (state not persisted)
     bookmarks_screen.dart          List of bookmarked items
-assets/data/ruqyah.json            All content: {"categories": [...]}, 5 categories, 22 items total
+assets/data/ruqyah.json            All content: {"categories": [...]}, 6 categories, 42 items total
+test/tajweed_test.dart             Unit tests for the tajweed parser
 web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
@@ -49,7 +52,8 @@ Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each cate
 - **No state-management package.** State is plain `StatefulWidget` + `setState`, with one app-wide `BookmarkStore extends ChangeNotifier` created in `_RuqyahAppState` and passed down constructors; screens that show bookmark state wrap themselves in `AnimatedBuilder(animation: bookmarks)`.
 - **No routing package and no named routes.** Navigation uses `Navigator.push(MaterialPageRoute(...))` directly.
 - **Data loading:** `DataService.loadCategories()` reads the JSON asset once via `rootBundle` and caches it in a static field; `main.dart` drives it with a `FutureBuilder`.
-- **Styling:** single theme factory `_theme(Brightness)` in `lib/main.dart` (Material 3, seed color `0xFF6B5D4F`); Arabic text always uses the shared `arabicStyle(context)` helper (RTL `Directionality` is applied per-widget at call sites). Theme mode follows the system.
+- **Styling:** single theme factory `_theme(Brightness)` in `lib/main.dart` (Material 3, seed color `0xFF6B5D4F`); Arabic text is rendered through `arabicText(context, arabic)` in `lib/tajweed.dart`, which applies the shared `arabicStyle(context)` helper, RTL direction, and tajweed colouring. Theme mode follows the system.
+- **Tajweed colouring:** `parseTajweed(String)` in `lib/tajweed.dart` is a pure function splitting vocalised Arabic into `TajweedSegment`s tagged with a `TajweedRule`. It reads the diacritics that are actually written, so it only works on fully vocalised text. It covers the noon sakin/tanwin rules (izhar, idgham with and without ghunnah, iqlab, ikhfa), the meem sakin rules, ghunnah, qalqalah sughra, and madd of 4-6 counts; natural 2-count madd is deliberately left uncoloured. Colours live on the `TajweedRule` enum, one per brightness. Any change to the rules must keep `test/tajweed_test.dart` green — including the round-trip test asserting that segments reassemble the input exactly.
 - **Language:** all code, comments, and UI strings are in English; content data includes Arabic and transliteration.
 - **Linting:** `analysis_options.yaml` includes `package:flutter_lints/flutter.yaml` with no overrides. Code currently passes `flutter analyze` with zero issues — keep it that way.
 - **Dependency policy:** the app is intentionally dependency-light. Confirm a package is truly needed before adding one, and pin it in `pubspec.yaml`.
@@ -70,8 +74,8 @@ flutter build web        # web release build (output in build/web)
 
 ## Testing instructions
 
-- **There is currently no `test/` directory and no tests.** `flutter_test` is already in dev dependencies, so add widget/unit tests under `test/` (e.g. `test/bookmarks_test.dart`) when making behavioral changes.
-- `flutter analyze` is the only enforced check today; run it before considering any change done.
+- `test/tajweed_test.dart` covers the tajweed parser. There are no widget tests yet; add them under `test/` when making behavioral changes.
+- `flutter analyze` and `flutter test` must both be clean before considering any change done.
 - When testing bookmark behavior, note that `BookmarkStore` uses the `shared_preferences` plugin — in widget tests, call `SharedPreferences.setMockInitialValues({})` first.
 
 ## Security and content considerations

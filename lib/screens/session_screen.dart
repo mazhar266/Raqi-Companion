@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart';
 import '../models.dart';
+import '../tajweed.dart';
 
 class SessionScreen extends StatefulWidget {
   final List<Category> categories;
@@ -74,15 +74,8 @@ class _SessionScreenState extends State<SessionScreen> {
                           }
                         }),
                         title: Text(item.reference),
-                        subtitle: Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: Text(
-                            item.arabic,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: arabicStyle(context, size: 16),
-                          ),
-                        ),
+                        subtitle: arabicText(context, item.arabic,
+                            size: 16, maxLines: 1),
                       ),
                     );
                   }),
