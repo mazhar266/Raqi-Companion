@@ -11,6 +11,7 @@ Guidance for AI coding agents working on this repository. Assumes no prior knowl
 - A detail screen per item with Arabic, transliteration, translation, an optional note, and a tap counter for repetitions (`repeat` field).
 - A "Session" screen: a guided checklist across all categories with a progress bar (in-memory only, not persisted).
 - Bookmarks persisted locally via `shared_preferences`.
+- An appearance setting (Light / Dark / System, default System) persisted the same way.
 
 All content ships in a single bundled JSON asset (`assets/data/ruqyah.json`); there is no backend, network access, or account system.
 
@@ -31,6 +32,8 @@ lib/
   models.dart                      RuqyahItem and Category data classes with fromJson factories
   data_service.dart                DataService: loads/caches assets/data/ruqyah.json, findItem lookup
   bookmarks.dart                   BookmarkStore (ChangeNotifier) backed by shared_preferences
+  theme_store.dart                 ThemeStore (ChangeNotifier) for the Light/Dark/System
+                                   setting, plus the appearance picker sheet
   tajweed.dart                     Tajweed rule parser (parseTajweed), rule colours,
                                    arabicText() widget helper, and the legend sheet
   screens/
@@ -41,6 +44,7 @@ lib/
     bookmarks_screen.dart          List of bookmarked items
 assets/data/ruqyah.json            All content: {"categories": [...]}, 6 categories, 42 items total
 test/tajweed_test.dart             Unit tests for the tajweed parser
+test/theme_store_test.dart         Unit and widget tests for the appearance setting
 web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
@@ -49,10 +53,11 @@ Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each cate
 
 ## Architecture and conventions
 
-- **No state-management package.** State is plain `StatefulWidget` + `setState`, with one app-wide `BookmarkStore extends ChangeNotifier` created in `_RuqyahAppState` and passed down constructors; screens that show bookmark state wrap themselves in `AnimatedBuilder(animation: bookmarks)`.
+- **No state-management package.** State is plain `StatefulWidget` + `setState`, with two app-wide `ChangeNotifier` stores — `BookmarkStore` and `ThemeStore` — created in `_RuqyahAppState` and passed down constructors; screens that show bookmark state wrap themselves in `AnimatedBuilder(animation: bookmarks)`. The root wraps `MaterialApp` in `AnimatedBuilder(animation: Listenable.merge([bookmarks, themeStore]))`, so a theme change rebuilds the whole tree and no screen needs to listen for it. Both stores expose a `loaded` flag, and the root shows a spinner until both have loaded so the app never flashes the wrong theme on launch.
 - **No routing package and no named routes.** Navigation uses `Navigator.push(MaterialPageRoute(...))` directly.
 - **Data loading:** `DataService.loadCategories()` reads the JSON asset once via `rootBundle` and caches it in a static field; `main.dart` drives it with a `FutureBuilder`.
-- **Styling:** single theme factory `_theme(Brightness)` in `lib/main.dart` (Material 3, seed color `0xFF6B5D4F`); Arabic text is rendered through `arabicText(context, arabic)` in `lib/tajweed.dart`, which applies the shared `arabicStyle(context)` helper, RTL direction, and tajweed colouring. Theme mode follows the system.
+- **Styling:** single theme factory `_theme(Brightness)` in `lib/main.dart` (Material 3, seed color `0xFF6B5D4F`) builds both the light and dark themes; Arabic text is rendered through `arabicText(context, arabic)` in `lib/tajweed.dart`, which applies the shared `arabicStyle(context)` helper, RTL direction, and tajweed colouring. Any new colour must be defined for both brightnesses — read it off the `ColorScheme` where possible, or follow the `TajweedRule` pattern of an explicit light/dark pair.
+- **Theme mode:** `ThemeStore` in `lib/theme_store.dart` holds a `ThemeMode` persisted under the `'themeMode'` key as `ThemeMode.name`; an unrecognised or missing value falls back to `ThemeMode.system`, so the app follows the device until the user picks Light or Dark, and remembers that choice until they change it. The picker (`showThemePicker`) is a bottom sheet reached from the home screen app bar; it uses a `RadioGroup` ancestor because `RadioListTile.groupValue`/`onChanged` are deprecated in this Flutter version.
 - **Tajweed colouring:** `parseTajweed(String)` in `lib/tajweed.dart` is a pure function splitting vocalised Arabic into `TajweedSegment`s tagged with a `TajweedRule`. It reads the diacritics that are actually written, so it only works on fully vocalised text. It covers the noon sakin/tanwin rules (izhar, idgham with and without ghunnah, iqlab, ikhfa), the meem sakin rules, ghunnah, qalqalah sughra, and madd of 4-6 counts; natural 2-count madd is deliberately left uncoloured. Colours live on the `TajweedRule` enum, one per brightness. Any change to the rules must keep `test/tajweed_test.dart` green — including the round-trip test asserting that segments reassemble the input exactly.
 - **Language:** all code, comments, and UI strings are in English; content data includes Arabic and transliteration.
 - **Linting:** `analysis_options.yaml` includes `package:flutter_lints/flutter.yaml` with no overrides. Code currently passes `flutter analyze` with zero issues — keep it that way.
@@ -81,9 +86,9 @@ flutter test test/tajweed_test.dart --plain-name 'iqlab before'   # substring of
 
 ## Testing instructions
 
-- `test/tajweed_test.dart` covers the tajweed parser. There are no widget tests yet; add them under `test/` when making behavioral changes.
+- `test/tajweed_test.dart` covers the tajweed parser; `test/theme_store_test.dart` covers the appearance setting, including a widget test driving the picker sheet. Add tests under `test/` when making behavioral changes.
 - `flutter analyze` and `flutter test` must both be clean before considering any change done.
-- When testing bookmark behavior, note that `BookmarkStore` uses the `shared_preferences` plugin — in widget tests, call `SharedPreferences.setMockInitialValues({})` first.
+- Both stores use the `shared_preferences` plugin, which needs a mock: call `TestWidgetsFlutterBinding.ensureInitialized()` once in `main()`, then `SharedPreferences.setMockInitialValues({...})` at the start of each test (it is per-test state, so set it every time rather than in `setUpAll`).
 
 ## Editing content (`assets/data/ruqyah.json`)
 
@@ -98,6 +103,6 @@ Prefer editing this file with a script (Python's `json` module round-trips it cl
 ## Security and content considerations
 
 - The app is fully offline: no network calls, no permissions beyond defaults, no user data leaves the device. Do not add network permissions or telemetry without an explicit request.
-- Bookmarks are stored only in local `shared_preferences` under the key `'bookmarks'`.
+- The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'` and the appearance setting under `'themeMode'`.
 - Android release builds are signed with the debug key — fix the signing config in `android/app/build.gradle.kts` before any real distribution.
 - `assets/data/ruqyah.json` contains religious content (Quranic verses with translations). Treat its text with care: do not alter Arabic strings, references, or translations unless explicitly asked, and validate the JSON after any edit (it must remain valid UTF-8 and parse cleanly).

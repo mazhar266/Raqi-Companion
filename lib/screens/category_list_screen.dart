@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../bookmarks.dart';
 import '../models.dart';
+import '../theme_store.dart';
 import 'bookmarks_screen.dart';
 import 'item_list_screen.dart';
 import 'session_screen.dart';
@@ -30,17 +31,28 @@ IconData categoryIcon(String name) {
 class CategoryListScreen extends StatelessWidget {
   final List<Category> categories;
   final BookmarkStore bookmarks;
+  final ThemeStore themeStore;
 
   const CategoryListScreen({
     super.key,
     required this.categories,
     required this.bookmarks,
+    required this.themeStore,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Raqi Companion')),
+      appBar: AppBar(
+        title: const Text('Raqi Companion'),
+        actions: [
+          IconButton(
+            tooltip: 'Appearance',
+            icon: Icon(themeStore.mode.icon),
+            onPressed: () => showThemePicker(context, themeStore),
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

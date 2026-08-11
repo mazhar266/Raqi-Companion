@@ -11,7 +11,7 @@ Everything ships inside the app. There is no backend, no network access, no acco
 - **Repetition counter** — items with a recommended repetition count get a tap counter and a progress bar.
 - **Guided session** — a checklist across every category with overall progress, for working through a full recitation.
 - **Bookmarks** — saved locally and kept between launches.
-- **Light and dark themes**, following the system setting.
+- **Light, dark, or system appearance** — follows your device by default; pick Light or Dark explicitly and the app remembers it.
 
 ## Content
 

@@ -4,6 +4,7 @@ import 'bookmarks.dart';
 import 'data_service.dart';
 import 'models.dart';
 import 'screens/category_list_screen.dart';
+import 'theme_store.dart';
 
 void main() {
   runApp(const RuqyahApp());
@@ -18,6 +19,7 @@ class RuqyahApp extends StatefulWidget {
 
 class _RuqyahAppState extends State<RuqyahApp> {
   final BookmarkStore bookmarks = BookmarkStore();
+  final ThemeStore themeStore = ThemeStore();
   late final Future<List<Category>> future;
 
   @override
@@ -25,6 +27,7 @@ class _RuqyahAppState extends State<RuqyahApp> {
     super.initState();
     future = DataService.loadCategories();
     bookmarks.load();
+    themeStore.load();
   }
 
   ThemeData _theme(Brightness brightness) {
@@ -49,18 +52,18 @@ class _RuqyahAppState extends State<RuqyahApp> {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: bookmarks,
+      animation: Listenable.merge([bookmarks, themeStore]),
       builder: (context, _) {
         return MaterialApp(
           title: 'Raqi Companion',
           debugShowCheckedModeBanner: false,
           theme: _theme(Brightness.light),
           darkTheme: _theme(Brightness.dark),
-          themeMode: ThemeMode.system,
+          themeMode: themeStore.mode,
           home: FutureBuilder<List<Category>>(
             future: future,
             builder: (context, snapshot) {
-              if (!snapshot.hasData || !bookmarks.loaded) {
+              if (!snapshot.hasData || !bookmarks.loaded || !themeStore.loaded) {
                 return const Scaffold(
                   body: Center(child: CircularProgressIndicator()),
                 );
@@ -68,6 +71,7 @@ class _RuqyahAppState extends State<RuqyahApp> {
               return CategoryListScreen(
                 categories: snapshot.data!,
                 bookmarks: bookmarks,
+                themeStore: themeStore,
               );
             },
           ),
