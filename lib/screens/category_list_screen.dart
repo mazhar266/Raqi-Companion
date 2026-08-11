@@ -1,0 +1,109 @@
+import 'package:flutter/material.dart';
+
+import '../bookmarks.dart';
+import '../models.dart';
+import 'bookmarks_screen.dart';
+import 'item_list_screen.dart';
+import 'session_screen.dart';
+
+IconData categoryIcon(String name) {
+  switch (name) {
+    case 'menu_book':
+      return Icons.menu_book;
+    case 'auto_stories':
+      return Icons.auto_stories;
+    case 'shield':
+      return Icons.shield_outlined;
+    case 'visibility_off':
+      return Icons.visibility_off_outlined;
+    case 'wb_sunny':
+      return Icons.wb_sunny_outlined;
+    case 'favorite':
+      return Icons.favorite_outline;
+    default:
+      return Icons.bookmark_outline;
+  }
+}
+
+class CategoryListScreen extends StatelessWidget {
+  final List<Category> categories;
+  final BookmarkStore bookmarks;
+
+  const CategoryListScreen({
+    super.key,
+    required this.categories,
+    required this.bookmarks,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Raqi Companion')),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _ActionCard(
+            icon: Icons.play_circle_outline,
+            title: 'Start Session',
+            subtitle: 'Guided recitation checklist across all categories',
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => SessionScreen(categories: categories),
+            )),
+          ),
+          _ActionCard(
+            icon: Icons.bookmark_outline,
+            title: 'Bookmarks',
+            subtitle: '${bookmarks.ids.length} saved',
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) =>
+                  BookmarksScreen(categories: categories, bookmarks: bookmarks),
+            )),
+          ),
+          const SizedBox(height: 12),
+          ...categories.map((c) => _ActionCard(
+                icon: categoryIcon(c.icon),
+                title: c.title,
+                subtitle: c.subtitle,
+                trailing: Text('${c.items.length}'),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => ItemListScreen(
+                      category: c, bookmarks: bookmarks),
+                )),
+              )),
+        ],
+      ),
+    );
+  }
+}
+
+class _ActionCard extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final Widget? trailing;
+  final VoidCallback onTap;
+
+  const _ActionCard({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+    this.trailing,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: ListTile(
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        leading: Icon(icon, size: 30),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text(subtitle),
+        trailing: trailing,
+        onTap: onTap,
+      ),
+    );
+  }
+}
