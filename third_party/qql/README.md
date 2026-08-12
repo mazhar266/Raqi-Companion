@@ -62,14 +62,36 @@ sets `ndkVersion = flutter.ndkVersion`, which Flutter 3.44.9 pins to `28.2.13676
 Toolchain needed: rustup with `aarch64-linux-android armv7-linux-androideabi x86_64-linux-android`,
 `cargo install cargo-ndk`, the NDK above, and JDK 17 (AGP rejects JDK 25).
 
-## Still to do — getting the data onto the device
+## Data on device
 
-The native library reads JSON with `std::fs`, so it cannot see Flutter's asset bundle,
-and `sources/` is deliberately **not** declared as an asset — a release APK today
-contains `libqql.so` but none of the data. Making QQL return results on device needs
-`sources/` declared as an asset, unpacked to app storage on first launch, and that path
-passed to `QqlHelper.open`. At 64 MB that roughly doubles install footprint, so trimming
-to just the sources this app needs is worth doing first.
+The native library reads JSON with `std::fs` and cannot see Flutter's asset bundle, so
+`sources/` is declared as an asset in `pubspec.yaml` and unpacked to app storage on first
+launch by `lib/qql/qql_data.dart`. That unpacked path is what gets passed to
+`QqlHelper.open`.
+
+Two things to know when changing the data:
+
+- **Asset directories are not recursive.** Every leaf directory needs its own entry under
+  `flutter.assets` — all nine hadith book directories are listed individually. A missing
+  entry does not fail the build, it just makes that collection silently unresolvable.
+  `test/qql_data_test.dart` asserts the expected asset counts to catch this.
+- **Bump `QqlData.dataVersion`** after changing the bundled files, or existing installs
+  keep their old unpacked copy.
+
+Cost: the release APK goes from 47.7 MB to **66.4 MB** (JSON compresses well, so 64 MB of
+data adds ~19 MB).
+
+### The web build carries this data pointlessly
+
+Flutter has no per-platform asset declaration, so `flutter build web` also bundles all
+64 MB into `build/web/assets/sources/` even though the web build can never read it. The
+files are served individually and are never actually requested by a browser, so users
+download nothing extra — but the deploy artifact grows from 41 MB to 105 MB. Strip it
+after building:
+
+```bash
+flutter build web && rm -rf build/web/assets/sources
+```
 
 iOS would use `libqql.a` instead; there is no iOS runner in this repo.
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'bookmarks.dart';
 import 'data_service.dart';
 import 'models.dart';
-import 'screens/category_list_screen.dart';
+import 'screens/home_shell.dart';
 import 'theme_store.dart';
 
 void main() {
@@ -68,7 +68,7 @@ class _RuqyahAppState extends State<RuqyahApp> {
                   body: Center(child: CircularProgressIndicator()),
                 );
               }
-              return CategoryListScreen(
+              return HomeShell(
                 categories: snapshot.data!,
                 bookmarks: bookmarks,
                 themeStore: themeStore,

@@ -6,7 +6,8 @@ Guidance for AI coding agents working on this repository. Assumes no prior knowl
 
 **raqi_companion** ("Raqi Companion") is an offline Flutter app providing Quranic ayats and adhkar for ruqyah shari'ah. It is a read-only content browser with:
 
-- A category list (home screen) of ruqyah content groups.
+- Two bottom-navigation tabs: **Browse** (the ruqyah content) and **Query** (a QQL console).
+- A category list of ruqyah content groups.
 - Per-category item lists showing Arabic text with a bookmark toggle.
 - A detail screen per item with Arabic, transliteration, translation, an optional note, and a tap counter for repetitions (`repeat` field).
 - A "Session" screen: a guided checklist across all categories with a progress bar (in-memory only, not persisted).
@@ -19,7 +20,7 @@ All content ships in a single bundled JSON asset (`assets/data/ruqyah.json`); th
 
 - **Flutter 3.44.9 (stable channel)** / **Dart SDK `>=3.0.0 <4.0.0`** (see `pubspec.yaml`).
 - **Platforms enabled:** Android and Web only (see `.metadata` migration list and the `android/` and `web/` directories). There are no `ios/`, `linux/`, `macos/`, or `windows/` runners.
-- **Runtime dependencies:** `shared_preferences` (^2.2.3) and `ffi` (^2.1.0, required by the vendored QQL binding), plus the Flutter SDK.
+- **Runtime dependencies:** `shared_preferences` (^2.2.3), `ffi` (^2.1.0, required by the vendored QQL binding) and `path_provider` (^2.1.0, locates the directory QQL data is unpacked into), plus the Flutter SDK.
 - **Dev dependencies:** `flutter_test` (SDK), `flutter_lints` (^3.0.0).
 - **Android:** Gradle Kotlin DSL (`android/build.gradle.kts`, `android/app/build.gradle.kts`), Java/Kotlin 17, `applicationId = com.example.raqi_companion`, namespace `com.example.raqi_companion`. Release builds currently sign with the debug key (marked TODO in `android/app/build.gradle.kts`).
 
@@ -41,9 +42,12 @@ lib/
     qql_helper_io.dart             dart:ffi implementation
     qql_helper_web.dart            Web stub (isSupported == false, everything throws)
     qql_record.dart                QqlRecord / QqlQueryException — pure Dart
+    qql_data.dart                  Unpacks the bundled data from assets to app storage
     vendor/qql.dart                Vendored QQL binding, verbatim from upstream
   screens/
-    category_list_screen.dart      Home screen; also maps category icon names to IconData
+    home_shell.dart                Root screen: bottom NavigationBar over the two tabs
+    category_list_screen.dart      Browse tab; also maps category icon names to IconData
+    qql_query_screen.dart          Query tab: a QQL input, submit, and the results
     item_list_screen.dart          Items of one category with bookmark toggles
     ayat_detail_screen.dart        Full item view with prev/next navigation and repeat counter
     session_screen.dart            Guided checklist across all categories (state not persisted)
@@ -52,6 +56,8 @@ assets/data/ruqyah.json            All content: {"categories": [...]}, 6 categor
 test/tajweed_test.dart             Unit tests for the tajweed parser
 test/theme_store_test.dart         Unit and widget tests for the appearance setting
 test/qql_helper_test.dart          Integration tests against the real native library
+test/qql_data_test.dart            Asset declaration, unpacking, and an end-to-end query
+test/home_shell_test.dart          Bottom-navigation smoke tests
 third_party/qql/                   Vendored QQL: C header, prebuilt Linux .so, licence,
                                    and README.md with provenance and rebuild steps
 android/app/src/main/jniLibs/      QQL native libs, 3 ABIs — built by cargo-ndk, see above
@@ -73,7 +79,8 @@ Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each cate
 - **Tajweed colouring:** `parseTajweed(String)` in `lib/tajweed.dart` is a pure function splitting vocalised Arabic into `TajweedSegment`s tagged with a `TajweedRule`. It reads the diacritics that are actually written, so it only works on fully vocalised text. It covers the noon sakin/tanwin rules (izhar, idgham with and without ghunnah, iqlab, ikhfa), the meem sakin rules, ghunnah, qalqalah sughra, and madd of 4-6 counts; natural 2-count madd is deliberately left uncoloured. Colours live on the `TajweedRule` enum, one per brightness. Any change to the rules must keep `test/tajweed_test.dart` green — including the round-trip test asserting that segments reassemble the input exactly.
 - **QQL (`lib/qql/`):** a vendored Rust library reached over `dart:ffi`, resolving references like `Q:2:1-5,255` against the JSON in `sources/`. It is **not wired into any screen yet** — the app's own content still comes entirely from `assets/data/ruqyah.json`. Three things constrain how it can be used:
   - **No web.** `dart:ffi` does not exist there. `lib/qql/qql_helper.dart` conditionally exports the FFI implementation or a stub, so the app still compiles for web; guard call sites with `QqlHelper.isSupported` rather than catching. Never import `qql_helper_io.dart` or `qql_helper_web.dart` directly, and never import `vendor/qql.dart` outside `qql_helper_io.dart` — any of those breaks the web build.
-  - **No data on device yet.** The Android `.so`s are built and bundled (`android/app/src/main/jniLibs/`, three ABIs), but `sources/` is not a Flutter asset, so a release APK ships the library without its data. Rebuild instructions and the remaining work are in `third_party/qql/README.md`.
+  - **Data must be unpacked before use.** The library reads with `std::fs` and cannot see the asset bundle, so `QqlData.ensureUnpacked()` copies `sources/` to app storage on first launch and returns the path for `QqlHelper.open`. Bump `QqlData.dataVersion` when the bundled data changes. Asset directories are not recursive — every leaf directory is listed in `pubspec.yaml`, and `test/qql_data_test.dart` guards the counts.
+  - **The web build bundles the 64 MB of data pointlessly** (no per-platform assets in Flutter); strip `build/web/assets/sources/` after building. See `third_party/qql/README.md`.
   - **`dispose()` is mandatory.** The context is native memory with no finalizer.
 - **Language:** all code, comments, and UI strings are in English; content data includes Arabic and transliteration.
 - **Linting:** `analysis_options.yaml` includes `package:flutter_lints/flutter.yaml` with no overrides. Code currently passes `flutter analyze` with zero issues — keep it that way.

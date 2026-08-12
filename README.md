@@ -7,6 +7,7 @@ Everything ships inside the app. There is no backend, no network access, no acco
 ## Features
 
 - **Browse by category** — six groups of ruqyah content, each item showing Arabic, transliteration, translation, and a short note on its source or use.
+- **Query tab** — look up any ayah, hadith, or supplication with a compact reference such as `Q:2:1-5,255`, `HM:27:1-3`, or `B:1:1`, covering the whole Quran, Hisnul Muslim, and the nine hadith books. Android only; see below.
 - **Tajweed colouring** — the Arabic is coloured by recitation rule (ghunnah, idgham, ikhfa, iqlab, qalqalah, madd), with a legend explaining each colour.
 - **Repetition counter** — items with a recommended repetition count get a tap counter and a progress bar.
 - **Guided session** — a checklist across every category with overall progress, for working through a full recitation.
@@ -39,9 +40,13 @@ flutter run -d chrome    # in the browser
 Building a release:
 
 ```bash
-flutter build apk        # Android
-flutter build web        # output in build/web
+flutter build apk                                  # Android
+flutter build web && rm -rf build/web/assets/sources   # output in build/web
 ```
+
+> The `rm` is not optional housekeeping. Flutter cannot declare assets per platform, so
+> the web build bundles 64 MB of query data that a browser can never read — it triples the
+> deploy artifact. Browsers never request the files, so users download nothing extra.
 
 > Android release builds are currently signed with the debug key. Set a real signing config in `android/app/build.gradle.kts` before distributing.
 
@@ -54,6 +59,8 @@ flutter test test/tajweed_test.dart  # one file
 ```
 
 The tajweed rules are implemented as a pure function, `parseTajweed()` in [`lib/tajweed.dart`](lib/tajweed.dart), which splits vocalised Arabic into segments tagged with the rule that applies. It is covered by [`test/tajweed_test.dart`](test/tajweed_test.dart), including a check that the segmentation reassembles every ayat in the asset exactly.
+
+The Query tab is powered by [QQL](https://github.com/mazhar266/QQ-Lang), a Rust library vendored into `third_party/qql/` and reached over `dart:ffi`. It works on Android and desktop; on web the tab reports that it is unavailable, because `dart:ffi` and the filesystem it needs do not exist there. See [`third_party/qql/README.md`](third_party/qql/README.md) for provenance, how to rebuild the native libraries, and the licence implications.
 
 [`AGENTS.md`](AGENTS.md) documents the architecture, conventions, and the non-obvious couplings in the content file. Read it before making changes.
 
