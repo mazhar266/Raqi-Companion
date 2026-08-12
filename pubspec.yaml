@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.2.3
+  # Required by the vendored QQL binding in lib/qql/vendor/qql.dart.
+  # Not used on web, where dart:ffi does not exist.
+  ffi: ^2.1.0
 
 dev_dependencies:
   flutter_test:
