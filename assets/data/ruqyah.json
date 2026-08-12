@@ -425,6 +425,713 @@
           "note": "The Prophet ﷺ would recite the Mu'awwidhat into his palms and wipe over his body every night (Sahih al-Bukhari 5017)."
         }
       ]
+    },
+    {
+      "id": "dawah-jews",
+      "title": "Dawah to Jewish Friends",
+      "subtitle": "Common ground, the Torah honoured, and the questions of prophethood",
+      "icon": "auto_stories",
+      "group": "Dawah",
+      "items": [
+        {
+          "id": "dawah-jews-16-125",
+          "reference": "An-Nahl 16:125",
+          "arabic": "ٱدۡعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلۡحِكۡمَةِ وَٱلۡمَوۡعِظَةِ ٱلۡحَسَنَةِۖ وَجَٰدِلۡهُم بِٱلَّتِي هِيَ أَحۡسَنُۚ إِنَّ رَبَّكَ هُوَ أَعۡلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ وَهُوَ أَعۡلَمُ بِٱلۡمُهۡتَدِينَ",
+          "transliteration": "OdAAu ila sabeeli rabbika bialhikmati waalmawAAithati alhasanati wajadilhum biallatee hiya ahsanu inna rabbaka huwa aAAlamu biman dalla AAan sabeelihi wahuwa aAAlamu bialmuhtadeena",
+          "translation": "Invite to the way of your Lord with wisdom and good instruction, and argue with them in a way that is best. Indeed, your Lord is most knowing of who has strayed from His way, and He is most knowing of who is [rightly] guided",
+          "repeat": 1,
+          "note": "The method itself: wisdom, good instruction, and arguing in the way that is best. This sets the standard for everything else — never debate to humiliate.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-3-64",
+          "reference": "Ali 'Imran 3:64",
+          "arabic": "قُلۡ يَـٰٓأَهۡلَ ٱلۡكِتَٰبِ تَعَالَوۡاْ إِلَىٰ كَلِمَةٖ سَوَآءِۭ بَيۡنَنَا وَبَيۡنَكُمۡ أَلَّا نَعۡبُدَ إِلَّا ٱللَّهَ وَلَا نُشۡرِكَ بِهِۦ شَيۡـٔٗا وَلَا يَتَّخِذَ بَعۡضُنَا بَعۡضًا أَرۡبَابٗا مِّن دُونِ ٱللَّهِۚ فَإِن تَوَلَّوۡاْ فَقُولُواْ ٱشۡهَدُواْ بِأَنَّا مُسۡلِمُونَ",
+          "transliteration": "Qul ya ahla alkitabi taAAalaw ila kalimatin sawain baynana wabaynakum alla naAAbuda illa Allaha wala nushrika bihi shayan wala yattakhitha baAAduna baAAdan arbaban min dooni Allahi fain tawallaw faqooloo ishhadoo bianna muslimoona",
+          "translation": "Say, \"O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah and not associate anything with Him and not take one another as lords instead of Allah.\" But if they turn away, then say, \"Bear witness that we are Muslims [submitting to Him]",
+          "repeat": 1,
+          "note": "The common word. The Quran's own opening line to the People of the Book, and the bridge to start from rather than end with.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-29-46",
+          "reference": "Al-'Ankabut 29:46",
+          "arabic": "۞وَلَا تُجَٰدِلُوٓاْ أَهۡلَ ٱلۡكِتَٰبِ إِلَّا بِٱلَّتِي هِيَ أَحۡسَنُ إِلَّا ٱلَّذِينَ ظَلَمُواْ مِنۡهُمۡۖ وَقُولُوٓاْ ءَامَنَّا بِٱلَّذِيٓ أُنزِلَ إِلَيۡنَا وَأُنزِلَ إِلَيۡكُمۡ وَإِلَٰهُنَا وَإِلَٰهُكُمۡ وَٰحِدٞ وَنَحۡنُ لَهُۥ مُسۡلِمُونَ",
+          "transliteration": "Wala tujadiloo ahla alkitabi illa biallatee hiya ahsanu illa allatheena thalamoo minhum waqooloo amanna biallathee onzila ilayna waonzila ilaykum wailahuna wailahukum wahidun wanahnu lahu muslimoona",
+          "translation": "And do not argue with the People of the Scripture except in a way that is best, except for those who commit injustice among them, and say, \"We believe in that which has been revealed to us and revealed to you. And our God and your God is one; and we are Muslims [in submission] to Him",
+          "repeat": 1,
+          "note": "Argue only in the best manner, and affirm belief in what was revealed to them. Close conversations on this spirit: \"our God and your God is One\".",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-3-113",
+          "reference": "Ali 'Imran 3:113",
+          "arabic": "۞لَيۡسُواْ سَوَآءٗۗ مِّنۡ أَهۡلِ ٱلۡكِتَٰبِ أُمَّةٞ قَآئِمَةٞ يَتۡلُونَ ءَايَٰتِ ٱللَّهِ ءَانَآءَ ٱلَّيۡلِ وَهُمۡ يَسۡجُدُونَ",
+          "transliteration": "Laysoo sawaan min ahli alkitabi ommatun qaimatun yatloona ayati Allahi anaa allayli wahum yasjudoona",
+          "translation": "They are not [all] the same; among the People of the Scripture is a community standing [in obedience], reciting the verses of Allah during periods of the night and prostrating [in prayer]",
+          "repeat": 1,
+          "note": "They are not a monolith. The Quran itself refuses to generalise about a community — do not do what the Book declines to do.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-256",
+          "reference": "Al-Baqarah 2:256",
+          "arabic": "لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ قَد تَّبَيَّنَ ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ فَمَن يَكۡفُرۡ بِٱلطَّـٰغُوتِ وَيُؤۡمِنۢ بِٱللَّهِ فَقَدِ ٱسۡتَمۡسَكَ بِٱلۡعُرۡوَةِ ٱلۡوُثۡقَىٰ لَا ٱنفِصَامَ لَهَاۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+          "transliteration": "La ikraha fee alddeeni qad tabayyana alrrushdu mina alghayyi faman yakfur bialttaghooti wayumin biAllahi faqadi istamsaka bialAAurwati alwuthqa la infisama laha waAllahu sameeAAun AAaleemun",
+          "translation": "There shall be no compulsion in [acceptance of] the religion. The right course has become clear from the wrong. So whoever disbelieves in Taghut and believes in Allah has grasped the most trustworthy handhold with no break in it. And Allah is Hearing and Knowing",
+          "repeat": 1,
+          "note": "There is no compulsion in religion. Plant seeds; never rush anyone toward the shahada.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-28-56",
+          "reference": "Al-Qasas 28:56",
+          "arabic": "إِنَّكَ لَا تَهۡدِي مَنۡ أَحۡبَبۡتَ وَلَٰكِنَّ ٱللَّهَ يَهۡدِي مَن يَشَآءُۚ وَهُوَ أَعۡلَمُ بِٱلۡمُهۡتَدِينَ",
+          "transliteration": "Innaka la tahdee man ahbabta walakinna Allaha yahdee man yashao wahuwa aAAlamu bialmuhtadeena",
+          "translation": "Indeed, [O Muhammad], you do not guide whom you like, but Allah guides whom He wills. And He is most knowing of the [rightly] guided",
+          "repeat": 1,
+          "note": "Guidance belongs to Allah, not to you. This frees you from needing to win, and is the reason to make dua for them.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-40",
+          "reference": "Al-Baqarah 2:40",
+          "arabic": "يَٰبَنِيٓ إِسۡرَـٰٓءِيلَ ٱذۡكُرُواْ نِعۡمَتِيَ ٱلَّتِيٓ أَنۡعَمۡتُ عَلَيۡكُمۡ وَأَوۡفُواْ بِعَهۡدِيٓ أُوفِ بِعَهۡدِكُمۡ وَإِيَّـٰيَ فَٱرۡهَبُونِ",
+          "transliteration": "Ya banee israeela othkuroo niAAmatiya allatee anAAamtu AAalaykum waawfoo biAAahdee oofi biAAahdikum waiyyaya fairhabooni",
+          "translation": "O Children of Israel, remember My favor which I have bestowed upon you and fulfill My covenant [upon you] that I will fulfill your covenant [from Me], and be afraid of [only] Me",
+          "repeat": 1,
+          "note": "Opens the address to the Children of Israel: remember the favour, fulfil the covenant. Begin from honour, not critique.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-47",
+          "reference": "Al-Baqarah 2:47",
+          "arabic": "يَٰبَنِيٓ إِسۡرَـٰٓءِيلَ ٱذۡكُرُواْ نِعۡمَتِيَ ٱلَّتِيٓ أَنۡعَمۡتُ عَلَيۡكُمۡ وَأَنِّي فَضَّلۡتُكُمۡ عَلَى ٱلۡعَٰلَمِينَ",
+          "transliteration": "Ya banee israeela othkuroo niAAmatiya allatee anAAamtu AAalaykum waannee faddaltukum AAala alAAalameena",
+          "translation": "O Children of Israel, remember My favor that I have bestowed upon you and that I preferred you over the worlds",
+          "repeat": 1,
+          "note": "The favour and the preference over the worlds, affirmed by the Quran itself.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-83",
+          "reference": "Al-Baqarah 2:83",
+          "arabic": "وَإِذۡ أَخَذۡنَا مِيثَٰقَ بَنِيٓ إِسۡرَـٰٓءِيلَ لَا تَعۡبُدُونَ إِلَّا ٱللَّهَ وَبِٱلۡوَٰلِدَيۡنِ إِحۡسَانٗا وَذِي ٱلۡقُرۡبَىٰ وَٱلۡيَتَٰمَىٰ وَٱلۡمَسَٰكِينِ وَقُولُواْ لِلنَّاسِ حُسۡنٗا وَأَقِيمُواْ ٱلصَّلَوٰةَ وَءَاتُواْ ٱلزَّكَوٰةَ ثُمَّ تَوَلَّيۡتُمۡ إِلَّا قَلِيلٗا مِّنكُمۡ وَأَنتُم مُّعۡرِضُونَ",
+          "transliteration": "Waith akhathna meethaqa banee israeela la taAAbudoona illa Allaha wabialwalidayni ihsanan wathee alqurba waalyatama waalmasakeeni waqooloo lilnnasi husnan waaqeemoo alssalata waatoo alzzakata thumma tawallaytum illa qaleelan minkum waantum muAAridoona",
+          "translation": "And [recall] when We took the covenant from the Children of Israel, [enjoining upon them], \"Do not worship except Allah; and to parents do good and to relatives, orphans, and the needy. And speak to people good [words] and establish prayer and give zakah.\" Then you turned away, except a few of you, and you were refusing",
+          "repeat": 1,
+          "note": "The covenant: worship none but Allah, be good to parents, relatives, orphans and the needy, and speak kindly to people. A shared ethical foundation, and an easy place to open a conversation.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-5-44",
+          "reference": "Al-Ma'idah 5:44",
+          "arabic": "إِنَّآ أَنزَلۡنَا ٱلتَّوۡرَىٰةَ فِيهَا هُدٗى وَنُورٞۚ يَحۡكُمُ بِهَا ٱلنَّبِيُّونَ ٱلَّذِينَ أَسۡلَمُواْ لِلَّذِينَ هَادُواْ وَٱلرَّبَّـٰنِيُّونَ وَٱلۡأَحۡبَارُ بِمَا ٱسۡتُحۡفِظُواْ مِن كِتَٰبِ ٱللَّهِ وَكَانُواْ عَلَيۡهِ شُهَدَآءَۚ فَلَا تَخۡشَوُاْ ٱلنَّاسَ وَٱخۡشَوۡنِ وَلَا تَشۡتَرُواْ بِـَٔايَٰتِي ثَمَنٗا قَلِيلٗاۚ وَمَن لَّمۡ يَحۡكُم بِمَآ أَنزَلَ ٱللَّهُ فَأُوْلَـٰٓئِكَ هُمُ ٱلۡكَٰفِرُونَ",
+          "transliteration": "Inna anzalna alttawrata feeha hudan wanoorun yahkumu biha alnnabiyyoona allatheena aslamoo lillatheena hadoo waalrrabbaniyyoona waalahbaru bima istuhfithoo min kitabi Allahi wakanoo AAalayhi shuhadaa fala takhshawoo alnnasa waikhshawni wala tashtaroo biayatee thamanan qaleelan waman lam yahkum bima anzala Allahu faolaika humu alkafiroona",
+          "translation": "Indeed, We sent down the Torah, in which was guidance and light. The prophets who submitted [to Allah] judged by it for the Jews, as did the rabbis and scholars by that with which they were entrusted of the Scripture of Allah, and they were witnesses thereto. So do not fear the people but fear Me, and do not exchange My verses for a small price. And whoever does not judge by what Allah has revealed - then it is those who are the disbelievers",
+          "repeat": 1,
+          "note": "The Torah as originally revealed contained guidance and light. Affirm this before any critique — it builds the trust everything else depends on.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-5-48",
+          "reference": "Al-Ma'idah 5:48",
+          "arabic": "وَأَنزَلۡنَآ إِلَيۡكَ ٱلۡكِتَٰبَ بِٱلۡحَقِّ مُصَدِّقٗا لِّمَا بَيۡنَ يَدَيۡهِ مِنَ ٱلۡكِتَٰبِ وَمُهَيۡمِنًا عَلَيۡهِۖ فَٱحۡكُم بَيۡنَهُم بِمَآ أَنزَلَ ٱللَّهُۖ وَلَا تَتَّبِعۡ أَهۡوَآءَهُمۡ عَمَّا جَآءَكَ مِنَ ٱلۡحَقِّۚ لِكُلّٖ جَعَلۡنَا مِنكُمۡ شِرۡعَةٗ وَمِنۡهَاجٗاۚ وَلَوۡ شَآءَ ٱللَّهُ لَجَعَلَكُمۡ أُمَّةٗ وَٰحِدَةٗ وَلَٰكِن لِّيَبۡلُوَكُمۡ فِي مَآ ءَاتَىٰكُمۡۖ فَٱسۡتَبِقُواْ ٱلۡخَيۡرَٰتِۚ إِلَى ٱللَّهِ مَرۡجِعُكُمۡ جَمِيعٗا فَيُنَبِّئُكُم بِمَا كُنتُمۡ فِيهِ تَخۡتَلِفُونَ",
+          "transliteration": "Waanzalna ilayka alkitaba bialhaqqi musaddiqan lima bayna yadayhi mina alkitabi wamuhayminan AAalayhi faohkum baynahum bima anzala Allahu wala tattabiAA ahwaahum AAamma jaaka mina alhaqqi likullin jaAAalna minkum shirAAatan waminhajan walaw shaa Allahu lajaAAalakum ommatan wahidatan walakin liyabluwakum fee ma atakum faistabiqoo alkhayrati ila Allahi marjiAAukum jameeAAan fayunabbiokum bima kuntum feehi takhtalifoona",
+          "translation": "And We have revealed to you, [O Muhammad], the Book in truth, confirming that which preceded it of the Scripture and as a criterion over it. So judge between them by what Allah has revealed and do not follow their inclinations away from what has come to you of the truth. To each of you We prescribed a law and a method. Had Allah willed, He would have made you one nation [united in religion], but [He intended] to test you in what He has given you; so race to [all that is] good. To Allah is your return all together, and He will [then] inform you concerning that over which you used to differ",
+          "repeat": 1,
+          "note": "The Quran presents itself as confirming what came before it. The gentle question that follows: if Allah sent prophets successively, why would revelation stop?",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-285",
+          "reference": "Al-Baqarah 2:285",
+          "arabic": "ءَامَنَ ٱلرَّسُولُ بِمَآ أُنزِلَ إِلَيۡهِ مِن رَّبِّهِۦ وَٱلۡمُؤۡمِنُونَۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَـٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَيۡنَ أَحَدٖ مِّن رُّسُلِهِۦۚ وَقَالُواْ سَمِعۡنَا وَأَطَعۡنَاۖ غُفۡرَانَكَ رَبَّنَا وَإِلَيۡكَ ٱلۡمَصِيرُ",
+          "transliteration": "Amana alrrasoolu bima onzila ilayhi min rabbihi waalmuminoona kullun amana biAllahi wamalaikatihi wakutubihi warusulihi la nufarriqu bayna ahadin min rusulihi waqaloo samiAAna waataAAna ghufranaka rabbana wailayka almaseeru",
+          "translation": "The Messenger has believed in what was revealed to him from his Lord, and [so have] the believers. All of them have believed in Allah and His angels and His books and His messengers, [saying], \"We make no distinction between any of His messengers.\" And they say, \"We hear and we obey. [We seek] Your forgiveness, our Lord, and to You is the [final] destination",
+          "repeat": 1,
+          "note": "Muslims make no distinction between His messengers — Musa, Dawud, Sulayman, Ibrahim and all the prophets of Israel are ours to honour too.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-5-32",
+          "reference": "Al-Ma'idah 5:32",
+          "arabic": "مِنۡ أَجۡلِ ذَٰلِكَ كَتَبۡنَا عَلَىٰ بَنِيٓ إِسۡرَـٰٓءِيلَ أَنَّهُۥ مَن قَتَلَ نَفۡسَۢا بِغَيۡرِ نَفۡسٍ أَوۡ فَسَادٖ فِي ٱلۡأَرۡضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعٗا وَمَنۡ أَحۡيَاهَا فَكَأَنَّمَآ أَحۡيَا ٱلنَّاسَ جَمِيعٗاۚ وَلَقَدۡ جَآءَتۡهُمۡ رُسُلُنَا بِٱلۡبَيِّنَٰتِ ثُمَّ إِنَّ كَثِيرٗا مِّنۡهُم بَعۡدَ ذَٰلِكَ فِي ٱلۡأَرۡضِ لَمُسۡرِفُونَ",
+          "transliteration": "Min ajli thalika katabna AAala banee israeela annahu man qatala nafsan bighayri nafsin aw fasadin fee alardi fakaannama qatala alnnasa jameeAAan waman ahyaha fakaannama ahya alnnasa jameeAAan walaqad jaa thum rusuluna bialbayyinati thumma inna katheeran minhum baAAda thalika fee alardi lamusrifoona",
+          "translation": "Because of that, We decreed upon the Children of Israel that whoever kills a soul unless for a soul or for corruption [done] in the land - it is as if he had slain mankind entirely. And whoever saves one - it is as if he had saved mankind entirely. And our messengers had certainly come to them with clear proofs. Then indeed many of them, [even] after that, throughout the land, were transgressors",
+          "repeat": 1,
+          "note": "Whoever saves one life, it is as if he saved all mankind — nearly word for word with Mishnah Sanhedrin 4:5. An extraordinary bridge verse, and often unknown to both sides.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-7-159",
+          "reference": "Al-A'raf 7:159",
+          "arabic": "وَمِن قَوۡمِ مُوسَىٰٓ أُمَّةٞ يَهۡدُونَ بِٱلۡحَقِّ وَبِهِۦ يَعۡدِلُونَ",
+          "transliteration": "Wamin qawmi moosa ommatun yahdoona bialhaqqi wabihi yaAAdiloona",
+          "translation": "And among the people of Moses is a community which guides by truth and by it establishes justice",
+          "repeat": 1,
+          "note": "Among the people of Musa is a community that guides by truth and establishes justice. A powerful, often-unknown verse of fairness — the Quran naming the righteous among them.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-49-13",
+          "reference": "Al-Hujurat 49:13",
+          "arabic": "يَـٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقۡنَٰكُم مِّن ذَكَرٖ وَأُنثَىٰ وَجَعَلۡنَٰكُمۡ شُعُوبٗا وَقَبَآئِلَ لِتَعَارَفُوٓاْۚ إِنَّ أَكۡرَمَكُمۡ عِندَ ٱللَّهِ أَتۡقَىٰكُمۡۚ إِنَّ ٱللَّهَ عَلِيمٌ خَبِيرٞ",
+          "transliteration": "Ya ayyuha alnnasu inna khalaqnakum min thakarin waontha wajaAAalnakum shuAAooban waqabaila litaAAarafoo inna akramakum AAinda Allahi atqakum inna Allaha AAaleemun khabeerun",
+          "translation": "O mankind, indeed We have created you from male and female and made you peoples and tribes that you may know one another. Indeed, the most noble of you in the sight of Allah is the most righteous of you. Indeed, Allah is Knowing and Acquainted",
+          "repeat": 1,
+          "note": "Nobility before Allah is by righteousness, not lineage. Pair with 2:40 and 2:47: the covenant is honoured, and favour is now tied to faith and conduct.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-3-93-94",
+          "reference": "Ali 'Imran 3:93-94",
+          "arabic": "۞كُلُّ ٱلطَّعَامِ كَانَ حِلّٗا لِّبَنِيٓ إِسۡرَـٰٓءِيلَ إِلَّا مَا حَرَّمَ إِسۡرَـٰٓءِيلُ عَلَىٰ نَفۡسِهِۦ مِن قَبۡلِ أَن تُنَزَّلَ ٱلتَّوۡرَىٰةُۚ قُلۡ فَأۡتُواْ بِٱلتَّوۡرَىٰةِ فَٱتۡلُوهَآ إِن كُنتُمۡ صَٰدِقِينَ ﴿٩٣﴾ فَمَنِ ٱفۡتَرَىٰ عَلَى ٱللَّهِ ٱلۡكَذِبَ مِنۢ بَعۡدِ ذَٰلِكَ فَأُوْلَـٰٓئِكَ هُمُ ٱلظَّـٰلِمُونَ ﴿٩٤﴾",
+          "transliteration": "Kullu alttaAAami kana hillan libanee israeela illa ma harrama israeelu AAala nafsihi min qabli an tunazzala alttawratu qul fatoo bialttawrati faotlooha in kuntum sadiqeena Famani iftara AAala Allahi alkathiba min baAAdi thalika faolaika humu althalimoona",
+          "translation": "All food was lawful to the Children of Israel except what Israel had made unlawful to himself before the Torah was revealed. Say, [O Muhammad], \"So bring the Torah and recite it, if you should be truthful And whoever invents about Allah untruth after that - then those are [truly] the wrongdoers",
+          "repeat": 1,
+          "note": "The Quran's own method: appeal to their scripture as evidence — \"bring the Torah and recite it, if you are truthful.\"",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-111",
+          "reference": "Al-Baqarah 2:111",
+          "arabic": "وَقَالُواْ لَن يَدۡخُلَ ٱلۡجَنَّةَ إِلَّا مَن كَانَ هُودًا أَوۡ نَصَٰرَىٰۗ تِلۡكَ أَمَانِيُّهُمۡۗ قُلۡ هَاتُواْ بُرۡهَٰنَكُمۡ إِن كُنتُمۡ صَٰدِقِينَ",
+          "transliteration": "Waqaloo lan yadkhula aljannata illa man kana hoodan aw nasara tilka amaniyyuhum qul hatoo burhanakum in kuntum sadiqeena",
+          "translation": "And they say, \"None will enter Paradise except one who is a Jew or a Christian.\" That is [merely] their wishful thinking, Say, \"Produce your proof, if you should be truthful",
+          "repeat": 1,
+          "note": "Produce your proof if you are truthful. The Quran asks for evidence rather than assertion, and so should you.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-89",
+          "reference": "Al-Baqarah 2:89",
+          "arabic": "وَلَمَّا جَآءَهُمۡ كِتَٰبٞ مِّنۡ عِندِ ٱللَّهِ مُصَدِّقٞ لِّمَا مَعَهُمۡ وَكَانُواْ مِن قَبۡلُ يَسۡتَفۡتِحُونَ عَلَى ٱلَّذِينَ كَفَرُواْ فَلَمَّا جَآءَهُم مَّا عَرَفُواْ كَفَرُواْ بِهِۦۚ فَلَعۡنَةُ ٱللَّهِ عَلَى ٱلۡكَٰفِرِينَ",
+          "transliteration": "Walamma jaahum kitabun min AAindi Allahi musaddiqun lima maAAahum wakanoo min qablu yastaftihoona AAala allatheena kafaroo falamma jaahum ma AAarafoo kafaroo bihi falaAAnatu Allahi AAala alkafireena",
+          "translation": "And when there came to them a Book from Allah confirming that which was with them - although before they used to pray for victory against those who disbelieved - but [then] when there came to them that which they recognized, they disbelieved in it; so the curse of Allah will be upon the disbelievers",
+          "repeat": 1,
+          "note": "Addresses the hardest question directly — recognising the truth and turning away from it. Steer the conversation toward evidence, never grievance.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-2-75",
+          "reference": "Al-Baqarah 2:75",
+          "arabic": "۞أَفَتَطۡمَعُونَ أَن يُؤۡمِنُواْ لَكُمۡ وَقَدۡ كَانَ فَرِيقٞ مِّنۡهُمۡ يَسۡمَعُونَ كَلَٰمَ ٱللَّهِ ثُمَّ يُحَرِّفُونَهُۥ مِنۢ بَعۡدِ مَا عَقَلُوهُ وَهُمۡ يَعۡلَمُونَ",
+          "transliteration": "AfatatmaAAoona an yuminoo lakum waqad kana fareequn minhum yasmaAAoona kalama Allahi thumma yuharrifoonahu min baAAdi ma AAaqaloohu wahum yaAAlamoona",
+          "translation": "Do you covet [the hope, O believers], that they would believe for you while a party of them used to hear the words of Allah and then distort the Torah after they had understood it while they were knowing",
+          "repeat": 1,
+          "note": "On the alteration of scripture. Frame this with tact: the Quran asks whether every word of the present text is the original revelation. It is not an attack on their faith.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-5-13",
+          "reference": "Al-Ma'idah 5:13",
+          "arabic": "فَبِمَا نَقۡضِهِم مِّيثَٰقَهُمۡ لَعَنَّـٰهُمۡ وَجَعَلۡنَا قُلُوبَهُمۡ قَٰسِيَةٗۖ يُحَرِّفُونَ ٱلۡكَلِمَ عَن مَّوَاضِعِهِۦ وَنَسُواْ حَظّٗا مِّمَّا ذُكِّرُواْ بِهِۦۚ وَلَا تَزَالُ تَطَّلِعُ عَلَىٰ خَآئِنَةٖ مِّنۡهُمۡ إِلَّا قَلِيلٗا مِّنۡهُمۡۖ فَٱعۡفُ عَنۡهُمۡ وَٱصۡفَحۡۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلۡمُحۡسِنِينَ",
+          "transliteration": "Fabima naqdihim meethaqahum laAAannahum wajaAAalna quloobahum qasiyatan yuharrifoona alkalima AAan mawadiAAihi wanasoo haththan mimma thukkiroo bihi wala tazalu tattaliAAu AAala khainatin minhum illa qaleelan minhum faoAAfu AAanhum waisfah inna Allaha yuhibbu almuhsineena",
+          "translation": "So for their breaking of the covenant We cursed them and made their hearts hard. They distort words from their [proper] usages and have forgotten a portion of that of which they were reminded. And you will still observe deceit among them, except a few of them. But pardon them and overlook [their misdeeds]. Indeed, Allah loves the doers of good",
+          "repeat": 1,
+          "note": "The second verse on alteration. Handle it as a question, not an accusation.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-62-6",
+          "reference": "Al-Jumu'ah 62:6",
+          "arabic": "قُلۡ يَـٰٓأَيُّهَا ٱلَّذِينَ هَادُوٓاْ إِن زَعَمۡتُمۡ أَنَّكُمۡ أَوۡلِيَآءُ لِلَّهِ مِن دُونِ ٱلنَّاسِ فَتَمَنَّوُاْ ٱلۡمَوۡتَ إِن كُنتُمۡ صَٰدِقِينَ",
+          "transliteration": "Qul ya ayyuha allatheena hadoo in zaAAamtum annakum awliyao lillahi min dooni alnnasi fatamannawoo almawta in kuntum sadiqeena",
+          "translation": "Say, \"O you who are Jews, if you claim that you are allies of Allah, excluding the [other] people, then wish for death, if you should be truthful",
+          "repeat": 1,
+          "note": "A challenge to the claim of exclusive alliance with Allah. Use only where the claim is actually being made, and never as an opening.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-jews-5-82",
+          "reference": "Al-Ma'idah 5:82",
+          "arabic": "۞لَتَجِدَنَّ أَشَدَّ ٱلنَّاسِ عَدَٰوَةٗ لِّلَّذِينَ ءَامَنُواْ ٱلۡيَهُودَ وَٱلَّذِينَ أَشۡرَكُواْۖ وَلَتَجِدَنَّ أَقۡرَبَهُم مَّوَدَّةٗ لِّلَّذِينَ ءَامَنُواْ ٱلَّذِينَ قَالُوٓاْ إِنَّا نَصَٰرَىٰۚ ذَٰلِكَ بِأَنَّ مِنۡهُمۡ قِسِّيسِينَ وَرُهۡبَانٗا وَأَنَّهُمۡ لَا يَسۡتَكۡبِرُونَ",
+          "transliteration": "Latajidanna ashadda alnnasi AAadawatan lillatheena amanoo alyahooda waallatheena ashrakoo walatajidanna aqrabahum mawaddatan lillatheena amanoo allatheena qaloo inna nasara thalika bianna minhum qisseeseena waruhbanan waannahum la yastakbiroona",
+          "translation": "You will surely find the most intense of the people in animosity toward the believers [to be] the Jews and those who associate others with Allah; and you will find the nearest of them in affection to the believers those who say, \"We are Christians.\" That is because among them are priests and monks and because they are not arrogant",
+          "repeat": 1,
+          "note": "Caution. This verse describes historical hostility and contrasts it with Christian closeness. The source guidance is explicit: use with wisdom, not as a talking point, and never as collective blame — 3:113 and 7:159 are the Quran's own corrective.",
+          "script": "uthmani"
+        }
+      ]
+    },
+    {
+      "id": "dawah-christians",
+      "title": "Dawah to Christian Friends",
+      "subtitle": "Love for Isa and Maryam, and where the difference actually lies",
+      "icon": "favorite",
+      "group": "Dawah",
+      "items": [
+        {
+          "id": "dawah-christians-16-125",
+          "reference": "An-Nahl 16:125",
+          "arabic": "ٱدۡعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلۡحِكۡمَةِ وَٱلۡمَوۡعِظَةِ ٱلۡحَسَنَةِۖ وَجَٰدِلۡهُم بِٱلَّتِي هِيَ أَحۡسَنُۚ إِنَّ رَبَّكَ هُوَ أَعۡلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ وَهُوَ أَعۡلَمُ بِٱلۡمُهۡتَدِينَ",
+          "transliteration": "OdAAu ila sabeeli rabbika bialhikmati waalmawAAithati alhasanati wajadilhum biallatee hiya ahsanu inna rabbaka huwa aAAlamu biman dalla AAan sabeelihi wahuwa aAAlamu bialmuhtadeena",
+          "translation": "Invite to the way of your Lord with wisdom and good instruction, and argue with them in a way that is best. Indeed, your Lord is most knowing of who has strayed from His way, and He is most knowing of who is [rightly] guided",
+          "repeat": 1,
+          "note": "The method itself: wisdom, good instruction, and arguing in the way that is best. This sets the standard for everything else — never debate to humiliate.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-3-64",
+          "reference": "Ali 'Imran 3:64",
+          "arabic": "قُلۡ يَـٰٓأَهۡلَ ٱلۡكِتَٰبِ تَعَالَوۡاْ إِلَىٰ كَلِمَةٖ سَوَآءِۭ بَيۡنَنَا وَبَيۡنَكُمۡ أَلَّا نَعۡبُدَ إِلَّا ٱللَّهَ وَلَا نُشۡرِكَ بِهِۦ شَيۡـٔٗا وَلَا يَتَّخِذَ بَعۡضُنَا بَعۡضًا أَرۡبَابٗا مِّن دُونِ ٱللَّهِۚ فَإِن تَوَلَّوۡاْ فَقُولُواْ ٱشۡهَدُواْ بِأَنَّا مُسۡلِمُونَ",
+          "transliteration": "Qul ya ahla alkitabi taAAalaw ila kalimatin sawain baynana wabaynakum alla naAAbuda illa Allaha wala nushrika bihi shayan wala yattakhitha baAAduna baAAdan arbaban min dooni Allahi fain tawallaw faqooloo ishhadoo bianna muslimoona",
+          "translation": "Say, \"O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah and not associate anything with Him and not take one another as lords instead of Allah.\" But if they turn away, then say, \"Bear witness that we are Muslims [submitting to Him]",
+          "repeat": 1,
+          "note": "The common word. The Quran's own opening line to the People of the Book, and the bridge to start from rather than end with.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-29-46",
+          "reference": "Al-'Ankabut 29:46",
+          "arabic": "۞وَلَا تُجَٰدِلُوٓاْ أَهۡلَ ٱلۡكِتَٰبِ إِلَّا بِٱلَّتِي هِيَ أَحۡسَنُ إِلَّا ٱلَّذِينَ ظَلَمُواْ مِنۡهُمۡۖ وَقُولُوٓاْ ءَامَنَّا بِٱلَّذِيٓ أُنزِلَ إِلَيۡنَا وَأُنزِلَ إِلَيۡكُمۡ وَإِلَٰهُنَا وَإِلَٰهُكُمۡ وَٰحِدٞ وَنَحۡنُ لَهُۥ مُسۡلِمُونَ",
+          "transliteration": "Wala tujadiloo ahla alkitabi illa biallatee hiya ahsanu illa allatheena thalamoo minhum waqooloo amanna biallathee onzila ilayna waonzila ilaykum wailahuna wailahukum wahidun wanahnu lahu muslimoona",
+          "translation": "And do not argue with the People of the Scripture except in a way that is best, except for those who commit injustice among them, and say, \"We believe in that which has been revealed to us and revealed to you. And our God and your God is one; and we are Muslims [in submission] to Him",
+          "repeat": 1,
+          "note": "Argue only in the best manner, and affirm belief in what was revealed to them. Close conversations on this spirit: \"our God and your God is One\".",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-3-113",
+          "reference": "Ali 'Imran 3:113",
+          "arabic": "۞لَيۡسُواْ سَوَآءٗۗ مِّنۡ أَهۡلِ ٱلۡكِتَٰبِ أُمَّةٞ قَآئِمَةٞ يَتۡلُونَ ءَايَٰتِ ٱللَّهِ ءَانَآءَ ٱلَّيۡلِ وَهُمۡ يَسۡجُدُونَ",
+          "transliteration": "Laysoo sawaan min ahli alkitabi ommatun qaimatun yatloona ayati Allahi anaa allayli wahum yasjudoona",
+          "translation": "They are not [all] the same; among the People of the Scripture is a community standing [in obedience], reciting the verses of Allah during periods of the night and prostrating [in prayer]",
+          "repeat": 1,
+          "note": "They are not a monolith. The Quran itself refuses to generalise about a community — do not do what the Book declines to do.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-2-256",
+          "reference": "Al-Baqarah 2:256",
+          "arabic": "لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ قَد تَّبَيَّنَ ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ فَمَن يَكۡفُرۡ بِٱلطَّـٰغُوتِ وَيُؤۡمِنۢ بِٱللَّهِ فَقَدِ ٱسۡتَمۡسَكَ بِٱلۡعُرۡوَةِ ٱلۡوُثۡقَىٰ لَا ٱنفِصَامَ لَهَاۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+          "transliteration": "La ikraha fee alddeeni qad tabayyana alrrushdu mina alghayyi faman yakfur bialttaghooti wayumin biAllahi faqadi istamsaka bialAAurwati alwuthqa la infisama laha waAllahu sameeAAun AAaleemun",
+          "translation": "There shall be no compulsion in [acceptance of] the religion. The right course has become clear from the wrong. So whoever disbelieves in Taghut and believes in Allah has grasped the most trustworthy handhold with no break in it. And Allah is Hearing and Knowing",
+          "repeat": 1,
+          "note": "There is no compulsion in religion. Plant seeds; never rush anyone toward the shahada.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-28-56",
+          "reference": "Al-Qasas 28:56",
+          "arabic": "إِنَّكَ لَا تَهۡدِي مَنۡ أَحۡبَبۡتَ وَلَٰكِنَّ ٱللَّهَ يَهۡدِي مَن يَشَآءُۚ وَهُوَ أَعۡلَمُ بِٱلۡمُهۡتَدِينَ",
+          "transliteration": "Innaka la tahdee man ahbabta walakinna Allaha yahdee man yashao wahuwa aAAlamu bialmuhtadeena",
+          "translation": "Indeed, [O Muhammad], you do not guide whom you like, but Allah guides whom He wills. And He is most knowing of the [rightly] guided",
+          "repeat": 1,
+          "note": "Guidance belongs to Allah, not to you. This frees you from needing to win, and is the reason to make dua for them.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-5-82",
+          "reference": "Al-Ma'idah 5:82",
+          "arabic": "۞لَتَجِدَنَّ أَشَدَّ ٱلنَّاسِ عَدَٰوَةٗ لِّلَّذِينَ ءَامَنُواْ ٱلۡيَهُودَ وَٱلَّذِينَ أَشۡرَكُواْۖ وَلَتَجِدَنَّ أَقۡرَبَهُم مَّوَدَّةٗ لِّلَّذِينَ ءَامَنُواْ ٱلَّذِينَ قَالُوٓاْ إِنَّا نَصَٰرَىٰۚ ذَٰلِكَ بِأَنَّ مِنۡهُمۡ قِسِّيسِينَ وَرُهۡبَانٗا وَأَنَّهُمۡ لَا يَسۡتَكۡبِرُونَ",
+          "transliteration": "Latajidanna ashadda alnnasi AAadawatan lillatheena amanoo alyahooda waallatheena ashrakoo walatajidanna aqrabahum mawaddatan lillatheena amanoo allatheena qaloo inna nasara thalika bianna minhum qisseeseena waruhbanan waannahum la yastakbiroona",
+          "translation": "You will surely find the most intense of the people in animosity toward the believers [to be] the Jews and those who associate others with Allah; and you will find the nearest of them in affection to the believers those who say, \"We are Christians.\" That is because among them are priests and monks and because they are not arrogant",
+          "repeat": 1,
+          "note": "Christians are nearest in affection to the believers, because among them are priests and monks and they are not arrogant. A warm opening, and usually a surprising one.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-3-45-51",
+          "reference": "Ali 'Imran 3:45-51",
+          "arabic": "إِذۡ قَالَتِ ٱلۡمَلَـٰٓئِكَةُ يَٰمَرۡيَمُ إِنَّ ٱللَّهَ يُبَشِّرُكِ بِكَلِمَةٖ مِّنۡهُ ٱسۡمُهُ ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ وَجِيهٗا فِي ٱلدُّنۡيَا وَٱلۡأٓخِرَةِ وَمِنَ ٱلۡمُقَرَّبِينَ ﴿٤٥﴾ وَيُكَلِّمُ ٱلنَّاسَ فِي ٱلۡمَهۡدِ وَكَهۡلٗا وَمِنَ ٱلصَّـٰلِحِينَ ﴿٤٦﴾ قَالَتۡ رَبِّ أَنَّىٰ يَكُونُ لِي وَلَدٞ وَلَمۡ يَمۡسَسۡنِي بَشَرٞۖ قَالَ كَذَٰلِكِ ٱللَّهُ يَخۡلُقُ مَا يَشَآءُۚ إِذَا قَضَىٰٓ أَمۡرٗا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ ﴿٤٧﴾ وَيُعَلِّمُهُ ٱلۡكِتَٰبَ وَٱلۡحِكۡمَةَ وَٱلتَّوۡرَىٰةَ وَٱلۡإِنجِيلَ ﴿٤٨﴾ وَرَسُولًا إِلَىٰ بَنِيٓ إِسۡرَـٰٓءِيلَ أَنِّي قَدۡ جِئۡتُكُم بِـَٔايَةٖ مِّن رَّبِّكُمۡ أَنِّيٓ أَخۡلُقُ لَكُم مِّنَ ٱلطِّينِ كَهَيۡـَٔةِ ٱلطَّيۡرِ فَأَنفُخُ فِيهِ فَيَكُونُ طَيۡرَۢا بِإِذۡنِ ٱللَّهِۖ وَأُبۡرِئُ ٱلۡأَكۡمَهَ وَٱلۡأَبۡرَصَ وَأُحۡيِ ٱلۡمَوۡتَىٰ بِإِذۡنِ ٱللَّهِۖ وَأُنَبِّئُكُم بِمَا تَأۡكُلُونَ وَمَا تَدَّخِرُونَ فِي بُيُوتِكُمۡۚ إِنَّ فِي ذَٰلِكَ لَأٓيَةٗ لَّكُمۡ إِن كُنتُم مُّؤۡمِنِينَ ﴿٤٩﴾ وَمُصَدِّقٗا لِّمَا بَيۡنَ يَدَيَّ مِنَ ٱلتَّوۡرَىٰةِ وَلِأُحِلَّ لَكُم بَعۡضَ ٱلَّذِي حُرِّمَ عَلَيۡكُمۡۚ وَجِئۡتُكُم بِـَٔايَةٖ مِّن رَّبِّكُمۡ فَٱتَّقُواْ ٱللَّهَ وَأَطِيعُونِ ﴿٥٠﴾ إِنَّ ٱللَّهَ رَبِّي وَرَبُّكُمۡ فَٱعۡبُدُوهُۚ هَٰذَا صِرَٰطٞ مُّسۡتَقِيمٞ ﴿٥١﴾",
+          "transliteration": "Ith qalati almalaikatu ya maryamu inna Allaha yubashshiruki bikalimatin minhu ismuhu almaseehu AAeesa ibnu maryama wajeehan fee alddunya waalakhirati wamina almuqarrabeena Wayukallimu alnnasa fee almahdi wakahlan wamina alssaliheena Qalat rabbi anna yakoonu lee waladun walam yamsasnee basharun qala kathaliki Allahu yakhluqu ma yashao itha qada amran fainnama yaqoolu lahu kun fayakoonu WayuAAallimuhu alkitaba waalhikmata waalttawrata waalinjeela Warasoolan ila banee israeela annee qad jitukum biayatin min rabbikum annee akhluqu lakum mina altteeni kahayati alttayri faanfukhu feehi fayakoonu tayran biithni Allahi waobrio alakmaha waalabrasa waohyee almawta biithni Allahi waonabbiokum bima takuloona wama taddakhiroona fee buyootikum inna fee thalika laayatan lakum in kuntum mumineena Wamusaddiqan lima bayna yadayya mina alttawrati waliohilla lakum baAAda allathee hurrima AAalaykum wajitukum biayatin min rabbikum faittaqoo Allaha waateeAAooni Inna Allaha rabbee warabbukum faoAAbudoohu hatha siratun mustaqeemun",
+          "translation": "[And mention] when the angels said, \"O Mary, indeed Allah gives you good tidings of a word from Him, whose name will be the Messiah, Jesus, the son of Mary - distinguished in this world and the Hereafter and among those brought near [to Allah] He will speak to the people in the cradle and in maturity and will be of the righteous She said, \"My Lord, how will I have a child when no man has touched me?\" [The angel] said, \"Such is Allah; He creates what He wills. When He decrees a matter, He only says to it, 'Be,' and it is And He will teach him writing and wisdom and the Torah and the Gospel And [make him] a messenger to the Children of Israel, [who will say], 'Indeed I have come to you with a sign from your Lord in that I design for you from clay [that which is] like the form of a bird, then I breathe into it and it becomes a bird by permission of Allah. And I cure the blind and the leper, and I give life to the dead - by permission of Allah. And I inform you of what you eat and what you store in your houses. Indeed in that is a sign for you, if you are believers And [I have come] confirming what was before me of the Torah and to make lawful for you some of what was forbidden to you. And I have come to you with a sign from your Lord, so fear Allah and obey me Indeed, Allah is my Lord and your Lord, so worship Him. That is the straight path",
+          "repeat": 1,
+          "note": "The annunciation to Maryam, the miracles of Isa by Allah's permission, and his own words: \"worship Allah, my Lord and your Lord.\" Verse 51 is the heart of the difference, said by Isa himself.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-19-16-21",
+          "reference": "Maryam 19:16-21",
+          "arabic": "وَٱذۡكُرۡ فِي ٱلۡكِتَٰبِ مَرۡيَمَ إِذِ ٱنتَبَذَتۡ مِنۡ أَهۡلِهَا مَكَانٗا شَرۡقِيّٗا ﴿١٦﴾ فَٱتَّخَذَتۡ مِن دُونِهِمۡ حِجَابٗا فَأَرۡسَلۡنَآ إِلَيۡهَا رُوحَنَا فَتَمَثَّلَ لَهَا بَشَرٗا سَوِيّٗا ﴿١٧﴾ قَالَتۡ إِنِّيٓ أَعُوذُ بِٱلرَّحۡمَٰنِ مِنكَ إِن كُنتَ تَقِيّٗا ﴿١٨﴾ قَالَ إِنَّمَآ أَنَا۠ رَسُولُ رَبِّكِ لِأَهَبَ لَكِ غُلَٰمٗا زَكِيّٗا ﴿١٩﴾ قَالَتۡ أَنَّىٰ يَكُونُ لِي غُلَٰمٞ وَلَمۡ يَمۡسَسۡنِي بَشَرٞ وَلَمۡ أَكُ بَغِيّٗا ﴿٢٠﴾ قَالَ كَذَٰلِكِ قَالَ رَبُّكِ هُوَ عَلَيَّ هَيِّنٞۖ وَلِنَجۡعَلَهُۥٓ ءَايَةٗ لِّلنَّاسِ وَرَحۡمَةٗ مِّنَّاۚ وَكَانَ أَمۡرٗا مَّقۡضِيّٗا ﴿٢١﴾",
+          "transliteration": "Waothkur fee alkitabi maryama ithi intabathat min ahliha makanan sharqiyyan Faittakhathat min doonihim hijaban faarsalna ilayha roohana fatamaththala laha basharan sawiyyan Qalat innee aAAoothu bialrrahmani minka in kunta taqiyyan Qala innama ana rasoolu rabbiki liahaba laki ghulaman zakiyyan Qalat anna yakoonu lee ghulamun walam yamsasnee basharun walam aku baghiyyan Qala kathaliki qala rabbuki huwa AAalayya hayyinun walinajAAalahu ayatan lilnnasi warahmatan minna wakana amran maqdiyyan",
+          "translation": "And mention, [O Muhammad], in the Book [the story of] Mary, when she withdrew from her family to a place toward the east And she took, in seclusion from them, a screen. Then We sent to her Our Angel, and he represented himself to her as a well-proportioned man She said, \"Indeed, I seek refuge in the Most Merciful from you, [so leave me], if you should be fearing of Allah He said, \"I am only the messenger of your Lord to give you [news of] a pure boy She said, \"How can I have a boy while no man has touched me and I have not been unchaste He said, \"Thus [it will be]; your Lord says, 'It is easy for Me, and We will make him a sign to the people and a mercy from Us. And it is a matter [already] decreed",
+          "repeat": 1,
+          "note": "The annunciation and the virgin birth, from the surah named after Maryam. Many Christians do not know that belief in the virgin birth is required of every Muslim.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-19-30-36",
+          "reference": "Maryam 19:30-36",
+          "arabic": "قَالَ إِنِّي عَبۡدُ ٱللَّهِ ءَاتَىٰنِيَ ٱلۡكِتَٰبَ وَجَعَلَنِي نَبِيّٗا ﴿٣٠﴾ وَجَعَلَنِي مُبَارَكًا أَيۡنَ مَا كُنتُ وَأَوۡصَٰنِي بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ مَا دُمۡتُ حَيّٗا ﴿٣١﴾ وَبَرَّۢا بِوَٰلِدَتِي وَلَمۡ يَجۡعَلۡنِي جَبَّارٗا شَقِيّٗا ﴿٣٢﴾ وَٱلسَّلَٰمُ عَلَيَّ يَوۡمَ وُلِدتُّ وَيَوۡمَ أَمُوتُ وَيَوۡمَ أُبۡعَثُ حَيّٗا ﴿٣٣﴾ ذَٰلِكَ عِيسَى ٱبۡنُ مَرۡيَمَۖ قَوۡلَ ٱلۡحَقِّ ٱلَّذِي فِيهِ يَمۡتَرُونَ ﴿٣٤﴾ مَا كَانَ لِلَّهِ أَن يَتَّخِذَ مِن وَلَدٖۖ سُبۡحَٰنَهُۥٓۚ إِذَا قَضَىٰٓ أَمۡرٗا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ ﴿٣٥﴾ وَإِنَّ ٱللَّهَ رَبِّي وَرَبُّكُمۡ فَٱعۡبُدُوهُۚ هَٰذَا صِرَٰطٞ مُّسۡتَقِيمٞ ﴿٣٦﴾",
+          "transliteration": "Qala innee AAabdu Allahi ataniya alkitaba wajaAAalanee nabiyyan WajaAAalanee mubarakan ayna ma kuntu waawsanee bialssalati waalzzakati ma dumtu hayyan Wabarran biwalidatee walam yajAAalnee jabbaran shaqiyyan Waalssalamu AAalayya yawma wulidtu wayawma amootu wayawma obAAathu hayyan Thalika AAeesa ibnu maryama qawla alhaqqi allathee feehi yamtaroona Ma kana lillahi an yattakhitha min waladin subhanahu itha qada amran fainnama yaqoolu lahu kun fayakoonu Wainna Allaha rabbee warabbukum faoAAbudoohu hatha siratun mustaqeemun",
+          "translation": "[Jesus] said, \"Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet And He has made me blessed wherever I am and has enjoined upon me prayer and zakah as long as I remain alive And [made me] dutiful to my mother, and He has not made me a wretched tyrant And peace is on me the day I was born and the day I will die and the day I am raised alive That is Jesus, the son of Mary - the word of truth about which they are in dispute It is not [befitting] for Allah to take a son; exalted is He! When He decrees an affair, He only says to it, \"Be,\" and it is [Jesus said], \"And indeed, Allah is my Lord and your Lord, so worship Him. That is a straight path",
+          "repeat": 1,
+          "note": "Isa speaks in the cradle, and the passage closes: it is not befitting for Allah to take a son. His own testimony about himself.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-5-46",
+          "reference": "Al-Ma'idah 5:46",
+          "arabic": "وَقَفَّيۡنَا عَلَىٰٓ ءَاثَٰرِهِم بِعِيسَى ٱبۡنِ مَرۡيَمَ مُصَدِّقٗا لِّمَا بَيۡنَ يَدَيۡهِ مِنَ ٱلتَّوۡرَىٰةِۖ وَءَاتَيۡنَٰهُ ٱلۡإِنجِيلَ فِيهِ هُدٗى وَنُورٞ وَمُصَدِّقٗا لِّمَا بَيۡنَ يَدَيۡهِ مِنَ ٱلتَّوۡرَىٰةِ وَهُدٗى وَمَوۡعِظَةٗ لِّلۡمُتَّقِينَ",
+          "transliteration": "Waqaffayna AAala atharihim biAAeesa ibni maryama musaddiqan lima bayna yadayhi mina alttawrati waataynahu alinjeela feehi hudan wanoorun wamusaddiqan lima bayna yadayhi mina alttawrati wahudan wamawAAithatan lilmuttaqeena",
+          "translation": "And We sent, following in their footsteps, Jesus, the son of Mary, confirming that which came before him in the Torah; and We gave him the Gospel, in which was guidance and light and confirming that which preceded it of the Torah as guidance and instruction for the righteous",
+          "repeat": 1,
+          "note": "The Gospel as originally revealed contained guidance and light. Affirm this the way 5:44 affirms the Torah.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-5-110",
+          "reference": "Al-Ma'idah 5:110",
+          "arabic": "إِذۡ قَالَ ٱللَّهُ يَٰعِيسَى ٱبۡنَ مَرۡيَمَ ٱذۡكُرۡ نِعۡمَتِي عَلَيۡكَ وَعَلَىٰ وَٰلِدَتِكَ إِذۡ أَيَّدتُّكَ بِرُوحِ ٱلۡقُدُسِ تُكَلِّمُ ٱلنَّاسَ فِي ٱلۡمَهۡدِ وَكَهۡلٗاۖ وَإِذۡ عَلَّمۡتُكَ ٱلۡكِتَٰبَ وَٱلۡحِكۡمَةَ وَٱلتَّوۡرَىٰةَ وَٱلۡإِنجِيلَۖ وَإِذۡ تَخۡلُقُ مِنَ ٱلطِّينِ كَهَيۡـَٔةِ ٱلطَّيۡرِ بِإِذۡنِي فَتَنفُخُ فِيهَا فَتَكُونُ طَيۡرَۢا بِإِذۡنِيۖ وَتُبۡرِئُ ٱلۡأَكۡمَهَ وَٱلۡأَبۡرَصَ بِإِذۡنِيۖ وَإِذۡ تُخۡرِجُ ٱلۡمَوۡتَىٰ بِإِذۡنِيۖ وَإِذۡ كَفَفۡتُ بَنِيٓ إِسۡرَـٰٓءِيلَ عَنكَ إِذۡ جِئۡتَهُم بِٱلۡبَيِّنَٰتِ فَقَالَ ٱلَّذِينَ كَفَرُواْ مِنۡهُمۡ إِنۡ هَٰذَآ إِلَّا سِحۡرٞ مُّبِينٞ",
+          "transliteration": "Ith qala Allahu ya AAeesa ibna maryama othkur niAAmatee AAalayka waAAala walidatika ith ayyadtuka biroohi alqudusi tukallimu alnnasa fee almahdi wakahlan waith AAallamtuka alkitaba waalhikmata waalttawrata waalinjeela waith takhluqu mina altteeni kahayati alttayri biithnee fatanfukhu feeha fatakoonu tayran biithnee watubrio alakmaha waalabrasa biithnee waith tukhriju almawta biithnee waith kafaftu banee israeela AAanka ith jitahum bialbayyinati faqala allatheena kafaroo minhum in hatha illa sihrun mubeenun",
+          "translation": "[The Day] when Allah will say, \"O Jesus, Son of Mary, remember My favor upon you and upon your mother when I supported you with the Pure Spirit and you spoke to the people in the cradle and in maturity; and [remember] when I taught you writing and wisdom and the Torah and the Gospel; and when you designed from clay [what was] like the form of a bird with My permission, then you breathed into it, and it became a bird with My permission; and you healed the blind and the leper with My permission; and when you brought forth the dead with My permission; and when I restrained the Children of Israel from [killing] you when you came to them with clear proofs and those who disbelieved among them said, \"This is not but obvious magic",
+          "repeat": 1,
+          "note": "The full list of Isa's miracles by Allah's permission, including speaking in the cradle. Affirm everything you genuinely share before naming any difference.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-3-55",
+          "reference": "Ali 'Imran 3:55",
+          "arabic": "إِذۡ قَالَ ٱللَّهُ يَٰعِيسَىٰٓ إِنِّي مُتَوَفِّيكَ وَرَافِعُكَ إِلَيَّ وَمُطَهِّرُكَ مِنَ ٱلَّذِينَ كَفَرُواْ وَجَاعِلُ ٱلَّذِينَ ٱتَّبَعُوكَ فَوۡقَ ٱلَّذِينَ كَفَرُوٓاْ إِلَىٰ يَوۡمِ ٱلۡقِيَٰمَةِۖ ثُمَّ إِلَيَّ مَرۡجِعُكُمۡ فَأَحۡكُمُ بَيۡنَكُمۡ فِيمَا كُنتُمۡ فِيهِ تَخۡتَلِفُونَ",
+          "transliteration": "Ith qala Allahu ya AAeesa innee mutawaffeeka warafiAAuka ilayya wamutahhiruka mina allatheena kafaroo wajaAAilu allatheena ittabaAAooka fawqa allatheena kafaroo ila yawmi alqiyamati thumma ilayya marjiAAukum faahkumu baynakum feema kuntum feehi takhtalifoona",
+          "translation": "[Mention] when Allah said, \"O Jesus, indeed I will take you and raise you to Myself and purify you from those who disbelieve and make those who follow you [in submission to Allah alone] superior to those who disbelieve until the Day of Resurrection. Then to Me is your return, and I will judge between you concerning that in which you used to differ",
+          "repeat": 1,
+          "note": "Allah raising Isa to Himself, and honouring those who followed him until the Day of Resurrection.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-5-111",
+          "reference": "Al-Ma'idah 5:111",
+          "arabic": "وَإِذۡ أَوۡحَيۡتُ إِلَى ٱلۡحَوَارِيِّـۧنَ أَنۡ ءَامِنُواْ بِي وَبِرَسُولِي قَالُوٓاْ ءَامَنَّا وَٱشۡهَدۡ بِأَنَّنَا مُسۡلِمُونَ",
+          "transliteration": "Waith awhaytu ila alhawariyyeena an aminoo bee wabirasoolee qaloo amanna waishhad biannana muslimoona",
+          "translation": "And [remember] when I inspired to the disciples, \"Believe in Me and in My messenger Jesus.\" They said, \"We have believed, so bear witness that indeed we are Muslims [in submission to Allah]",
+          "repeat": 1,
+          "note": "The disciples declare: bear witness that we are Muslims — that is, submitters. A striking point of contact.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-57-27",
+          "reference": "Al-Hadid 57:27",
+          "arabic": "ثُمَّ قَفَّيۡنَا عَلَىٰٓ ءَاثَٰرِهِم بِرُسُلِنَا وَقَفَّيۡنَا بِعِيسَى ٱبۡنِ مَرۡيَمَ وَءَاتَيۡنَٰهُ ٱلۡإِنجِيلَۖ وَجَعَلۡنَا فِي قُلُوبِ ٱلَّذِينَ ٱتَّبَعُوهُ رَأۡفَةٗ وَرَحۡمَةٗۚ وَرَهۡبَانِيَّةً ٱبۡتَدَعُوهَا مَا كَتَبۡنَٰهَا عَلَيۡهِمۡ إِلَّا ٱبۡتِغَآءَ رِضۡوَٰنِ ٱللَّهِ فَمَا رَعَوۡهَا حَقَّ رِعَايَتِهَاۖ فَـَٔاتَيۡنَا ٱلَّذِينَ ءَامَنُواْ مِنۡهُمۡ أَجۡرَهُمۡۖ وَكَثِيرٞ مِّنۡهُمۡ فَٰسِقُونَ",
+          "transliteration": "Thumma qaffayna AAala atharihim birusulina waqaffayna biAAeesa ibni maryama waataynahu alinjeela wajaAAalna fee quloobi allatheena ittabaAAoohu rafatan warahmatan warahbaniyyatan ibtadaAAooha ma katabnaha AAalayhim illa ibtighaa ridwani Allahi fama raAAawha haqqa riAAayatiha faatayna allatheena amanoo minhum ajrahum wakatheerun minhum fasiqoona",
+          "translation": "Then We sent following their footsteps Our messengers and followed [them] with Jesus, the son of Mary, and gave him the Gospel. And We placed in the hearts of those who followed him compassion and mercy and monasticism, which they innovated; We did not prescribe it for them except [that they did so] seeking the approval of Allah. But they did not observe it with due observance. So We gave the ones who believed among them their reward, but many of them are defiantly disobedient",
+          "repeat": 1,
+          "note": "Compassion and mercy placed in the hearts of those who followed Isa. A warm and fair verse about Christian spirituality.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-61-6",
+          "reference": "As-Saf 61:6",
+          "arabic": "وَإِذۡ قَالَ عِيسَى ٱبۡنُ مَرۡيَمَ يَٰبَنِيٓ إِسۡرَـٰٓءِيلَ إِنِّي رَسُولُ ٱللَّهِ إِلَيۡكُم مُّصَدِّقٗا لِّمَا بَيۡنَ يَدَيَّ مِنَ ٱلتَّوۡرَىٰةِ وَمُبَشِّرَۢا بِرَسُولٖ يَأۡتِي مِنۢ بَعۡدِي ٱسۡمُهُۥٓ أَحۡمَدُۖ فَلَمَّا جَآءَهُم بِٱلۡبَيِّنَٰتِ قَالُواْ هَٰذَا سِحۡرٞ مُّبِينٞ",
+          "transliteration": "Waith qala AAeesa ibnu maryama ya banee israeela innee rasoolu Allahi ilaykum musaddiqan lima bayna yadayya mina alttawrati wamubashshiran birasoolin yatee min baAAdee ismuhu ahmadu falamma jaahum bialbayyinati qaloo hatha sihrun mubeenun",
+          "translation": "And [mention] when Jesus, the son of Mary, said, \"O children of Israel, indeed I am the messenger of Allah to you confirming what came before me of the Torah and bringing good tidings of a messenger to come after me, whose name is Ahmad.\" But when he came to them with clear evidences, they said, \"This is obvious magic",
+          "repeat": 1,
+          "note": "Isa foretelling a messenger to come after him whose name is Ahmad. Present it as an invitation to investigate, never as a demand.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-4-163",
+          "reference": "An-Nisa 4:163",
+          "arabic": "۞إِنَّآ أَوۡحَيۡنَآ إِلَيۡكَ كَمَآ أَوۡحَيۡنَآ إِلَىٰ نُوحٖ وَٱلنَّبِيِّـۧنَ مِنۢ بَعۡدِهِۦۚ وَأَوۡحَيۡنَآ إِلَىٰٓ إِبۡرَٰهِيمَ وَإِسۡمَٰعِيلَ وَإِسۡحَٰقَ وَيَعۡقُوبَ وَٱلۡأَسۡبَاطِ وَعِيسَىٰ وَأَيُّوبَ وَيُونُسَ وَهَٰرُونَ وَسُلَيۡمَٰنَۚ وَءَاتَيۡنَا دَاوُۥدَ زَبُورٗا",
+          "transliteration": "Inna awhayna ilayka kama awhayna ila noohin waalnnabiyyeena min baAAdihi waawhayna ila ibraheema waismaAAeela waishaqa wayaAAqooba waalasbati waAAeesa waayyooba wayoonusa waharoona wasulaymana waatayna dawooda zabooran",
+          "translation": "Indeed, We have revealed to you, [O Muhammad], as We revealed to Noah and the prophets after him. And we revealed to Abraham, Ishmael, Isaac, Jacob, the Descendants, Jesus, Job, Jonah, Aaron, and Solomon, and to David We gave the book [of Psalms]",
+          "repeat": 1,
+          "note": "The single chain of revelation, from Nuh through the prophets to Dawud and the Psalms.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-4-171",
+          "reference": "An-Nisa 4:171",
+          "arabic": "يَـٰٓأَهۡلَ ٱلۡكِتَٰبِ لَا تَغۡلُواْ فِي دِينِكُمۡ وَلَا تَقُولُواْ عَلَى ٱللَّهِ إِلَّا ٱلۡحَقَّۚ إِنَّمَا ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ رَسُولُ ٱللَّهِ وَكَلِمَتُهُۥٓ أَلۡقَىٰهَآ إِلَىٰ مَرۡيَمَ وَرُوحٞ مِّنۡهُۖ فَـَٔامِنُواْ بِٱللَّهِ وَرُسُلِهِۦۖ وَلَا تَقُولُواْ ثَلَٰثَةٌۚ ٱنتَهُواْ خَيۡرٗا لَّكُمۡۚ إِنَّمَا ٱللَّهُ إِلَٰهٞ وَٰحِدٞۖ سُبۡحَٰنَهُۥٓ أَن يَكُونَ لَهُۥ وَلَدٞۘ لَّهُۥ مَا فِي ٱلسَّمَٰوَٰتِ وَمَا فِي ٱلۡأَرۡضِۗ وَكَفَىٰ بِٱللَّهِ وَكِيلٗا",
+          "transliteration": "Ya ahla alkitabi la taghloo fee deenikum wala taqooloo AAala Allahi illa alhaqqa innama almaseehu AAeesa ibnu maryama rasoolu Allahi wakalimatuhu alqaha ila maryama waroohun minhu faaminoo biAllahi warusulihi wala taqooloo thalathatun intahoo khayran lakum innama Allahu ilahun wahidun subhanahu an yakoona lahu waladun lahu ma fee alssamawati wama fee alardi wakafa biAllahi wakeelan",
+          "translation": "O People of the Scripture, do not commit excess in your religion or say about Allah except the truth. The Messiah, Jesus, the son of Mary, was but a messenger of Allah and His word which He directed to Mary and a soul [created at a command] from Him. So believe in Allah and His messengers. And do not say, \"Three\"; desist - it is better for you. Indeed, Allah is but one God. Exalted is He above having a son. To Him belongs whatever is in the heavens and whatever is on the earth. And sufficient is Allah as Disposer of affairs",
+          "repeat": 1,
+          "note": "The central verse: do not go to extremes, and do not say \"Three\". Ask questions rather than mock — can God die? Did Isa ever say \"worship me\"? Let them reason it through.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-5-72-75",
+          "reference": "Al-Ma'idah 5:72-75",
+          "arabic": "لَقَدۡ كَفَرَ ٱلَّذِينَ قَالُوٓاْ إِنَّ ٱللَّهَ هُوَ ٱلۡمَسِيحُ ٱبۡنُ مَرۡيَمَۖ وَقَالَ ٱلۡمَسِيحُ يَٰبَنِيٓ إِسۡرَـٰٓءِيلَ ٱعۡبُدُواْ ٱللَّهَ رَبِّي وَرَبَّكُمۡۖ إِنَّهُۥ مَن يُشۡرِكۡ بِٱللَّهِ فَقَدۡ حَرَّمَ ٱللَّهُ عَلَيۡهِ ٱلۡجَنَّةَ وَمَأۡوَىٰهُ ٱلنَّارُۖ وَمَا لِلظَّـٰلِمِينَ مِنۡ أَنصَارٖ ﴿٧٢﴾ لَّقَدۡ كَفَرَ ٱلَّذِينَ قَالُوٓاْ إِنَّ ٱللَّهَ ثَالِثُ ثَلَٰثَةٖۘ وَمَا مِنۡ إِلَٰهٍ إِلَّآ إِلَٰهٞ وَٰحِدٞۚ وَإِن لَّمۡ يَنتَهُواْ عَمَّا يَقُولُونَ لَيَمَسَّنَّ ٱلَّذِينَ كَفَرُواْ مِنۡهُمۡ عَذَابٌ أَلِيمٌ ﴿٧٣﴾ أَفَلَا يَتُوبُونَ إِلَى ٱللَّهِ وَيَسۡتَغۡفِرُونَهُۥۚ وَٱللَّهُ غَفُورٞ رَّحِيمٞ ﴿٧٤﴾ مَّا ٱلۡمَسِيحُ ٱبۡنُ مَرۡيَمَ إِلَّا رَسُولٞ قَدۡ خَلَتۡ مِن قَبۡلِهِ ٱلرُّسُلُ وَأُمُّهُۥ صِدِّيقَةٞۖ كَانَا يَأۡكُلَانِ ٱلطَّعَامَۗ ٱنظُرۡ كَيۡفَ نُبَيِّنُ لَهُمُ ٱلۡأٓيَٰتِ ثُمَّ ٱنظُرۡ أَنَّىٰ يُؤۡفَكُونَ ﴿٧٥﴾",
+          "transliteration": "Laqad kafara allatheena qaloo inna Allaha huwa almaseehu ibnu maryama waqala almaseehu ya banee israeela oAAbudoo Allaha rabbee warabbakum innahu man yushrik biAllahi faqad harrama Allahu AAalayhi aljannata wamawahu alnnaru wama lilththalimeena min ansarin Laqad kafara allatheena qaloo inna Allaha thalithu thalathatin wama min ilahin illa ilahun wahidun wain lam yantahoo AAamma yaqooloona layamassanna allatheena kafaroo minhum AAathabun aleemun Afala yatooboona ila Allahi wayastaghfiroonahu waAllahu ghafoorun raheemun Ma almaseehu ibnu maryama illa rasoolun qad khalat min qablihi alrrusulu waommuhu siddeeqatun kana yakulani alttaAAama onthur kayfa nubayyinu lahumu alayati thumma onthur anna yufakoona",
+          "translation": "They have certainly disbelieved who say, \"Allah is the Messiah, the son of Mary\" while the Messiah has said, \"O Children of Israel, worship Allah, my Lord and your Lord.\" Indeed, he who associates others with Allah - Allah has forbidden him Paradise, and his refuge is the Fire. And there are not for the wrongdoers any helpers They have certainly disbelieved who say, \"Allah is the third of three.\" And there is no god except one God. And if they do not desist from what they are saying, there will surely afflict the disbelievers among them a painful punishment So will they not repent to Allah and seek His forgiveness? And Allah is Forgiving and Merciful The Messiah, son of Mary, was not but a messenger; [other] messengers have passed on before him. And his mother was a supporter of truth. They both used to eat food. Look how We make clear to them the signs; then look how they are deluded",
+          "repeat": 1,
+          "note": "The Messiah was a messenger; messengers passed on before him, and he and his mother both ate food. The argument is made from his humanity, gently.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-5-116-117",
+          "reference": "Al-Ma'idah 5:116-117",
+          "arabic": "وَإِذۡ قَالَ ٱللَّهُ يَٰعِيسَى ٱبۡنَ مَرۡيَمَ ءَأَنتَ قُلۡتَ لِلنَّاسِ ٱتَّخِذُونِي وَأُمِّيَ إِلَٰهَيۡنِ مِن دُونِ ٱللَّهِۖ قَالَ سُبۡحَٰنَكَ مَا يَكُونُ لِيٓ أَنۡ أَقُولَ مَا لَيۡسَ لِي بِحَقٍّۚ إِن كُنتُ قُلۡتُهُۥ فَقَدۡ عَلِمۡتَهُۥۚ تَعۡلَمُ مَا فِي نَفۡسِي وَلَآ أَعۡلَمُ مَا فِي نَفۡسِكَۚ إِنَّكَ أَنتَ عَلَّـٰمُ ٱلۡغُيُوبِ ﴿١١٦﴾ مَا قُلۡتُ لَهُمۡ إِلَّا مَآ أَمَرۡتَنِي بِهِۦٓ أَنِ ٱعۡبُدُواْ ٱللَّهَ رَبِّي وَرَبَّكُمۡۚ وَكُنتُ عَلَيۡهِمۡ شَهِيدٗا مَّا دُمۡتُ فِيهِمۡۖ فَلَمَّا تَوَفَّيۡتَنِي كُنتَ أَنتَ ٱلرَّقِيبَ عَلَيۡهِمۡۚ وَأَنتَ عَلَىٰ كُلِّ شَيۡءٖ شَهِيدٌ ﴿١١٧﴾",
+          "transliteration": "Waith qala Allahu ya AAeesa ibna maryama aanta qulta lilnnasi ittakhithoonee waommiya ilahayni min dooni Allahi qala subhanaka ma yakoonu lee an aqoola ma laysa lee bihaqqin in kuntu qultuhu faqad AAalimtahu taAAlamu ma fee nafsee wala aAAlamu ma fee nafsika innaka anta AAallamu alghuyoobi Ma qultu lahum illa ma amartanee bihi ani oAAbudoo Allaha rabbee warabbakum wakuntu AAalayhim shaheedan ma dumtu feehim falamma tawaffaytanee kunta anta alrraqeeba AAalayhim waanta AAala kulli shayin shaheedun",
+          "translation": "And [beware the Day] when Allah will say, \"O Jesus, Son of Mary, did you say to the people, 'Take me and my mother as deities besides Allah?'\" He will say, \"Exalted are You! It was not for me to say that to which I have no right. If I had said it, You would have known it. You know what is within myself, and I do not know what is within Yourself. Indeed, it is You who is Knower of the unseen I said not to them except what You commanded me - to worship Allah, my Lord and your Lord. And I was a witness over them as long as I was among them; but when You took me up, You were the Observer over them, and You are, over all things, Witness",
+          "repeat": 1,
+          "note": "Isa questioned, and his disavowal: it was not for me to say what I had no right to say. His own words are the strongest form of this point.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-4-157-158",
+          "reference": "An-Nisa 4:157-158",
+          "arabic": "وَقَوۡلِهِمۡ إِنَّا قَتَلۡنَا ٱلۡمَسِيحَ عِيسَى ٱبۡنَ مَرۡيَمَ رَسُولَ ٱللَّهِ وَمَا قَتَلُوهُ وَمَا صَلَبُوهُ وَلَٰكِن شُبِّهَ لَهُمۡۚ وَإِنَّ ٱلَّذِينَ ٱخۡتَلَفُواْ فِيهِ لَفِي شَكّٖ مِّنۡهُۚ مَا لَهُم بِهِۦ مِنۡ عِلۡمٍ إِلَّا ٱتِّبَاعَ ٱلظَّنِّۚ وَمَا قَتَلُوهُ يَقِينَۢا ﴿١٥٧﴾ بَل رَّفَعَهُ ٱللَّهُ إِلَيۡهِۚ وَكَانَ ٱللَّهُ عَزِيزًا حَكِيمٗا ﴿١٥٨﴾",
+          "transliteration": "Waqawlihim inna qatalna almaseeha AAeesa ibna maryama rasoola Allahi wama qataloohu wama salaboohu walakin shubbiha lahum wainna allatheena ikhtalafoo feehi lafee shakkin minhu ma lahum bihi min AAilmin illa ittibaAAa alththanni wama qataloohu yaqeenan Bal rafaAAahu Allahu ilayhi wakana Allahu AAazeezan hakeeman",
+          "translation": "And [for] their saying, \"Indeed, we have killed the Messiah, Jesus, the son of Mary, the messenger of Allah.\" And they did not kill him, nor did they crucify him; but [another] was made to resemble him to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain Rather, Allah raised him to Himself. And ever is Allah Exalted in Might and Wise",
+          "repeat": 1,
+          "note": "The crucifixion: neither killed nor crucified, but raised to Allah. Note that salvation in Islam does not hinge on a blood sacrifice.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-6-164",
+          "reference": "Al-An'am 6:164",
+          "arabic": "قُلۡ أَغَيۡرَ ٱللَّهِ أَبۡغِي رَبّٗا وَهُوَ رَبُّ كُلِّ شَيۡءٖۚ وَلَا تَكۡسِبُ كُلُّ نَفۡسٍ إِلَّا عَلَيۡهَاۚ وَلَا تَزِرُ وَازِرَةٞ وِزۡرَ أُخۡرَىٰۚ ثُمَّ إِلَىٰ رَبِّكُم مَّرۡجِعُكُمۡ فَيُنَبِّئُكُم بِمَا كُنتُمۡ فِيهِ تَخۡتَلِفُونَ",
+          "transliteration": "Qul aghayra Allahi abghee rabban wahuwa rabbu kulli shayin wala taksibu kullu nafsin illa AAalayha wala taziru waziratun wizra okhra thumma ila rabbikum marjiAAukum fayunabbiokum bima kuntum feehi takhtalifoona",
+          "translation": "Say, \"Is it other than Allah I should desire as a lord while He is the Lord of all things? And every soul earns not [blame] except against itself, and no bearer of burdens will bear the burden of another. Then to your Lord is your return, and He will inform you concerning that over which you used to differ",
+          "repeat": 1,
+          "note": "No bearer of burdens bears the burden of another. Pair with the crucifixion discussion, and with original sin: accountability is personal.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-43-61",
+          "reference": "Az-Zukhruf 43:61",
+          "arabic": "وَإِنَّهُۥ لَعِلۡمٞ لِّلسَّاعَةِ فَلَا تَمۡتَرُنَّ بِهَا وَٱتَّبِعُونِۚ هَٰذَا صِرَٰطٞ مُّسۡتَقِيمٞ",
+          "transliteration": "Wainnahu laAAilmun lilssaAAati fala tamtarunna biha waittabiAAooni hatha siratun mustaqeemun",
+          "translation": "And indeed, Jesus will be [a sign for] knowledge of the Hour, so be not in doubt of it, and follow Me. This is a straight path",
+          "repeat": 1,
+          "note": "Isa as a sign of the Hour — his return is shared ground, not a point of dispute.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-4-159",
+          "reference": "An-Nisa 4:159",
+          "arabic": "وَإِن مِّنۡ أَهۡلِ ٱلۡكِتَٰبِ إِلَّا لَيُؤۡمِنَنَّ بِهِۦ قَبۡلَ مَوۡتِهِۦۖ وَيَوۡمَ ٱلۡقِيَٰمَةِ يَكُونُ عَلَيۡهِمۡ شَهِيدٗا",
+          "transliteration": "Wain min ahli alkitabi illa layuminanna bihi qabla mawtihi wayawma alqiyamati yakoonu AAalayhim shaheedan",
+          "translation": "And there is none from the People of the Scripture but that he will surely believe in Jesus before his death. And on the Day of Resurrection he will be against them a witness",
+          "repeat": 1,
+          "note": "The People of the Book will believe in him before his death.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-15-9",
+          "reference": "Al-Hijr 15:9",
+          "arabic": "إِنَّا نَحۡنُ نَزَّلۡنَا ٱلذِّكۡرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ",
+          "transliteration": "Inna nahnu nazzalna alththikra wainna lahu lahafithoona",
+          "translation": "Indeed, it is We who sent down the Qur'an and indeed, We will be its guardian",
+          "repeat": 1,
+          "note": "Allah's guarantee to guard the Reminder. The natural place to offer a translation as a gift.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-christians-9-30-31",
+          "reference": "At-Tawbah 9:30-31",
+          "arabic": "وَقَالَتِ ٱلۡيَهُودُ عُزَيۡرٌ ٱبۡنُ ٱللَّهِ وَقَالَتِ ٱلنَّصَٰرَى ٱلۡمَسِيحُ ٱبۡنُ ٱللَّهِۖ ذَٰلِكَ قَوۡلُهُم بِأَفۡوَٰهِهِمۡۖ يُضَٰهِـُٔونَ قَوۡلَ ٱلَّذِينَ كَفَرُواْ مِن قَبۡلُۚ قَٰتَلَهُمُ ٱللَّهُۖ أَنَّىٰ يُؤۡفَكُونَ ﴿٣٠﴾ ٱتَّخَذُوٓاْ أَحۡبَارَهُمۡ وَرُهۡبَٰنَهُمۡ أَرۡبَابٗا مِّن دُونِ ٱللَّهِ وَٱلۡمَسِيحَ ٱبۡنَ مَرۡيَمَ وَمَآ أُمِرُوٓاْ إِلَّا لِيَعۡبُدُوٓاْ إِلَٰهٗا وَٰحِدٗاۖ لَّآ إِلَٰهَ إِلَّا هُوَۚ سُبۡحَٰنَهُۥ عَمَّا يُشۡرِكُونَ ﴿٣١﴾",
+          "transliteration": "Waqalati alyahoodu AAuzayrun ibnu Allahi waqalati alnnasara almaseehu ibnu Allahi thalika qawluhum biafwahihim yudahioona qawla allatheena kafaroo min qablu qatalahumu Allahu anna yufakoona Ittakhathoo ahbarahum waruhbanahum arbaban min dooni Allahi waalmaseeha ibna maryama wama omiroo illa liyaAAbudoo ilahan wahidan la ilaha illa huwa subhanahu AAamma yushrikoona",
+          "translation": "The Jews say, \"Ezra is the son of Allah \"; and the Christians say, \"The Messiah is the son of Allah.\" That is their statement from their mouths; they imitate the saying of those who disbelieved [before them]. May Allah destroy them; how are they deluded They have taken their scholars and monks as lords besides Allah, and [also] the Messiah, the son of Mary. And they were not commanded except to worship one God; there is no deity except Him. Exalted is He above whatever they associate with Him",
+          "repeat": 1,
+          "note": "Caution. On taking sons of God, and rabbis and monks, as lords. Handle only with full context — quoting hostile-context verses without it damages trust and misrepresents the text.",
+          "script": "uthmani"
+        }
+      ]
+    },
+    {
+      "id": "dawah-shaitan",
+      "title": "Shaytan: the Open Enemy",
+      "subtitle": "His strategy, the limits of his power, and the refuge from him",
+      "icon": "visibility_off",
+      "group": "Dawah",
+      "items": [
+        {
+          "id": "dawah-shaitan-2-168-169",
+          "reference": "Al-Baqarah 2:168-169",
+          "arabic": "يَـٰٓأَيُّهَا ٱلنَّاسُ كُلُواْ مِمَّا فِي ٱلۡأَرۡضِ حَلَٰلٗا طَيِّبٗا وَلَا تَتَّبِعُواْ خُطُوَٰتِ ٱلشَّيۡطَٰنِۚ إِنَّهُۥ لَكُمۡ عَدُوّٞ مُّبِينٌ ﴿١٦٨﴾ إِنَّمَا يَأۡمُرُكُم بِٱلسُّوٓءِ وَٱلۡفَحۡشَآءِ وَأَن تَقُولُواْ عَلَى ٱللَّهِ مَا لَا تَعۡلَمُونَ ﴿١٦٩﴾",
+          "transliteration": "Ya ayyuha alnnasu kuloo mimma fee alardi halalan tayyiban wala tattabiAAoo khutuwati alshshaytani innahu lakum AAaduwwun mubeenun Innama yamurukum bialssooi waalfahshai waan taqooloo AAala Allahi ma la taAAlamoona",
+          "translation": "O mankind, eat from whatever is on earth [that is] lawful and good and do not follow the footsteps of Satan. Indeed, he is to you a clear enemy He only orders you to evil and immorality and to say about Allah what you do not know",
+          "repeat": 1,
+          "note": "The command that frames everything else: do not follow the footsteps of Shaytan. He enjoins only evil and immorality, and saying about Allah what you do not know.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-7-16-17",
+          "reference": "Al-A'raf 7:16-17",
+          "arabic": "قَالَ فَبِمَآ أَغۡوَيۡتَنِي لَأَقۡعُدَنَّ لَهُمۡ صِرَٰطَكَ ٱلۡمُسۡتَقِيمَ ﴿١٦﴾ ثُمَّ لَأٓتِيَنَّهُم مِّنۢ بَيۡنِ أَيۡدِيهِمۡ وَمِنۡ خَلۡفِهِمۡ وَعَنۡ أَيۡمَٰنِهِمۡ وَعَن شَمَآئِلِهِمۡۖ وَلَا تَجِدُ أَكۡثَرَهُمۡ شَٰكِرِينَ ﴿١٧﴾",
+          "transliteration": "Qala fabima aghwaytanee laaqAAudanna lahum sirataka almustaqeema Thumma laatiyannahum min bayni aydeehim wamin khalfihim waAAan aymanihim waAAan shamailihim wala tajidu aktharahum shakireena",
+          "translation": "[Satan] said, \"Because You have put me in error, I will surely sit in wait for them on Your straight path Then I will come to them from before them and from behind them and on their right and on their left, and You will not find most of them grateful [to You]",
+          "repeat": 1,
+          "note": "His vow after refusing to prostrate — to sit in wait on the straight path and come at people from every direction. Know the strategy to recognise it.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-7-27",
+          "reference": "Al-A'raf 7:27",
+          "arabic": "يَٰبَنِيٓ ءَادَمَ لَا يَفۡتِنَنَّكُمُ ٱلشَّيۡطَٰنُ كَمَآ أَخۡرَجَ أَبَوَيۡكُم مِّنَ ٱلۡجَنَّةِ يَنزِعُ عَنۡهُمَا لِبَاسَهُمَا لِيُرِيَهُمَا سَوۡءَٰتِهِمَآۚ إِنَّهُۥ يَرَىٰكُمۡ هُوَ وَقَبِيلُهُۥ مِنۡ حَيۡثُ لَا تَرَوۡنَهُمۡۗ إِنَّا جَعَلۡنَا ٱلشَّيَٰطِينَ أَوۡلِيَآءَ لِلَّذِينَ لَا يُؤۡمِنُونَ",
+          "transliteration": "Ya banee adama la yaftinannakumu alshshaytanu kama akhraja abawaykum mina aljannati yanziAAu AAanhuma libasahuma liyuriyahuma sawatihima innahu yarakum huwa waqabeeluhu min haythu la tarawnahum inna jaAAalna alshshayateena awliyaa lillatheena la yuminoona",
+          "translation": "O children of Adam, let not Satan tempt you as he removed your parents from Paradise, stripping them of their clothing to show them their private parts. Indeed, he sees you, he and his tribe, from where you do not see them. Indeed, We have made the devils allies to those who do not believe",
+          "repeat": 1,
+          "note": "He and his tribe see you from where you do not see them. The reason vigilance is not paranoia.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-35-5-6",
+          "reference": "Fatir 35:5-6",
+          "arabic": "يَـٰٓأَيُّهَا ٱلنَّاسُ إِنَّ وَعۡدَ ٱللَّهِ حَقّٞۖ فَلَا تَغُرَّنَّكُمُ ٱلۡحَيَوٰةُ ٱلدُّنۡيَا وَلَا يَغُرَّنَّكُم بِٱللَّهِ ٱلۡغَرُورُ ﴿٥﴾ إِنَّ ٱلشَّيۡطَٰنَ لَكُمۡ عَدُوّٞ فَٱتَّخِذُوهُ عَدُوًّاۚ إِنَّمَا يَدۡعُواْ حِزۡبَهُۥ لِيَكُونُواْ مِنۡ أَصۡحَٰبِ ٱلسَّعِيرِ ﴿٦﴾",
+          "transliteration": "Ya ayyuha alnnasu inna waAAda Allahi haqqun fala taghurrannakumu alhayatu alddunya wala yaghurrannakum biAllahi algharooru Inna alshshaytana lakum AAaduwwun faittakhithoohu AAaduwwan innama yadAAoo hizbahu liyakoonoo min ashabi alssaAAeeri",
+          "translation": "O mankind, indeed the promise of Allah is truth, so let not the worldly life delude you and be not deceived about Allah by the Deceiver Indeed, Satan is an enemy to you; so take him as an enemy. He only invites his party to be among the companions of the Blaze",
+          "repeat": 1,
+          "note": "Shaytan is an enemy to you, so take him as an enemy. The relationship is settled by Allah; the only question is whether you act on it.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-12-5",
+          "reference": "Yusuf 12:5",
+          "arabic": "قَالَ يَٰبُنَيَّ لَا تَقۡصُصۡ رُءۡيَاكَ عَلَىٰٓ إِخۡوَتِكَ فَيَكِيدُواْ لَكَ كَيۡدًاۖ إِنَّ ٱلشَّيۡطَٰنَ لِلۡإِنسَٰنِ عَدُوّٞ مُّبِينٞ",
+          "transliteration": "Qala ya bunayya la taqsus ruyaka AAala ikhwatika fayakeedoo laka kaydan inna alshshaytana lilinsani AAaduwwun mubeenun",
+          "translation": "He said, \"O my son, do not relate your vision to your brothers or they will contrive against you a plan. Indeed Satan, to man, is a manifest enemy",
+          "repeat": 1,
+          "note": "Yaqub warning Yusuf: Shaytan is a manifest enemy to man. He works through those closest to you.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-17-53",
+          "reference": "Al-Isra 17:53",
+          "arabic": "وَقُل لِّعِبَادِي يَقُولُواْ ٱلَّتِي هِيَ أَحۡسَنُۚ إِنَّ ٱلشَّيۡطَٰنَ يَنزَغُ بَيۡنَهُمۡۚ إِنَّ ٱلشَّيۡطَٰنَ كَانَ لِلۡإِنسَٰنِ عَدُوّٗا مُّبِينٗا",
+          "transliteration": "Waqul liAAibadee yaqooloo allatee hiya ahsanu inna alshshaytana yanzaghu baynahum inna alshshaytana kana lilinsani AAaduwwan mubeenan",
+          "translation": "And tell My servants to say that which is best. Indeed, Satan induces [dissension] among them. Indeed Satan is ever, to mankind, a clear enemy",
+          "repeat": 1,
+          "note": "He sows discord between people. Much of his work is done through speech — say that which is best.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-24-21",
+          "reference": "An-Nur 24:21",
+          "arabic": "۞يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَتَّبِعُواْ خُطُوَٰتِ ٱلشَّيۡطَٰنِۚ وَمَن يَتَّبِعۡ خُطُوَٰتِ ٱلشَّيۡطَٰنِ فَإِنَّهُۥ يَأۡمُرُ بِٱلۡفَحۡشَآءِ وَٱلۡمُنكَرِۚ وَلَوۡلَا فَضۡلُ ٱللَّهِ عَلَيۡكُمۡ وَرَحۡمَتُهُۥ مَا زَكَىٰ مِنكُم مِّنۡ أَحَدٍ أَبَدٗا وَلَٰكِنَّ ٱللَّهَ يُزَكِّي مَن يَشَآءُۗ وَٱللَّهُ سَمِيعٌ عَلِيمٞ",
+          "transliteration": "Ya ayyuha allatheena amanoo la tattabiAAoo khutuwati alshshaytani waman yattabiAA khutuwati alshshaytani fainnahu yamuru bialfahshai waalmunkari walawla fadlu Allahi AAalaykum warahmatuhu ma zaka minkum min ahadin abadan walakinna Allaha yuzakkee man yashao waAllahu sameeAAun AAaleemun",
+          "translation": "O you who have believed, do not follow the footsteps of Satan. And whoever follows the footsteps of Satan - indeed, he enjoins immorality and wrongdoing. And if not for the favor of Allah upon you and His mercy, not one of you would have been pure, ever, but Allah purifies whom He wills, and Allah is Hearing and Knowing",
+          "repeat": 1,
+          "note": "Do not follow his footsteps: whoever does, he enjoins immorality and wrongdoing. Sin approaches step by step, not at once.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-2-208",
+          "reference": "Al-Baqarah 2:208",
+          "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱدۡخُلُواْ فِي ٱلسِّلۡمِ كَآفَّةٗ وَلَا تَتَّبِعُواْ خُطُوَٰتِ ٱلشَّيۡطَٰنِۚ إِنَّهُۥ لَكُمۡ عَدُوّٞ مُّبِينٞ",
+          "transliteration": "Ya ayyuha allatheena amanoo odkhuloo fee alssilmi kaffatan wala tattabiAAoo khutuwati alshshaytani innahu lakum AAaduwwun mubeenun",
+          "translation": "O you who have believed, enter into Islam completely [and perfectly] and do not follow the footsteps of Satan. Indeed, he is to you a clear enemy",
+          "repeat": 1,
+          "note": "Enter into submission wholly, and do not follow his footsteps. Partial commitment is the gap he works in.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-36-60",
+          "reference": "Ya-Sin 36:60",
+          "arabic": "۞أَلَمۡ أَعۡهَدۡ إِلَيۡكُمۡ يَٰبَنِيٓ ءَادَمَ أَن لَّا تَعۡبُدُواْ ٱلشَّيۡطَٰنَۖ إِنَّهُۥ لَكُمۡ عَدُوّٞ مُّبِينٞ",
+          "transliteration": "Alam aAAhad ilaykum ya banee adama an la taAAbudoo alshshaytana innahu lakum AAaduwwun mubeenun",
+          "translation": "Did I not enjoin upon you, O children of Adam, that you not worship Satan - [for] indeed, he is to you a clear enemy",
+          "repeat": 1,
+          "note": "Did I not enjoin upon you not to worship Shaytan? Obedience to him is framed as worship of him.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-58-19",
+          "reference": "Al-Mujadila 58:19",
+          "arabic": "ٱسۡتَحۡوَذَ عَلَيۡهِمُ ٱلشَّيۡطَٰنُ فَأَنسَىٰهُمۡ ذِكۡرَ ٱللَّهِۚ أُوْلَـٰٓئِكَ حِزۡبُ ٱلشَّيۡطَٰنِۚ أَلَآ إِنَّ حِزۡبَ ٱلشَّيۡطَٰنِ هُمُ ٱلۡخَٰسِرُونَ",
+          "transliteration": "Istahwatha AAalayhimu alshshaytanu faansahum thikra Allahi olaika hizbu alshshaytani ala inna hizba alshshaytani humu alkhasiroona",
+          "translation": "Satan has overcome them and made them forget the remembrance of Allah. Those are the party of Satan. Unquestionably, the party of Satan - they will be the losers",
+          "repeat": 1,
+          "note": "Shaytan has overcome them and made them forget the remembrance of Allah. Forgetfulness of dhikr is the mechanism, not an accident.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-43-36-39",
+          "reference": "Az-Zukhruf 43:36-39",
+          "arabic": "وَمَن يَعۡشُ عَن ذِكۡرِ ٱلرَّحۡمَٰنِ نُقَيِّضۡ لَهُۥ شَيۡطَٰنٗا فَهُوَ لَهُۥ قَرِينٞ ﴿٣٦﴾ وَإِنَّهُمۡ لَيَصُدُّونَهُمۡ عَنِ ٱلسَّبِيلِ وَيَحۡسَبُونَ أَنَّهُم مُّهۡتَدُونَ ﴿٣٧﴾ حَتَّىٰٓ إِذَا جَآءَنَا قَالَ يَٰلَيۡتَ بَيۡنِي وَبَيۡنَكَ بُعۡدَ ٱلۡمَشۡرِقَيۡنِ فَبِئۡسَ ٱلۡقَرِينُ ﴿٣٨﴾ وَلَن يَنفَعَكُمُ ٱلۡيَوۡمَ إِذ ظَّلَمۡتُمۡ أَنَّكُمۡ فِي ٱلۡعَذَابِ مُشۡتَرِكُونَ ﴿٣٩﴾",
+          "transliteration": "Waman yaAAshu AAan thikri alrrahmani nuqayyid lahu shaytanan fahuwa lahu qareenun Wainnahum layasuddoonahum AAani alssabeeli wayahsaboona annahum muhtadoona Hatta itha jaana qala ya layta baynee wabaynaka buAAda almashriqayni fabisa alqareenu Walan yanfaAAakumu alyawma ith thalamtum annakum fee alAAathabi mushtarikoona",
+          "translation": "And whoever is blinded from remembrance of the Most Merciful - We appoint for him a devil, and he is to him a companion And indeed, the devils avert them from the way [of guidance] while they think that they are [rightly] guided Until, when he comes to Us [at Judgement], he says [to his companion], \"Oh, I wish there was between me and you the distance between the east and west - how wretched a companion And never will it benefit you that Day, when you have wronged, that you are [all] sharing in the punishment",
+          "repeat": 1,
+          "note": "Whoever turns away from the remembrance of the Most Merciful has a devil assigned as a companion. The remedy is in the diagnosis: return to the remembrance.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-7-200-201",
+          "reference": "Al-A'raf 7:200-201",
+          "arabic": "وَإِمَّا يَنزَغَنَّكَ مِنَ ٱلشَّيۡطَٰنِ نَزۡغٞ فَٱسۡتَعِذۡ بِٱللَّهِۚ إِنَّهُۥ سَمِيعٌ عَلِيمٌ ﴿٢٠٠﴾ إِنَّ ٱلَّذِينَ ٱتَّقَوۡاْ إِذَا مَسَّهُمۡ طَـٰٓئِفٞ مِّنَ ٱلشَّيۡطَٰنِ تَذَكَّرُواْ فَإِذَا هُم مُّبۡصِرُونَ ﴿٢٠١﴾",
+          "transliteration": "Waimma yanzaghannaka mina alshshaytani nazghun faistaAAith biAllahi innahu sameeAAun AAaleemun Inna allatheena ittaqaw itha massahum taifun mina alshshaytani tathakkaroo faitha hum mubsiroona",
+          "translation": "And if an evil suggestion comes to you from Satan, then seek refuge in Allah. Indeed, He is Hearing and Knowing Indeed, those who fear Allah - when an impulse touches them from Satan, they remember [Him] and at once they have insight",
+          "repeat": 1,
+          "note": "If an evil suggestion comes to you from Shaytan, seek refuge in Allah. Those who fear Allah remember, and at once they see.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-41-36",
+          "reference": "Fussilat 41:36",
+          "arabic": "وَإِمَّا يَنزَغَنَّكَ مِنَ ٱلشَّيۡطَٰنِ نَزۡغٞ فَٱسۡتَعِذۡ بِٱللَّهِۖ إِنَّهُۥ هُوَ ٱلسَّمِيعُ ٱلۡعَلِيمُ",
+          "transliteration": "Waimma yanzaghannaka mina alshshaytani nazghun faistaAAith biAllahi innahu huwa alssameeAAu alAAaleemu",
+          "translation": "And if there comes to you from Satan an evil suggestion, then seek refuge in Allah. Indeed, He is the Hearing, the Knowing",
+          "repeat": 1,
+          "note": "The same instruction again: seek refuge in Allah, for He is the Hearing, the Knowing.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-16-98-100",
+          "reference": "An-Nahl 16:98-100",
+          "arabic": "فَإِذَا قَرَأۡتَ ٱلۡقُرۡءَانَ فَٱسۡتَعِذۡ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ ﴿٩٨﴾ إِنَّهُۥ لَيۡسَ لَهُۥ سُلۡطَٰنٌ عَلَى ٱلَّذِينَ ءَامَنُواْ وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ ﴿٩٩﴾ إِنَّمَا سُلۡطَٰنُهُۥ عَلَى ٱلَّذِينَ يَتَوَلَّوۡنَهُۥ وَٱلَّذِينَ هُم بِهِۦ مُشۡرِكُونَ ﴿١٠٠﴾",
+          "transliteration": "Faitha qarata alqurana faistaAAith biAllahi mina alshshaytani alrrajeemi Innahu laysa lahu sultanun AAala allatheena amanoo waAAala rabbihim yatawakkaloona Innama sultanuhu AAala allatheena yatawallawnahu waallatheena hum bihi mushrikoona",
+          "translation": "So when you recite the Qur'an, [first] seek refuge in Allah from Satan, the expelled [from His mercy] Indeed, there is for him no authority over those who have believed and rely upon their Lord His authority is only over those who take him as an ally and those who through him associate others with Allah",
+          "repeat": 1,
+          "note": "Seek refuge in Allah before reciting the Quran. He has no authority over those who believe and rely upon their Lord.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-23-97-98",
+          "reference": "Al-Mu'minun 23:97-98",
+          "arabic": "وَقُل رَّبِّ أَعُوذُ بِكَ مِنۡ هَمَزَٰتِ ٱلشَّيَٰطِينِ ﴿٩٧﴾ وَأَعُوذُ بِكَ رَبِّ أَن يَحۡضُرُونِ ﴿٩٨﴾",
+          "transliteration": "Waqul rabbi aAAoothu bika min hamazati alshshayateeni WaaAAoothu bika rabbi an yahdurooni",
+          "translation": "And say, \"My Lord, I seek refuge in You from the incitements of the devils And I seek refuge in You, my Lord, lest they be present with me",
+          "repeat": 1,
+          "note": "The dua itself: my Lord, I seek refuge in You from the incitements of the devils, and from their presence.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-15-39-42",
+          "reference": "Al-Hijr 15:39-42",
+          "arabic": "قَالَ رَبِّ بِمَآ أَغۡوَيۡتَنِي لَأُزَيِّنَنَّ لَهُمۡ فِي ٱلۡأَرۡضِ وَلَأُغۡوِيَنَّهُمۡ أَجۡمَعِينَ ﴿٣٩﴾ إِلَّا عِبَادَكَ مِنۡهُمُ ٱلۡمُخۡلَصِينَ ﴿٤٠﴾ قَالَ هَٰذَا صِرَٰطٌ عَلَيَّ مُسۡتَقِيمٌ ﴿٤١﴾ إِنَّ عِبَادِي لَيۡسَ لَكَ عَلَيۡهِمۡ سُلۡطَٰنٌ إِلَّا مَنِ ٱتَّبَعَكَ مِنَ ٱلۡغَاوِينَ ﴿٤٢﴾",
+          "transliteration": "Qala rabbi bima aghwaytanee laozayyinanna lahum fee alardi walaoghwiyannahum ajmaAAeena Illa AAibadaka minhumu almukhlaseena Qala hatha siratun AAalayya mustaqeemun Inna AAibadee laysa laka AAalayhim sultanun illa mani ittabaAAaka mina alghaweena",
+          "translation": "[Iblees] said, \"My Lord, because You have put me in error, I will surely make [disobedience] attractive to them on earth, and I will mislead them all Except, among them, Your chosen servants [Allah] said, \"This is a path [of return] to Me [that is] straight Indeed, My servants - no authority will you have over them, except those who follow you of the deviators",
+          "repeat": 1,
+          "note": "His declaration that he will mislead them all — except Allah's chosen servants, over whom he has no authority.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-17-64-65",
+          "reference": "Al-Isra 17:64-65",
+          "arabic": "وَٱسۡتَفۡزِزۡ مَنِ ٱسۡتَطَعۡتَ مِنۡهُم بِصَوۡتِكَ وَأَجۡلِبۡ عَلَيۡهِم بِخَيۡلِكَ وَرَجِلِكَ وَشَارِكۡهُمۡ فِي ٱلۡأَمۡوَٰلِ وَٱلۡأَوۡلَٰدِ وَعِدۡهُمۡۚ وَمَا يَعِدُهُمُ ٱلشَّيۡطَٰنُ إِلَّا غُرُورًا ﴿٦٤﴾ إِنَّ عِبَادِي لَيۡسَ لَكَ عَلَيۡهِمۡ سُلۡطَٰنٞۚ وَكَفَىٰ بِرَبِّكَ وَكِيلٗا ﴿٦٥﴾",
+          "transliteration": "Waistafziz mani istataAAta minhum bisawtika waajlib AAalayhim bikhaylika warajlika washarikhum fee alamwali waalawladi waAAidhum wama yaAAiduhumu alshshaytanu illa ghurooran Inna AAibadee laysa laka AAalayhim sultanun wakafa birabbika wakeelan",
+          "translation": "And incite [to senselessness] whoever you can among them with your voice and assault them with your horses and foot soldiers and become a partner in their wealth and their children and promise them.\" But Satan does not promise them except delusion Indeed, over My [believing] servants there is for you no authority. And sufficient is your Lord as Disposer of affairs",
+          "repeat": 1,
+          "note": "The limits of his power, stated plainly: over My servants you have no authority.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-14-22",
+          "reference": "Ibrahim 14:22",
+          "arabic": "وَقَالَ ٱلشَّيۡطَٰنُ لَمَّا قُضِيَ ٱلۡأَمۡرُ إِنَّ ٱللَّهَ وَعَدَكُمۡ وَعۡدَ ٱلۡحَقِّ وَوَعَدتُّكُمۡ فَأَخۡلَفۡتُكُمۡۖ وَمَا كَانَ لِيَ عَلَيۡكُم مِّن سُلۡطَٰنٍ إِلَّآ أَن دَعَوۡتُكُمۡ فَٱسۡتَجَبۡتُمۡ لِيۖ فَلَا تَلُومُونِي وَلُومُوٓاْ أَنفُسَكُمۖ مَّآ أَنَا۠ بِمُصۡرِخِكُمۡ وَمَآ أَنتُم بِمُصۡرِخِيَّ إِنِّي كَفَرۡتُ بِمَآ أَشۡرَكۡتُمُونِ مِن قَبۡلُۗ إِنَّ ٱلظَّـٰلِمِينَ لَهُمۡ عَذَابٌ أَلِيمٞ",
+          "transliteration": "Waqala alshshaytanu lamma qudiya alamru inna Allaha waAAadakum waAAda alhaqqi wawaAAadtukum faakhlaftukum wama kana liya AAalaykum min sultanin illa an daAAawtukum faistajabtum lee fala taloomoonee waloomoo anfusakum ma ana bimusrikhikum wama antum bimusrikhiyya innee kafartu bima ashraktumooni min qablu inna alththalimeena lahum AAathabun aleemun",
+          "translation": "And Satan will say when the matter has been concluded, \"Indeed, Allah had promised you the promise of truth. And I promised you, but I betrayed you. But I had no authority over you except that I invited you, and you responded to me. So do not blame me; but blame yourselves. I cannot be called to your aid, nor can you be called to my aid. Indeed, I deny your association of me [with Allah] before. Indeed, for the wrongdoers is a painful punishment",
+          "repeat": 1,
+          "note": "His speech on the Day of Judgement: I had no authority over you except that I invited you, and you responded. Blame me not, but blame yourselves. The clearest statement that he persuades and never compels.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-59-16",
+          "reference": "Al-Hashr 59:16",
+          "arabic": "كَمَثَلِ ٱلشَّيۡطَٰنِ إِذۡ قَالَ لِلۡإِنسَٰنِ ٱكۡفُرۡ فَلَمَّا كَفَرَ قَالَ إِنِّي بَرِيٓءٞ مِّنكَ إِنِّيٓ أَخَافُ ٱللَّهَ رَبَّ ٱلۡعَٰلَمِينَ",
+          "transliteration": "Kamathali alshshaytani ith qala lilinsani okfur falamma kafara qala innee bareeon minka innee akhafu Allaha rabba alAAalameena",
+          "translation": "[The hypocrites are] like the example of Satan when he says to man, \"Disbelieve.\" But when he disbelieves, he says, \"Indeed, I am disassociated from you. Indeed, I fear Allah, Lord of the worlds",
+          "repeat": 1,
+          "note": "Like Shaytan, when he says to man \"disbelieve\" — and then disowns him. He does not stay with those who follow him.",
+          "script": "uthmani"
+        },
+        {
+          "id": "dawah-shaitan-114-1-6",
+          "reference": "An-Nas 114:1-6",
+          "arabic": "قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ ﴿١﴾ مَلِكِ ٱلنَّاسِ ﴿٢﴾ إِلَٰهِ ٱلنَّاسِ ﴿٣﴾ مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ ﴿٤﴾ ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ ﴿٥﴾ مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ ﴿٦﴾",
+          "transliteration": "Qul aAAoothu birabbi alnnasi Maliki alnnasi Ilahi alnnasi Min sharri alwaswasi alkhannasi Allathee yuwaswisu fee sudoori alnnasi Mina aljinnati wa alnnasm",
+          "translation": "Say, \"I seek refuge in the Lord of mankind The Sovereign of mankind The God of mankind From the evil of the retreating whisperer Who whispers [evil] into the breasts of mankind From among the jinn and mankind",
+          "repeat": 1,
+          "note": "Surah An-Nas: refuge with the Lord of mankind from the retreating whisperer who whispers in the breasts of mankind, from among jinn and mankind.",
+          "script": "uthmani"
+        }
+      ]
     }
   ]
 }

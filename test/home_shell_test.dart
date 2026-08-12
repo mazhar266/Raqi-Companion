@@ -20,7 +20,19 @@ void main() {
     items: [],
   );
 
-  Future<void> pumpShell(WidgetTester tester) async {
+  const grouped = Category(
+    id: 'dawah-jews',
+    title: 'Dawah to Jewish Friends',
+    subtitle: 'Common ground',
+    icon: 'auto_stories',
+    group: 'Dawah',
+    items: [],
+  );
+
+  Future<void> pumpShell(
+    WidgetTester tester, {
+    List<Category> categories = const [category],
+  }) async {
     SharedPreferences.setMockInitialValues({});
     final bookmarks = BookmarkStore();
     final themeStore = ThemeStore();
@@ -29,7 +41,7 @@ void main() {
 
     await tester.pumpWidget(MaterialApp(
       home: HomeShell(
-        categories: const [category],
+        categories: categories,
         bookmarks: bookmarks,
         themeStore: themeStore,
       ),
@@ -56,6 +68,32 @@ void main() {
 
     // The Query app bar title, on top of the destination label.
     expect(find.text('Query'), findsNWidgets(2));
+  });
+
+  testWidgets('grouped categories collapse into one card', (tester) async {
+    await pumpShell(tester, categories: const [category, grouped]);
+
+    // One card for the whole group, alongside the ungrouped category.
+    expect(find.text('Dawah'), findsOneWidget);
+    expect(find.text('Common Ayats'), findsOneWidget);
+
+    // The section appears only as the group card's subtitle — never as a card
+    // of its own, so it is not a ListTile title at this level.
+    final subtitle = find.text('Dawah to Jewish Friends');
+    expect(subtitle, findsOneWidget);
+    expect(
+      tester.widget<ListTile>(find.ancestor(of: subtitle, matching: find.byType(ListTile))).title,
+      isA<Text>().having((t) => t.data, 'title', 'Dawah'),
+    );
+  });
+
+  testWidgets('tapping the group card opens its sections', (tester) async {
+    await pumpShell(tester, categories: const [category, grouped]);
+
+    await tester.tap(find.text('Dawah'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Dawah to Jewish Friends'), findsOneWidget);
   });
 
   testWidgets('browse tab keeps its state across a switch', (tester) async {

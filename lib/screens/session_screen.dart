@@ -15,8 +15,12 @@ class SessionScreen extends StatefulWidget {
 class _SessionScreenState extends State<SessionScreen> {
   final Set<String> _done = {};
 
-  List<RuqyahItem> get _all =>
-      [for (final c in widget.categories) ...c.items];
+  /// Only top-level categories. Grouped ones (Dawah) are reference material,
+  /// not part of a recitation session.
+  List<Category> get _categories =>
+      widget.categories.where((c) => c.group.isEmpty).toList();
+
+  List<RuqyahItem> get _all => [for (final c in _categories) ...c.items];
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +57,7 @@ class _SessionScreenState extends State<SessionScreen> {
             child: ListView(
               padding: const EdgeInsets.all(16),
               children: [
-                for (final category in widget.categories) ...[
+                for (final category in _categories) ...[
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Text(category.title,
@@ -75,7 +79,9 @@ class _SessionScreenState extends State<SessionScreen> {
                         }),
                         title: Text(item.reference),
                         subtitle: arabicText(context, item.arabic,
-                            size: 16, maxLines: 1),
+                            size: 16,
+                            maxLines: 1,
+                            tajweed: item.supportsTajweed),
                       ),
                     );
                   }),

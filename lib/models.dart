@@ -7,6 +7,12 @@ class RuqyahItem {
   final int repeat;
   final String note;
 
+  /// Orthography of [arabic]. Empty (the default) means the imlaei text the
+  /// tajweed parser is written for; `'uthmani'` marks passages sourced from
+  /// the Quran data in `sources/`, which spell some marks differently and so
+  /// are rendered without tajweed colouring.
+  final String script;
+
   const RuqyahItem({
     required this.id,
     required this.reference,
@@ -15,7 +21,11 @@ class RuqyahItem {
     required this.translation,
     required this.repeat,
     required this.note,
+    this.script = '',
   });
+
+  /// Whether tajweed colouring can be trusted for this item's [arabic].
+  bool get supportsTajweed => script != 'uthmani';
 
   factory RuqyahItem.fromJson(Map<String, dynamic> json) => RuqyahItem(
         id: json['id'] as String,
@@ -25,6 +35,7 @@ class RuqyahItem {
         translation: json['translation'] as String? ?? '',
         repeat: (json['repeat'] as num?)?.toInt() ?? 1,
         note: json['note'] as String? ?? '',
+        script: json['script'] as String? ?? '',
       );
 }
 
@@ -35,12 +46,19 @@ class Category {
   final String icon;
   final List<RuqyahItem> items;
 
+  /// Optional menu this category is nested under, e.g. `'Dawah'`. Categories
+  /// sharing a group are reached through one card on the home screen instead
+  /// of appearing at the top level, and are left out of the Session
+  /// checklist, which is for ruqyah recitation. Empty means top level.
+  final String group;
+
   const Category({
     required this.id,
     required this.title,
     required this.subtitle,
     required this.icon,
     required this.items,
+    this.group = '',
   });
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
@@ -48,6 +66,7 @@ class Category {
         title: json['title'] as String,
         subtitle: json['subtitle'] as String? ?? '',
         icon: json['icon'] as String? ?? 'menu_book',
+        group: json['group'] as String? ?? '',
         items: (json['items'] as List<dynamic>)
             .map((e) => RuqyahItem.fromJson(e as Map<String, dynamic>))
             .toList(),

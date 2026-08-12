@@ -47,17 +47,20 @@ lib/
   screens/
     home_shell.dart                Root screen: bottom NavigationBar over the two tabs
     category_list_screen.dart      Browse tab; also maps category icon names to IconData
+    category_group_screen.dart     The sections nested under one group (e.g. Dawah)
     qql_query_screen.dart          Query tab: a QQL input, submit, and the results
     item_list_screen.dart          Items of one category with bookmark toggles
     ayat_detail_screen.dart        Full item view with prev/next navigation and repeat counter
     session_screen.dart            Guided checklist across all categories (state not persisted)
     bookmarks_screen.dart          List of bookmarked items
-assets/data/ruqyah.json            All content: {"categories": [...]}, 6 categories, 42 items total
+assets/data/ruqyah.json            All content: {"categories": [...]}, 9 categories, 110 items
+                                   (6 ruqyah categories + the 3 grouped under Dawah)
 test/tajweed_test.dart             Unit tests for the tajweed parser
 test/theme_store_test.dart         Unit and widget tests for the appearance setting
 test/qql_helper_test.dart          Integration tests against the real native library
 test/qql_data_test.dart            Asset declaration, unpacking, and an end-to-end query
-test/home_shell_test.dart          Bottom-navigation smoke tests
+test/home_shell_test.dart          Bottom-navigation and category-grouping widget tests
+test/dawah_content_test.dart       Dawah structure, and Arabic checked against sources/
 third_party/qql/                   Vendored QQL: C header, prebuilt Linux .so, licence,
                                    and README.md with provenance and rebuild steps
 android/app/src/main/jniLibs/      QQL native libs, 3 ABIs — built by cargo-ndk, see above
@@ -67,7 +70,12 @@ web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
 
-Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each category has `id`, `title`, `subtitle`, `icon` (a string key mapped to `IconData` in `category_list_screen.dart`), and `items`. Each item has `id`, `reference`, `arabic`, `transliteration`, `translation`, `repeat` (default 1), `note`. Optional string fields default to `''`.
+Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each category has `id`, `title`, `subtitle`, `icon` (a string key mapped to `IconData` in `category_list_screen.dart`), an optional `group`, and `items`. Each item has `id`, `reference`, `arabic`, `transliteration`, `translation`, `repeat` (default 1), `note`, and an optional `script`. Optional string fields default to `''`.
+
+Two optional fields carry behaviour:
+
+- **`group`** on a category nests it under a menu. Categories sharing a group value are replaced on the home screen by a single card (titled with the group, subtitled with its section titles) that opens `CategoryGroupScreen`, and they are **excluded from the Session checklist**, which is for ruqyah recitation. The Dawah sections use `"group": "Dawah"`.
+- **`script`** on an item declares its orthography. `"uthmani"` marks passages taken from the Quran data in `sources/`, which writes sukun as U+06E1 rather than U+0652; those render without tajweed colouring via `RuqyahItem.supportsTajweed`, because the parser targets the imlaei text used everywhere else in the file. Omit it for imlaei content.
 
 ## Architecture and conventions
 
@@ -121,7 +129,9 @@ The JSON asset is the app's whole database, and three couplings in it are not vi
 - **A category's `icon` is a string key, not an icon name.** It is resolved by the `switch` in `categoryIcon()` in `category_list_screen.dart`; an unrecognised key silently falls back to a bookmark outline. Adding a category with a new icon means editing that function too.
 - **`repeat` drives UI, not just display.** `ayat_detail_screen.dart` shows a progress bar and a tap counter only when `repeat > 1`; `item_list_screen.dart` shows an `×N` chip on the same condition.
 
-Prefer editing this file with a script (Python's `json` module round-trips it cleanly with `ensure_ascii=False, indent=2`) over hand-editing Arabic strings, and reuse existing `arabic`/`transliteration`/`translation` values verbatim when a passage already appears elsewhere in the file rather than retyping them. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
+Prefer editing this file with a script (Python's `json` module round-trips it cleanly with `ensure_ascii=False, indent=2`) over hand-editing Arabic strings, and reuse existing `arabic`/`transliteration`/`translation` values verbatim when a passage already appears elsewhere in the file rather than retyping them.
+
+**Never retype Quranic Arabic.** For new passages, copy them out of `sources/quran-json-arabic/dist/chapters/en/{surah}.json`, which carries text, transliteration and translation per ayah — that is how the Dawah sections were generated. Mark anything taken from there with `"script": "uthmani"`. Multi-ayah passages join verses with an `﴿٢٨٥﴾`-style marker (Arabic-Indic digits) after each verse; single-ayah passages carry no marker. `test/dawah_content_test.dart` re-checks a sample of passages against the source files, so hand-edits to that Arabic will fail the suite. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
 
 ## Security and content considerations
 

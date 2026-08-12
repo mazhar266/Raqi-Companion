@@ -72,7 +72,8 @@ class _AyatDetailScreenState extends State<AyatDetailScreen> {
             child: ListView(
               padding: const EdgeInsets.all(20),
               children: [
-                arabicText(context, item.arabic),
+                arabicText(context, item.arabic,
+                    tajweed: item.supportsTajweed),
                 if (item.transliteration.isNotEmpty) ...[
                   const SizedBox(height: 20),
                   Text(item.transliteration,

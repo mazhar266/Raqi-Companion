@@ -4,8 +4,20 @@ import '../bookmarks.dart';
 import '../models.dart';
 import '../theme_store.dart';
 import 'bookmarks_screen.dart';
+import 'category_group_screen.dart';
 import 'item_list_screen.dart';
 import 'session_screen.dart';
+
+/// Grouped categories, keyed by group name, in first-appearance order.
+Map<String, List<Category>> _groups(List<Category> categories) {
+  final groups = <String, List<Category>>{};
+  for (final c in categories) {
+    if (c.group.isNotEmpty) {
+      groups.putIfAbsent(c.group, () => []).add(c);
+    }
+  }
+  return groups;
+}
 
 IconData categoryIcon(String name) {
   switch (name) {
@@ -74,7 +86,7 @@ class CategoryListScreen extends StatelessWidget {
             )),
           ),
           const SizedBox(height: 12),
-          ...categories.map((c) => _ActionCard(
+          ...categories.where((c) => c.group.isEmpty).map((c) => _ActionCard(
                 icon: categoryIcon(c.icon),
                 title: c.title,
                 subtitle: c.subtitle,
@@ -82,6 +94,21 @@ class CategoryListScreen extends StatelessWidget {
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (_) => ItemListScreen(
                       category: c, bookmarks: bookmarks),
+                )),
+              )),
+          // Grouped categories collapse into one card per group, in the order
+          // the groups first appear in the data.
+          ..._groups(categories).entries.map((entry) => _ActionCard(
+                icon: Icons.diversity_3_outlined,
+                title: entry.key,
+                subtitle: entry.value.map((c) => c.title).join(' · '),
+                trailing: Text('${entry.value.length}'),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => CategoryGroupScreen(
+                    group: entry.key,
+                    categories: entry.value,
+                    bookmarks: bookmarks,
+                  ),
                 )),
               )),
         ],
