@@ -78,10 +78,12 @@ class _SessionScreenState extends State<SessionScreen> {
                           }
                         }),
                         title: Text(item.reference),
-                        subtitle: arabicText(context, item.arabic,
-                            size: 16,
-                            maxLines: 1,
-                            tajweed: item.supportsTajweed),
+                        subtitle: item.arabic.isEmpty
+                            ? null
+                            : arabicText(context, item.arabic,
+                                size: 16,
+                                maxLines: 1,
+                                tajweed: item.supportsTajweed),
                       ),
                     );
                   }),

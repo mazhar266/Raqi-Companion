@@ -1,13 +1,13 @@
 {
   "categories": [
     {
-      "id": "common",
-      "title": "Common Ayats",
-      "subtitle": "Al-Fatihah, Ayat al-Kursi, end of Al-Baqarah, and the Mu'awwidhat",
+      "id": "module-general",
+      "title": "Module 1 · General Ruqyah",
+      "subtitle": "The baseline routine — daily protection and generic illness",
       "icon": "menu_book",
       "items": [
         {
-          "id": "fatihah",
+          "id": "m1-fatihah",
           "reference": "Al-Fatihah 1:1-7",
           "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾",
           "transliteration": "Bismillahir-Rahmanir-Rahim. Al-hamdu lillahi Rabbil-'alamin. Ar-Rahmanir-Rahim. Maliki yawmid-din. Iyyaka na'budu wa iyyaka nasta'in. Ihdinas-siratal-mustaqim. Siratal-ladhina an'amta 'alayhim, ghayril-maghdubi 'alayhim wa lad-dallin.",
@@ -16,7 +16,17 @@
           "note": "The Prophet ﷺ confirmed Al-Fatihah as ruqyah (Sahih al-Bukhari 5749). Recite and blow lightly over the affected area or water."
         },
         {
-          "id": "ayat-kursi",
+          "id": "m1-2-1-5",
+          "reference": "Al-Baqarah 2:1-5",
+          "arabic": "الٓمٓ ﴿١﴾ ذَٰلِكَ ٱلۡكِتَٰبُ لَا رَيۡبَۛ فِيهِۛ هُدٗى لِّلۡمُتَّقِينَ ﴿٢﴾ ٱلَّذِينَ يُؤۡمِنُونَ بِٱلۡغَيۡبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ ﴿٣﴾ وَٱلَّذِينَ يُؤۡمِنُونَ بِمَآ أُنزِلَ إِلَيۡكَ وَمَآ أُنزِلَ مِن قَبۡلِكَ وَبِٱلۡأٓخِرَةِ هُمۡ يُوقِنُونَ ﴿٤﴾ أُوْلَـٰٓئِكَ عَلَىٰ هُدٗى مِّن رَّبِّهِمۡۖ وَأُوْلَـٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ ﴿٥﴾",
+          "transliteration": "Aliflammeem Thalika alkitabu la rayba feehi hudan lilmuttaqeena Allatheena yuminoona bialghaybi wayuqeemoona alssalata wamimma razaqnahum yunfiqoona Waallatheena yuminoona bima onzila ilayka wama onzila min qablika wabialakhirati hum yooqinoona Olaika AAala hudan min rabbihim waolaika humu almuflihoona",
+          "translation": "Alif, Lam, Meem This is the Book about which there is no doubt, a guidance for those conscious of Allah Who believe in the unseen, establish prayer, and spend out of what We have provided for them And who believe in what has been revealed to you, [O Muhammad], and what was revealed before you, and of the Hereafter they are certain [in faith] Those are upon [right] guidance from their Lord, and it is those who are the successful",
+          "repeat": 1,
+          "note": "The opening of Al-Baqarah. The Prophet ﷺ said the devil flees from a house in which Surah Al-Baqarah is recited (Sahih Muslim 780).",
+          "script": "uthmani"
+        },
+        {
+          "id": "m1-ayat-kursi",
           "reference": "Ayat al-Kursi — Al-Baqarah 2:255",
           "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
           "transliteration": "Allahu la ilaha illa Huwa, Al-Hayyul-Qayyum. La ta'khudhuhu sinatun wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi'idhnih. Ya'lamu ma bayna aydihim wa ma khalfahum, wa la yuhituna bishay'im-min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wa la ya'uduhu hifzuhuma, wa Huwal-'Aliyyul-'Azim.",
@@ -25,16 +35,17 @@
           "note": "Whoever recites it after each obligatory prayer is protected (An-Nasa'i). The greatest ayah of the Qur'an (Sahih Muslim 810)."
         },
         {
-          "id": "baqarah-end",
-          "reference": "Al-Baqarah 2:285-286",
-          "arabic": "آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ ﴿٢٨٥﴾ لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ ﴿٢٨٦﴾",
-          "transliteration": "Amanar-Rasulu bima unzila ilayhi mir-Rabbihi wal-mu'minun. Kullun amana billahi wa mala'ikatihi wa kutubihi wa rusulih, la nufarriqu bayna ahadim-mir-rusulih. Wa qalu sami'na wa ata'na, ghufranaka Rabbana wa ilaykal-masir. La yukalliful-lahu nafsan illa wus'aha, laha ma kasabat wa 'alayha maktasabat. Rabbana la tu'akhidhna in nasina aw akhta'na. Rabbana wa la tahmil 'alayna isran kama hamaltahu 'alal-ladhina min qablina. Rabbana wa la tuhammilna ma la taqata lana bih. Wa'fu 'anna, waghfir lana, warhamna. Anta Mawlana fansurna 'alal-qawmil-kafirin.",
-          "translation": "The Messenger has believed in what was revealed to him from his Lord, and so have the believers. All of them have believed in Allah and His angels and His books and His messengers, saying: We make no distinction between any of His messengers. And they say: We hear and we obey. Grant us Your forgiveness, our Lord; to You is the final destination. Allah does not burden a soul beyond what it can bear. It will have what it has earned, and against it is what it has incurred. Our Lord, do not impose blame upon us if we forget or err. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us, and forgive us, and have mercy upon us. You are our Protector, so give us victory over the disbelieving people.",
+          "id": "m1-2-284-286",
+          "reference": "Al-Baqarah 2:284-286",
+          "arabic": "لِّلَّهِ مَا فِي ٱلسَّمَٰوَٰتِ وَمَا فِي ٱلۡأَرۡضِۗ وَإِن تُبۡدُواْ مَا فِيٓ أَنفُسِكُمۡ أَوۡ تُخۡفُوهُ يُحَاسِبۡكُم بِهِ ٱللَّهُۖ فَيَغۡفِرُ لِمَن يَشَآءُ وَيُعَذِّبُ مَن يَشَآءُۗ وَٱللَّهُ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٌ ﴿٢٨٤﴾ ءَامَنَ ٱلرَّسُولُ بِمَآ أُنزِلَ إِلَيۡهِ مِن رَّبِّهِۦ وَٱلۡمُؤۡمِنُونَۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَـٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَيۡنَ أَحَدٖ مِّن رُّسُلِهِۦۚ وَقَالُواْ سَمِعۡنَا وَأَطَعۡنَاۖ غُفۡرَانَكَ رَبَّنَا وَإِلَيۡكَ ٱلۡمَصِيرُ ﴿٢٨٥﴾ لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ لَهَا مَا كَسَبَتۡ وَعَلَيۡهَا مَا ٱكۡتَسَبَتۡۗ رَبَّنَا لَا تُؤَاخِذۡنَآ إِن نَّسِينَآ أَوۡ أَخۡطَأۡنَاۚ رَبَّنَا وَلَا تَحۡمِلۡ عَلَيۡنَآ إِصۡرٗا كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِينَ مِن قَبۡلِنَاۚ رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦۖ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ ﴿٢٨٦﴾",
+          "transliteration": "Lillahi ma fee alssamawati wama fee alardi wain tubdoo ma fee anfusikum aw tukhfoohu yuhasibkum bihi Allahu fayaghfiru liman yashao wayuAAaththibu man yashao waAllahu AAala kulli shayin qadeerun Amana alrrasoolu bima onzila ilayhi min rabbihi waalmuminoona kullun amana biAllahi wamalaikatihi wakutubihi warusulihi la nufarriqu bayna ahadin min rusulihi waqaloo samiAAna waataAAna ghufranaka rabbana wailayka almaseeru La yukallifu Allahu nafsan illa wusAAaha laha ma kasabat waAAalayha ma iktasabat rabbana la tuakhithna in naseena aw akhtana rabbana wala tahmil AAalayna isran kama hamaltahu AAala allatheena min qablina rabbana wala tuhammilna ma la taqata lana bihi waoAAfu AAanna waighfir lana wairhamna anta mawlana faonsurna AAala alqawmi alkafireena",
+          "translation": "To Allah belongs whatever is in the heavens and whatever is in the earth. Whether you show what is within yourselves or conceal it, Allah will bring you to account for it. Then He will forgive whom He wills and punish whom He wills, and Allah is over all things competent The Messenger has believed in what was revealed to him from his Lord, and [so have] the believers. All of them have believed in Allah and His angels and His books and His messengers, [saying], \"We make no distinction between any of His messengers.\" And they say, \"We hear and we obey. [We seek] Your forgiveness, our Lord, and to You is the [final] destination Allah does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. \"Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people",
           "repeat": 1,
-          "note": "Whoever recites these two ayats at night, they suffice him (Sahih al-Bukhari 5009, Sahih Muslim 807)."
+          "note": "The closing passage of Al-Baqarah. Whoever recites the last two ayat at night, they suffice him (Sahih al-Bukhari 5009, Sahih Muslim 807).",
+          "script": "uthmani"
         },
         {
-          "id": "ikhlas",
+          "id": "m1-ikhlas",
           "reference": "Surah Al-Ikhlas 112:1-4",
           "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ﴿٤﴾",
           "transliteration": "Qul Huwal-lahu Ahad. Allahus-Samad. Lam yalid wa lam yulad. Wa lam yakul-lahu kufuwan ahad.",
@@ -43,7 +54,7 @@
           "note": "Recite with Al-Falaq and An-Nas three times morning and evening; it suffices against everything (Abu Dawud 5082, Tirmidhi 3575)."
         },
         {
-          "id": "falaq",
+          "id": "m1-falaq",
           "reference": "Surah Al-Falaq 113:1-5",
           "arabic": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾ مِنْ شَرِّ مَا خَلَقَ ﴿٢﴾ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٤﴾ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾",
           "transliteration": "Qul a'udhu bi Rabbil-falaq. Min sharri ma khalaq. Wa min sharri ghasiqin idha waqab. Wa min sharrin-naffathati fil-'uqad. Wa min sharri hasidin idha hasad.",
@@ -52,7 +63,7 @@
           "note": "One of the two Mu'awwidhat revealed for protection. Verse 4 is specifically relevant against magic worked with knots."
         },
         {
-          "id": "nas",
+          "id": "m1-nas",
           "reference": "Surah An-Nas 114:1-6",
           "arabic": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾ مَلِكِ النَّاسِ ﴿٢﴾ إِلَٰهِ النَّاسِ ﴿٣﴾ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٤﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٥﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٦﴾",
           "transliteration": "Qul a'udhu bi Rabbin-nas. Malikin-nas. Ilahin-nas. Min sharril-waswasil-khannas. Alladhi yuwaswisu fi sudurin-nas. Minal-jinnati wan-nas.",
@@ -63,13 +74,13 @@
       ]
     },
     {
-      "id": "sihr",
-      "title": "Ayats Against Sihr (Magic)",
-      "subtitle": "The account of Musa and the magicians, and the ayah of Babylon",
+      "id": "module-sihr",
+      "title": "Module 2 · Sihr",
+      "subtitle": "Nullifying sorcery, tracking hexes, breaking spells",
       "icon": "auto_stories",
       "items": [
         {
-          "id": "baqarah-102",
+          "id": "m2-baqarah-102",
           "reference": "Al-Baqarah 2:102",
           "arabic": "وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَىٰ مُلْكِ سُلَيْمَانَ ۖ وَمَا كَفَرَ سُلَيْمَانُ وَلَٰكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ وَمَا أُنْزِلَ عَلَى الْمَلَكَيْنِ بِبَابِلَ هَارُوتَ وَمَارُوتَ ۚ وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّىٰ يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ ۖ فَيَتَعَلَّمُونَ مِنْهُمَا مَا يُفَرِّقُونَ بِهِ بَيْنَ الْمَرْءِ وَزَوْجِهِ ۚ وَمَا هُمْ بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ ۚ وَيَتَعَلَّمُونَ مَا يَضُرُّهُمْ وَلَا يَنْفَعُهُمْ ۚ وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ ۚ وَلَبِئْسَ مَا شَرَوْا بِهِ أَنْفُسَهُمْ ۚ لَوْ كَانُوا يَعْلَمُونَ",
           "transliteration": "Wattaba'u ma tatlush-shayatinu 'ala mulki Sulayman; wa ma kafara Sulaymanu wa lakinnash-shayatina kafaru, yu'allimunan-nasas-sihra wa ma unzila 'alal-malakayni bi-Babila Haruta wa Marut. Wa ma yu'allimani min ahadin hatta yaqula: innama nahnu fitnatun fa la takfur. Fayata'allamuna minhuma ma yufarriquna bihi baynal-mar'i wa zawjih. Wa ma hum bidarrina bihi min ahadin illa bi'idhnillah. Wa yata'allamuna ma yadurruhum wa la yanfa'uhum. Wa laqad 'alimu lamanishtarahu ma lahu fil-akhirati min khalaq. Wa labi'sa ma sharaw bihi anfusahum, law kanu ya'lamun.",
@@ -78,7 +89,7 @@
           "note": "The definitive ayah establishing that magic is disbelief and harm only occurs by Allah's permission."
         },
         {
-          "id": "araf-117-122",
+          "id": "m2-araf-117-122",
           "reference": "Al-A'raf 7:117-122",
           "arabic": "وَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنْ أَلْقِ عَصَاكَ ۖ فَإِذَا هِيَ تَلْقَفُ مَا يَأْفِكُونَ ﴿١١٧﴾ فَوَقَعَ الْحَقُّ وَبَطَلَ مَا كَانُوا يَعْمَلُونَ ﴿١١٨﴾ فَغُلِبُوا هُنَالِكَ وَانْقَلَبُوا صَاغِرِينَ ﴿١١٩﴾ وَأُلْقِيَ السَّحَرَةُ سَاجِدِينَ ﴿١٢٠﴾ قَالُوا آمَنَّا بِرَبِّ الْعَالَمِينَ ﴿١٢١﴾ رَبِّ مُوسَىٰ وَهَارُونَ ﴿١٢٢﴾",
           "transliteration": "Wa awhayna ila Musa an alqi 'asak, fa'idha hiya talqafu ma ya'fikun. Fawaqa'al-haqqu wa batala ma kanu ya'malun. Faghulibu hunalika wanqalabu saghirin. Wa ulqiyas-saharatu sajidin. Qalu amanna bi Rabbil-'alamin, Rabbi Musa wa Harun.",
@@ -87,42 +98,55 @@
           "note": "Ayah 7:117-118 are among the most recited verses for undoing magic: the truth falls and the false work is nullified."
         },
         {
-          "id": "yunus-79-82",
-          "reference": "Yunus 10:79-82",
-          "arabic": "وَقَالَ فِرْعَوْنُ ائْتُونِي بِكُلِّ سَاحِرٍ عَلِيمٍ ﴿٧٩﴾ فَلَمَّا جَاءَ السَّحَرَةُ قَالَ لَهُمْ مُوسَىٰ أَلْقُوا مَا أَنْتُمْ مُلْقُونَ ﴿٨٠﴾ فَلَمَّا أَلْقَوْا قَالَ مُوسَىٰ مَا جِئْتُمْ بِهِ السِّحْرُ ۖ إِنَّ اللَّهَ سَيُبْطِلُهُ ۖ إِنَّ اللَّهَ لَا يُصْلِحُ عَمَلَ الْمُفْسِدِينَ ﴿٨١﴾ وَيُحِقُّ اللَّهُ الْحَقَّ بِكَلِمَاتِهِ وَلَوْ كَرِهَ الْمُجْرِمُونَ ﴿٨٢﴾",
-          "transliteration": "Wa qala Fir'awnu'tuni bikulli sahirin 'alim. Falamma ja'as-saharatu qala lahum Musa alqu ma antum mulqun. Falamma alqaw qala Musa: ma ji'tum bihis-sihr, innal-laha sayubtiluh, innal-laha la yuslihu 'amalal-mufsidin. Wa yuhiqqu-lahul-haqqa bikalimatihi wa law karihal-mujrimun.",
-          "translation": "And Pharaoh said: Bring me every learned magician. When the magicians came, Moses said to them: Throw down whatever you will throw. And when they threw, Moses said: What you have brought is magic. Indeed, Allah will expose its worthlessness. Indeed, Allah does not set right the work of corrupters. And Allah establishes the truth by His words, even if the criminals dislike it.",
+          "id": "m2-10-81-82",
+          "reference": "Yunus 10:81-82",
+          "arabic": "فَلَمَّآ أَلۡقَوۡاْ قَالَ مُوسَىٰ مَا جِئۡتُم بِهِ ٱلسِّحۡرُۖ إِنَّ ٱللَّهَ سَيُبۡطِلُهُۥٓ إِنَّ ٱللَّهَ لَا يُصۡلِحُ عَمَلَ ٱلۡمُفۡسِدِينَ ﴿٨١﴾ وَيُحِقُّ ٱللَّهُ ٱلۡحَقَّ بِكَلِمَٰتِهِۦ وَلَوۡ كَرِهَ ٱلۡمُجۡرِمُونَ ﴿٨٢﴾",
+          "transliteration": "Falamma alqaw qala moosa ma jitum bihi alssihru inna Allaha sayubtiluhu inna Allaha la yuslihu AAamala almufsideena Wayuhiqqu Allahu alhaqqa bikalimatihi walaw kariha almujrimoona",
+          "translation": "And when they had thrown, Moses said, \"What you have brought is [only] magic. Indeed, Allah will expose its worthlessness. Indeed, Allah does not amend the work of corrupters And Allah will establish the truth by His words, even if the criminals dislike it",
           "repeat": 7,
-          "note": "Ayah 10:81 — 'inna Allaha sayubtiluh' (Allah will nullify it) — is central to ruqyah for sihr."
+          "note": "'Innal-laha sayubtiluh' — Allah will nullify it. The core annulment ayah for sihr.",
+          "script": "uthmani"
         },
         {
-          "id": "taha-65-70",
-          "reference": "Ta-Ha 20:65-70",
-          "arabic": "قَالُوا يَا مُوسَىٰ إِمَّا أَنْ تُلْقِيَ وَإِمَّا أَنْ نَكُونَ أَوَّلَ مَنْ أَلْقَىٰ ﴿٦٥﴾ قَالَ بَلْ أَلْقُوا ۖ فَإِذَا حِبَالُهُمْ وَعِصِيُّهُمْ يُخَيَّلُ إِلَيْهِ مِنْ سِحْرِهِمْ أَنَّهَا تَسْعَىٰ ﴿٦٦﴾ فَأَوْجَسَ فِي نَفْسِهِ خِيفَةً مُوسَىٰ ﴿٦٧﴾ قُلْنَا لَا تَخَفْ إِنَّكَ أَنْتَ الْأَعْلَىٰ ﴿٦٨﴾ وَأَلْقِ مَا فِي يَمِينِكَ تَلْقَفْ مَا صَنَعُوا ۖ إِنَّمَا صَنَعُوا كَيْدُ سَاحِرٍ ۖ وَلَا يُفْلِحُ السَّاحِرُ حَيْثُ أَتَىٰ ﴿٦٩﴾ فَأُلْقِيَ السَّحَرَةُ سُجَّدًا قَالُوا آمَنَّا بِرَبِّ هَارُونَ وَمُوسَىٰ ﴿٧٠﴾",
-          "transliteration": "Qalu ya Musa imma an tulqiya wa imma an nakuna awwala man alqa. Qala bal alqu; fa'idha hibaluhum wa 'isiyyuhum yukhayyalu ilayhi min sihrihim annaha tas'a. Fa awjasa fi nafsihi khifata Musa. Qulna la takhaf innaka antal-a'la. Wa alqi ma fi yaminika talqaf ma sana'u; innama sana'u kaydu sahir, wa la yuflihus-sahiru haythu ata. Fa ulqiyas-saharatu sujjadan qalu amanna bi Rabbi Haruna wa Musa.",
-          "translation": "They said: O Moses, either you throw, or we will be the first to throw. He said: Rather, you throw. And suddenly their ropes and staffs seemed to him, by their magic, to be slithering. And Moses sensed fear within himself. We said: Fear not! Indeed, it is you who are superior. And throw what is in your right hand; it will devour what they have crafted. What they have crafted is but the trick of a magician, and the magician will not succeed wherever he comes. So the magicians fell down prostrate and said: We believe in the Lord of Aaron and Moses.",
+          "id": "m2-20-69",
+          "reference": "Taha 20:69",
+          "arabic": "وَأَلۡقِ مَا فِي يَمِينِكَ تَلۡقَفۡ مَا صَنَعُوٓاْۖ إِنَّمَا صَنَعُواْ كَيۡدُ سَٰحِرٖۖ وَلَا يُفۡلِحُ ٱلسَّاحِرُ حَيۡثُ أَتَىٰ",
+          "transliteration": "Waalqi ma fee yameenika talqaf ma sanaAAoo innama sanaAAoo kaydu sahirin wala yuflihu alssahiru haythu ata",
+          "translation": "And throw what is in your right hand; it will swallow up what they have crafted. What they have crafted is but the trick of a magician, and the magician will not succeed wherever he is",
           "repeat": 7,
-          "note": "Ayah 20:69 — 'wa la yuflihus-sahiru haythu ata' (the magician will never succeed, wherever he comes from) — a key declaration when reciting over sihr."
+          "note": "'Wa la yuflihus-sahiru haythu ata' — the magician will never succeed, wherever he comes from.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m2-25-23",
+          "reference": "Al-Furqan 25:23",
+          "arabic": "وَقَدِمۡنَآ إِلَىٰ مَا عَمِلُواْ مِنۡ عَمَلٖ فَجَعَلۡنَٰهُ هَبَآءٗ مَّنثُورًا",
+          "transliteration": "Waqadimna ila ma AAamiloo min AAamalin fajaAAalnahu habaan manthooran",
+          "translation": "And We will regard what they have done of deeds and make them as dust dispersed",
+          "repeat": 7,
+          "note": "Every work they did is turned to scattered dust. Recited over the undoing of what was tied.",
+          "script": "uthmani"
         }
       ]
     },
     {
-      "id": "hasad",
-      "title": "Hasad & 'Ayn (Envy / Evil Eye)",
-      "subtitle": "Verses and du'as against envy and the evil eye",
+      "id": "module-ayn",
+      "title": "Module 3 · Ayn & Hasad",
+      "subtitle": "Evil eye and envy — lethargy, distress, social blockages",
       "icon": "visibility_off",
       "items": [
         {
-          "id": "qalam-51-52",
-          "reference": "Al-Qalam 68:51-52",
-          "arabic": "وَإِنْ يَكَادُ الَّذِينَ كَفَرُوا لَيُزْلِقُونَكَ بِأَبْصَارِهِمْ لَمَّا سَمِعُوا الذِّكْرَ وَيَقُولُونَ إِنَّهُ لَمَجْنُونٌ ﴿٥١﴾ وَمَا هُوَ إِلَّا ذِكْرٌ لِلْعَالَمِينَ ﴿٥٢﴾",
-          "transliteration": "Wa in yakadul-ladhina kafaru layuzliqunaka bi'absarihim lamma sami'udh-dhikra wa yaquluna innahu lamajnun. Wa ma huwa illa dhikrul lil-'alamin.",
-          "translation": "And indeed, those who disbelieve would almost make you slip with their eyes when they hear the Reminder, and they say: Indeed, he is mad. But it is nothing less than a Reminder to all the worlds.",
+          "id": "m3-2-109",
+          "reference": "Al-Baqarah 2:109",
+          "arabic": "وَدَّ كَثِيرٞ مِّنۡ أَهۡلِ ٱلۡكِتَٰبِ لَوۡ يَرُدُّونَكُم مِّنۢ بَعۡدِ إِيمَٰنِكُمۡ كُفَّارًا حَسَدٗا مِّنۡ عِندِ أَنفُسِهِم مِّنۢ بَعۡدِ مَا تَبَيَّنَ لَهُمُ ٱلۡحَقُّۖ فَٱعۡفُواْ وَٱصۡفَحُواْ حَتَّىٰ يَأۡتِيَ ٱللَّهُ بِأَمۡرِهِۦٓۗ إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ",
+          "transliteration": "Wadda katheerun min ahli alkitabi law yaruddoonakum min baAAdi eemanikum kuffaran hasadan min AAindi anfusihim min baAAdi ma tabayyana lahumu alhaqqu faoAAfoo waisfahoo hatta yatiya Allahu biamrihi inna Allaha AAala kulli shayin qadeerun",
+          "translation": "Many of the People of the Scripture wish they could turn you back to disbelief after you have believed, out of envy from themselves [even] after the truth has become clear to them. So pardon and overlook until Allah delivers His command. Indeed, Allah is over all things competent",
           "repeat": 7,
-          "note": "Widely recited for the evil eye ('ayn), as it describes being struck by eyes upon hearing the Reminder."
+          "note": "Envy named directly: many wish to turn you back out of jealousy from within themselves, after the truth has become clear.",
+          "script": "uthmani"
         },
         {
-          "id": "nisa-54",
+          "id": "m3-nisa-54",
           "reference": "An-Nisa 4:54",
           "arabic": "أَمْ يَحْسُدُونَ النَّاسَ عَلَىٰ مَا آتَاهُمُ اللَّهُ مِنْ فَضْلِهِ ۖ فَقَدْ آتَيْنَا آلَ إِبْرَاهِيمَ الْكِتَابَ وَالْحِكْمَةَ وَآتَيْنَاهُمْ مُلْكًا عَظِيمًا",
           "transliteration": "Am yahsudunan-nasa 'ala ma atahumul-lahu min fadlih; faqad atayna Ala Ibrahimal-kitaba wal-hikmata wa ataynahum mulkan 'azima.",
@@ -131,110 +155,81 @@
           "note": "Directly addresses hasad (envy) of Allah's blessings upon others."
         },
         {
-          "id": "falaq-hasad",
-          "reference": "Al-Falaq 113:5 (focus ayah)",
-          "arabic": "وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ",
-          "transliteration": "Wa min sharri hasidin idha hasad.",
-          "translation": "And from the evil of an envier when he envies.",
-          "repeat": 10,
-          "note": "Repeat on its own with presence of heart after reciting the full surah. Pair with the du'a below."
+          "id": "m3-67-3-4",
+          "reference": "Al-Mulk 67:3-4",
+          "arabic": "ٱلَّذِي خَلَقَ سَبۡعَ سَمَٰوَٰتٖ طِبَاقٗاۖ مَّا تَرَىٰ فِي خَلۡقِ ٱلرَّحۡمَٰنِ مِن تَفَٰوُتٖۖ فَٱرۡجِعِ ٱلۡبَصَرَ هَلۡ تَرَىٰ مِن فُطُورٖ ﴿٣﴾ ثُمَّ ٱرۡجِعِ ٱلۡبَصَرَ كَرَّتَيۡنِ يَنقَلِبۡ إِلَيۡكَ ٱلۡبَصَرُ خَاسِئٗا وَهُوَ حَسِيرٞ ﴿٤﴾",
+          "transliteration": "Allathee khalaqa sabAAa samawatin tibaqan ma tara fee khalqi alrrahmani min tafawutin fairjiAAi albasara hal tara min futoorin Thumma irjiAAi albasara karratayni yanqalib ilayka albasaru khasian wahuwa haseerun",
+          "translation": "[And] who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return [your] vision [to the sky]; do you see any breaks Then return [your] vision twice again. [Your] vision will return to you humbled while it is fatigued",
+          "repeat": 7,
+          "note": "Turn the vision again and again — it returns to you humbled and fatigued. Recited against the harm carried by the eye.",
+          "script": "uthmani"
         },
         {
-          "id": "dua-kalimat",
-          "reference": "Du'a — Refuge in the Perfect Words of Allah",
-          "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ شَرِّ مَا خَلَقَ",
-          "transliteration": "A'udhu bikalimatil-lahit-tammati min sharri ma khalaq.",
-          "translation": "I seek refuge in the Perfect Words of Allah from the evil of what He has created.",
-          "repeat": 3,
-          "note": "Sahih Muslim 2708. Whoever says it three times in the evening, no harm (including from stings/afflictions) will befall him that night (Tirmidhi 3604)."
+          "id": "m3-qalam-51-52",
+          "reference": "Al-Qalam 68:51-52",
+          "arabic": "وَإِنْ يَكَادُ الَّذِينَ كَفَرُوا لَيُزْلِقُونَكَ بِأَبْصَارِهِمْ لَمَّا سَمِعُوا الذِّكْرَ وَيَقُولُونَ إِنَّهُ لَمَجْنُونٌ ﴿٥١﴾ وَمَا هُوَ إِلَّا ذِكْرٌ لِلْعَالَمِينَ ﴿٥٢﴾",
+          "transliteration": "Wa in yakadul-ladhina kafaru layuzliqunaka bi'absarihim lamma sami'udh-dhikra wa yaquluna innahu lamajnun. Wa ma huwa illa dhikrul lil-'alamin.",
+          "translation": "And indeed, those who disbelieve would almost make you slip with their eyes when they hear the Reminder, and they say: Indeed, he is mad. But it is nothing less than a Reminder to all the worlds.",
+          "repeat": 7,
+          "note": "Widely recited for the evil eye ('ayn), as it describes being struck by eyes upon hearing the Reminder."
         }
       ]
     },
     {
-      "id": "unseen",
-      "title": "Verses of the Unseen (Jinn)",
-      "subtitle": "Surah Al-Jinn, the watchers of the heaven, and Al-Hashr",
+      "id": "module-jinn",
+      "title": "Module 4 · Jinn Presence",
+      "subtitle": "Forcing hidden entities out, and cleansing infested places",
       "icon": "shield",
       "items": [
         {
-          "id": "jinn-1-6",
-          "reference": "Al-Jinn 72:1-6",
-          "arabic": "قُلْ أُوحِيَ إِلَيَّ أَنَّهُ اسْتَمَعَ نَفَرٌ مِنَ الْجِنِّ فَقَالُوا إِنَّا سَمِعْنَا قُرْآنًا عَجَبًا ﴿١﴾ يَهْدِي إِلَى الرُّشْدِ فَآمَنَّا بِهِ ۖ وَلَنْ نُشْرِكَ بِرَبِّنَا أَحَدًا ﴿٢﴾ وَأَنَّهُ تَعَالَىٰ جَدُّ رَبِّنَا مَا اتَّخَذَ صَاحِبَةً وَلَا وَلَدًا ﴿٣﴾ وَأَنَّهُ كَانَ يَقُولُ سَفِيهُنَا عَلَى اللَّهِ شَطَطًا ﴿٤﴾ وَأَنَّا ظَنَنَّا أَنْ لَنْ تَقُولَ الْإِنْسُ وَالْجِنُّ عَلَى اللَّهِ كَذِبًا ﴿٥﴾ وَأَنَّهُ كَانَ رِجَالٌ مِنَ الْإِنْسِ يَعُوذُونَ بِرِجَالٍ مِنَ الْجِنِّ فَزَادُوهُمْ رَهَقًا ﴿٦﴾",
-          "transliteration": "Qul uhiya ilayya annahustama'a nafarum-minal-jinni faqalu inna sami'na qur'anan 'ajaba. Yahdi ilar-rushdi fa'amanna bih, wa lan nushrika bi Rabbina ahada. Wa annahu ta'ala jaddu Rabbina, mattakhadha sahibataw-wa la walada. Wa annahu kana yaqulu safihuna 'alal-lahi shatata. Wa anna zananna an lan taqulal-insu wal-jinnu 'alal-lahi kadhiba. Wa annahu kana rijalum-minal-insi ya'udhuna birijalim-minal-jinni fazaduhum rahaqa.",
-          "translation": "Say: It has been revealed to me that a group of the jinn listened and said: Indeed, we have heard an amazing Qur'an. It guides to the right course, and we have believed in it. And we will never associate anyone with our Lord. And He, exalted is the Majesty of our Lord, has taken neither a wife nor a son. And our foolish one used to say about Allah an excessive transgression. And we had thought that mankind and the jinn would never speak about Allah a lie. And there were men from mankind who sought refuge in men from the jinn, so they only increased them in burden.",
-          "repeat": 1,
-          "note": "Recite over cases involving the jinn; the surah directly recounts the jinn hearing the Qur'an and submitting."
-        },
-        {
-          "id": "saffat-1-10",
-          "reference": "As-Saffat 37:1-10",
-          "arabic": "وَالصَّافَّاتِ صَفًّا ﴿١﴾ فَالزَّاجِرَاتِ زَجْرًا ﴿٢﴾ فَالتَّالِيَاتِ ذِكْرًا ﴿٣﴾ إِنَّ إِلَٰهَكُمْ لَوَاحِدٌ ﴿٤﴾ رَبُّ السَّمَاوَاتِ وَالْأَرْضِ وَمَا بَيْنَهُمَا وَرَبُّ الْمَشَارِقِ ﴿٥﴾ إِنَّا زَيَّنَّا السَّمَاءَ الدُّنْيَا بِزِينَةٍ الْكَوَاكِبِ ﴿٦﴾ وَحِفْظًا مِنْ كُلِّ شَيْطَانٍ مَارِدٍ ﴿٧﴾ لَا يَسَّمَّعُونَ إِلَى الْمَلَإِ الْأَعْلَىٰ وَيُقْذَفُونَ مِنْ كُلِّ جَانِبٍ ﴿٨﴾ دُحُورًا ۖ وَلَهُمْ عَذَابٌ وَاصِبٌ ﴿٩﴾ إِلَّا مَنْ خَطِفَ الْخَطْفَةَ فَأَتْبَعَهُ شِهَابٌ ثَاقِبٌ ﴿١٠﴾",
-          "transliteration": "Was-saffati saffa. Faz-zajirati zajra. Fat-taliyati dhikra. Inna ilahakum lawahid. Rabbus-samawati wal-ardi wa ma baynahuma wa Rabbul-mashariq. Inna zayyannas-sama'ad-dunya bizinatinil-kawakib. Wa hifzam-min kulli shaytanim-marid. La yassamma'una ilal-mala'il-a'la wa yuqdhafuna min kulli janib. Duhuraw-wa lahum 'adhabun wasib. Illa man khatifal-khatfata fa atba'ahu shihabun thaqib.",
-          "translation": "By those angels lined up in ranks, and those who drive away, and those who recite the Reminder: Indeed, your God is One, Lord of the heavens and the earth and what is between them, and Lord of the easts. Indeed, We have adorned the nearest heaven with an adornment of stars, and as protection against every rebellious devil. They cannot listen to the exalted assembly of angels, and they are pelted from every side, repelled — and for them is a constant punishment. Except one who snatches a fragment, and a piercing flame pursues him.",
-          "repeat": 1,
-          "note": "Describes the guarding of the heavens against rebellious devils; frequently recited in cases of jinn affliction."
-        },
-        {
-          "id": "hashr-21-24",
-          "reference": "Al-Hashr 59:21-24",
-          "arabic": "لَوْ أَنْزَلْنَا هَٰذَا الْقُرْآنَ عَلَىٰ جَبَلٍ لَرَأَيْتَهُ خَاشِعًا مُتَصَدِّعًا مِنْ خَشْيَةِ اللَّهِ ۚ وَتِلْكَ الْأَمْثَالُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ ﴿٢١﴾ هُوَ اللَّهُ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ ۖ عَالِمُ الْغَيْبِ وَالشَّهَادَةِ ۖ هُوَ الرَّحْمَٰنُ الرَّحِيمُ ﴿٢٢﴾ هُوَ اللَّهُ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْمَلِكُ الْقُدُّوسُ السَّلَامُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَزِيزُ الْجَبَّارُ الْمُتَكَبِّرُ ۚ سُبْحَانَ اللَّهِ عَمَّا يُشْرِكُونَ ﴿٢٣﴾ هُوَ اللَّهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ ۖ لَهُ الْأَسْمَاءُ الْحُسْنَىٰ ۚ يُسَبِّحُ لَهُ مَا فِي السَّمَاوَاتِ وَالْأَرْضِ ۖ وَهُوَ الْعَزِيزُ الْحَكِيمُ ﴿٢٤﴾",
-          "transliteration": "Law anzalna hadhal-qur'ana 'ala jabalil-lara'aytahu khashi'am-mutasaddi'am-min khashyatillah. Wa tilkal-amthalu nadribuha linnasi la'allahum yatafakkarun. Huwal-lahul-ladhi la ilaha illa Huwa, 'Alimul-ghaybi wash-shahadah, Huwar-Rahmanur-Rahim. Huwal-lahul-ladhi la ilaha illa Huwal-Malikul-Quddusus-Salamul-Mu'minul-Muhayminul-'Azizul-Jabbarul-Mutakabbir. Subhanal-lahi 'amma yushrikun. Huwal-lahul-Khaliqul-Bari'ul-Musawwir, lahul-asma'ul-husna. Yusabbihu lahu ma fis-samawati wal-ard, wa Huwal-'Azizul-Hakim.",
-          "translation": "If We had sent down this Qur'an upon a mountain, you would have seen it humbled and splitting from fear of Allah. And these examples We present to the people that perhaps they will reflect. He is Allah, other than whom there is no deity, Knower of the unseen and the witnessed. He is the Most Gracious, the Most Merciful. He is Allah, other than whom there is no deity: the Sovereign, the Pure, the Perfection, the Bestower of Faith, the Overseer, the Exalted in Might, the Compeller, the Superior. Exalted is Allah above whatever they associate with Him. He is Allah: the Creator, the Inventor, the Fashioner; to Him belong the Best Names. Whatever is in the heavens and earth glorifies Him. And He is the Exalted in Might, the Wise.",
+          "id": "m4-2-14",
+          "reference": "Al-Baqarah 2:14",
+          "arabic": "وَإِذَا لَقُواْ ٱلَّذِينَ ءَامَنُواْ قَالُوٓاْ ءَامَنَّا وَإِذَا خَلَوۡاْ إِلَىٰ شَيَٰطِينِهِمۡ قَالُوٓاْ إِنَّا مَعَكُمۡ إِنَّمَا نَحۡنُ مُسۡتَهۡزِءُونَ",
+          "transliteration": "Waitha laqoo allatheena amanoo qaloo amanna waitha khalaw ila shayateenihim qaloo inna maAAakum innama nahnu mustahzioona",
+          "translation": "And when they meet those who believe, they say, \"We believe\"; but when they are alone with their evil ones, they say, \"Indeed, we are with you; we were only mockers",
           "repeat": 3,
-          "note": "The closing of Surah Al-Hashr, magnifying Allah's names over the unseen — commonly recited three times in ruqyah."
+          "note": "On those who are with their devils in private. Read where an entity conceals itself behind ordinary behaviour.",
+          "script": "uthmani"
         },
         {
-          "id": "rahman-33-36",
-          "reference": "Ar-Rahman 55:33-36",
-          "arabic": "يَا مَعْشَرَ الْجِنِّ وَالْإِنْسِ إِنِ اسْتَطَعْتُمْ أَنْ تَنْفُذُوا مِنْ أَقْطَارِ السَّمَاوَاتِ وَالْأَرْضِ فَانْفُذُوا ۚ لَا تَنْفُذُونَ إِلَّا بِسُلْطَانٍ ﴿٣٣﴾ فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ ﴿٣٤﴾ يُرْسَلُ عَلَيْكُمَا شُوَاظٌ مِنْ نَارٍ وَنُحَاسٌ فَلَا تَنْتَصِرَانِ ﴿٣٥﴾ فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ ﴿٣٦﴾",
-          "transliteration": "Ya ma'sharal-jinni wal-insi inistata'tum an tanfudhu min aqtaris-samawati wal-ardi fanfudhu, la tanfudhuna illa bisultan. Fabi'ayyi ala'i Rabbikuma tukadhdhiban. Yursalu 'alaykuma shuwazum-min nariw-wa nuhasun fala tantasiran. Fabi'ayyi ala'i Rabbikuma tukadhdhiban.",
-          "translation": "O assembly of jinn and mankind! If you are able to pass beyond the regions of the heavens and the earth, then pass. You cannot pass except by authority. So which of the favours of your Lord would you deny? There will be sent against you a flame of fire and molten copper, and you will not be able to defend yourselves. So which of the favours of your Lord would you deny?",
-          "repeat": 7,
-          "note": "A direct address to the assembly of jinn and men; recited as a warning and expulsion verse."
-        }
-      ]
-    },
-    {
-      "id": "adhkar",
-      "title": "Protection Adhkar (Before / After)",
-      "subtitle": "Daily adhkar and the du'a for the sick",
-      "icon": "wb_sunny",
-      "items": [
-        {
-          "id": "dua-bismillah",
-          "reference": "Du'a — Morning & Evening Protection",
-          "arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
-          "transliteration": "Bismillahil-ladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama'i wa Huwas-Sami'ul-'Alim.",
-          "translation": "In the name of Allah, with whose name nothing on earth or in the heavens can cause harm, and He is the All-Hearing, the All-Knowing.",
+          "id": "m4-7-11-12",
+          "reference": "Al-A'raf 7:11-12",
+          "arabic": "وَلَقَدۡ خَلَقۡنَٰكُمۡ ثُمَّ صَوَّرۡنَٰكُمۡ ثُمَّ قُلۡنَا لِلۡمَلَـٰٓئِكَةِ ٱسۡجُدُواْ لِأٓدَمَ فَسَجَدُوٓاْ إِلَّآ إِبۡلِيسَ لَمۡ يَكُن مِّنَ ٱلسَّـٰجِدِينَ ﴿١١﴾ قَالَ مَا مَنَعَكَ أَلَّا تَسۡجُدَ إِذۡ أَمَرۡتُكَۖ قَالَ أَنَا۠ خَيۡرٞ مِّنۡهُ خَلَقۡتَنِي مِن نَّارٖ وَخَلَقۡتَهُۥ مِن طِينٖ ﴿١٢﴾",
+          "transliteration": "Walaqad khalaqnakum thumma sawwarnakum thumma qulna lilmalaikati osjudoo liadama fasajadoo illa ibleesa lam yakun mina alssajideena Qala ma manaAAaka alla tasjuda ith amartuka qala ana khayrun minhu khalaqtanee min narin wakhalaqtahu min teenin",
+          "translation": "And We have certainly created you, [O Mankind], and given you [human] form. Then We said to the angels, \"Prostrate to Adam\"; so they prostrated, except for Iblees. He was not of those who prostrated [Allah] said, \"What prevented you from prostrating when I commanded you?\" [Satan] said, \"I am better than him. You created me from fire and created him from clay",
           "repeat": 3,
-          "note": "Abu Dawud 5088, Tirmidhi 3388. Said three times morning and evening, nothing harms the one who says it."
+          "note": "The refusal of Iblis to prostrate, and the arrogance behind it. Confronts the pride an entity relies on.",
+          "script": "uthmani"
         },
         {
-          "id": "dua-sick",
-          "reference": "Du'a for the Sick — Adhhibil-ba's",
-          "arabic": "أَذْهِبِ الْبَأْسَ رَبَّ النَّاسِ، اشْفِ وَأَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا",
-          "transliteration": "Adhhibil-ba'sa Rabban-nas, ishfi wa Antash-Shafi, la shifa'a illa shifa'uk, shifa'an la yughadiru saqama.",
-          "translation": "Remove the harm, O Lord of mankind. Heal, for You are the Healer. There is no healing except Your healing — a healing that leaves no illness behind.",
-          "repeat": 7,
-          "note": "Sahih al-Bukhari 5675, Sahih Muslim 2191. The Prophet ﷺ recited this over the sick while wiping over them with his right hand."
-        },
-        {
-          "id": "dua-ruqyah-jibril",
-          "reference": "Ruqyah of Jibril over the Prophet ﷺ",
-          "arabic": "بِاسْمِ اللَّهِ أَرْقِيكَ، مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ، مِنْ شَرِّ كُلِّ نَفْسٍ أَوْ عَيْنٍ حَاسِدٍ، اللَّهُ يَشْفِيكَ، بِاسْمِ اللَّهِ أَرْقِيكَ",
-          "transliteration": "Bismillahi arqik, min kulli shay'in yu'dhik, min sharri kulli nafsin aw 'aynin hasid, Allahu yashfik, bismillahi arqik.",
-          "translation": "In the name of Allah I perform ruqyah over you, from everything that harms you, from the evil of every soul and every envious eye. May Allah heal you. In the name of Allah I perform ruqyah over you.",
-          "repeat": 7,
-          "note": "Sahih Muslim 2186. Jibril recited this ruqyah over the Prophet ﷺ."
-        },
-        {
-          "id": "kursi-note",
-          "reference": "Ayat al-Kursi — Guardian of the Night",
-          "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
-          "transliteration": "Allahu la ilaha illa Huwal-Hayyul-Qayyum.",
-          "translation": "Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence.",
+          "id": "m4-23-115-118",
+          "reference": "Al-Mu'minun 23:115-118",
+          "arabic": "أَفَحَسِبۡتُمۡ أَنَّمَا خَلَقۡنَٰكُمۡ عَبَثٗا وَأَنَّكُمۡ إِلَيۡنَا لَا تُرۡجَعُونَ ﴿١١٥﴾ فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۖ لَآ إِلَٰهَ إِلَّا هُوَ رَبُّ ٱلۡعَرۡشِ ٱلۡكَرِيمِ ﴿١١٦﴾ وَمَن يَدۡعُ مَعَ ٱللَّهِ إِلَٰهًا ءَاخَرَ لَا بُرۡهَٰنَ لَهُۥ بِهِۦ فَإِنَّمَا حِسَابُهُۥ عِندَ رَبِّهِۦٓۚ إِنَّهُۥ لَا يُفۡلِحُ ٱلۡكَٰفِرُونَ ﴿١١٧﴾ وَقُل رَّبِّ ٱغۡفِرۡ وَٱرۡحَمۡ وَأَنتَ خَيۡرُ ٱلرَّـٰحِمِينَ ﴿١١٨﴾",
+          "transliteration": "Afahasibtum annama khalaqnakum AAabathan waannakum ilayna la turjaAAoona FataAAala Allahu almaliku alhaqqu la ilaha illa huwa rabbu alAAarshi alkareemi Waman yadAAu maAAa Allahi ilahan akhara la burhana lahu bihi fainnama hisabuhu AAinda rabbihi innahu la yuflihu alkafiroona Waqul rabbi ighfir wairham waanta khayru alrrahimeena",
+          "translation": "Then did you think that We created you uselessly and that to Us you would not be returned So exalted is Allah, the Sovereign, the Truth; there is no deity except Him, Lord of the Noble Throne And whoever invokes besides Allah another deity for which he has no proof - then his account is only with his Lord. Indeed, the disbelievers will not succeed And, [O Muhammad], say, \"My Lord, forgive and have mercy, and You are the best of the merciful",
           "repeat": 1,
-          "note": "Recite the full Ayat al-Kursi (see Common Ayats) before sleeping: a guardian from Allah remains over you and no devil approaches until morning (Sahih al-Bukhari 2311)."
+          "note": "The closing of Al-Mu’minun: Allah alone is the true Sovereign, and no other invoked deity avails.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m4-46-29-32",
+          "reference": "Al-Ahqaf 46:29-32",
+          "arabic": "وَإِذۡ صَرَفۡنَآ إِلَيۡكَ نَفَرٗا مِّنَ ٱلۡجِنِّ يَسۡتَمِعُونَ ٱلۡقُرۡءَانَ فَلَمَّا حَضَرُوهُ قَالُوٓاْ أَنصِتُواْۖ فَلَمَّا قُضِيَ وَلَّوۡاْ إِلَىٰ قَوۡمِهِم مُّنذِرِينَ ﴿٢٩﴾ قَالُواْ يَٰقَوۡمَنَآ إِنَّا سَمِعۡنَا كِتَٰبًا أُنزِلَ مِنۢ بَعۡدِ مُوسَىٰ مُصَدِّقٗا لِّمَا بَيۡنَ يَدَيۡهِ يَهۡدِيٓ إِلَى ٱلۡحَقِّ وَإِلَىٰ طَرِيقٖ مُّسۡتَقِيمٖ ﴿٣٠﴾ يَٰقَوۡمَنَآ أَجِيبُواْ دَاعِيَ ٱللَّهِ وَءَامِنُواْ بِهِۦ يَغۡفِرۡ لَكُم مِّن ذُنُوبِكُمۡ وَيُجِرۡكُم مِّنۡ عَذَابٍ أَلِيمٖ ﴿٣١﴾ وَمَن لَّا يُجِبۡ دَاعِيَ ٱللَّهِ فَلَيۡسَ بِمُعۡجِزٖ فِي ٱلۡأَرۡضِ وَلَيۡسَ لَهُۥ مِن دُونِهِۦٓ أَوۡلِيَآءُۚ أُوْلَـٰٓئِكَ فِي ضَلَٰلٖ مُّبِينٍ ﴿٣٢﴾",
+          "transliteration": "Waith sarafna ilayka nafaran mina aljinni yastamiAAoona alqurana falamma hadaroohu qaloo ansitoo falamma qudiya wallaw ila qawmihim munthireena Qaloo ya qawmana inna samiAAna kitaban onzila min baAAdi moosa musaddiqan lima bayna yadayhi yahdee ila alhaqqi waila tareeqin mustaqeemin Ya qawmana ajeeboo daAAiya Allahi waaminoo bihi yaghfir lakum min thunoobikum wayujirkum min AAathabin aleemin Waman la yujib daAAiya Allahi falaysa bimuAAjizin fee alardi walaysa lahu min doonihi awliyaa olaika fee dalalin mubeenin",
+          "translation": "And [mention, O Muhammad], when We directed to you a few of the jinn, listening to the Qur'an. And when they attended it, they said, \"Listen quietly.\" And when it was concluded, they went back to their people as warners They said, \"O our people, indeed we have heard a [recited] Book revealed after Moses confirming what was before it which guides to the truth and to a straight path O our people, respond to the Messenger of Allah and believe in him; Allah will forgive for you your sins and protect you from a painful punishment But he who does not respond to the Caller of Allah will not cause failure [to Him] upon earth, and he will not have besides Him any protectors. Those are in manifest error",
+          "repeat": 1,
+          "note": "The jinn hear the Qur’an and call their people to answer Allah’s caller — a foundational passage in cases of jinn affliction.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m4-72-1-9",
+          "reference": "Al-Jinn 72:1-9",
+          "arabic": "قُلۡ أُوحِيَ إِلَيَّ أَنَّهُ ٱسۡتَمَعَ نَفَرٞ مِّنَ ٱلۡجِنِّ فَقَالُوٓاْ إِنَّا سَمِعۡنَا قُرۡءَانًا عَجَبٗا ﴿١﴾ يَهۡدِيٓ إِلَى ٱلرُّشۡدِ فَـَٔامَنَّا بِهِۦۖ وَلَن نُّشۡرِكَ بِرَبِّنَآ أَحَدٗا ﴿٢﴾ وَأَنَّهُۥ تَعَٰلَىٰ جَدُّ رَبِّنَا مَا ٱتَّخَذَ صَٰحِبَةٗ وَلَا وَلَدٗا ﴿٣﴾ وَأَنَّهُۥ كَانَ يَقُولُ سَفِيهُنَا عَلَى ٱللَّهِ شَطَطٗا ﴿٤﴾ وَأَنَّا ظَنَنَّآ أَن لَّن تَقُولَ ٱلۡإِنسُ وَٱلۡجِنُّ عَلَى ٱللَّهِ كَذِبٗا ﴿٥﴾ وَأَنَّهُۥ كَانَ رِجَالٞ مِّنَ ٱلۡإِنسِ يَعُوذُونَ بِرِجَالٖ مِّنَ ٱلۡجِنِّ فَزَادُوهُمۡ رَهَقٗا ﴿٦﴾ وَأَنَّهُمۡ ظَنُّواْ كَمَا ظَنَنتُمۡ أَن لَّن يَبۡعَثَ ٱللَّهُ أَحَدٗا ﴿٧﴾ وَأَنَّا لَمَسۡنَا ٱلسَّمَآءَ فَوَجَدۡنَٰهَا مُلِئَتۡ حَرَسٗا شَدِيدٗا وَشُهُبٗا ﴿٨﴾ وَأَنَّا كُنَّا نَقۡعُدُ مِنۡهَا مَقَٰعِدَ لِلسَّمۡعِۖ فَمَن يَسۡتَمِعِ ٱلۡأٓنَ يَجِدۡ لَهُۥ شِهَابٗا رَّصَدٗا ﴿٩﴾",
+          "transliteration": "Qul oohiya ilayya annahu istamaAAa nafarun mina aljinni faqaloo inna samiAAna quranan AAajaban Yahdee ila alrrushdi faamanna bihi walan nushrika birabbina ahadan Waannahu taAAala jaddu rabbina ma ittakhatha sahibatan wala waladan Waannahu kana yaqoolu safeehuna AAala Allahi shatatan Waanna thananna an lan taqoola alinsu waaljinnu AAala Allahi kathiban Waannahu kana rijalun mina alinsi yaAAoothoona birijalin mina aljinni fazadoohum rahaqan Waannahum thannoo kama thanantum an lan yabAAatha Allahu ahadan Waanna lamasna alssamaa fawajadnaha muliat harasan shadeedan washuhuban Waanna kunna naqAAudu minha maqaAAida lilssamAAi faman yastamiAAi alana yajid lahu shihaban rasadan",
+          "translation": "Say, [O Muhammad], \"It has been revealed to me that a group of the jinn listened and said, 'Indeed, we have heard an amazing Qur'an It guides to the right course, and we have believed in it. And we will never associate with our Lord anyone And [it teaches] that exalted is the nobleness of our Lord; He has not taken a wife or a son And that our foolish one has been saying about Allah an excessive transgression And we had thought that mankind and the jinn would never speak about Allah a lie And there were men from mankind who sought refuge in men from the jinn, so they [only] increased them in burden And they had thought, as you thought, that Allah would never send anyone [as a messenger] And we have sought [to reach] the heaven but found it filled with powerful guards and burning flames And we used to sit therein in positions for hearing, but whoever listens now will find a burning flame lying in wait for him",
+          "repeat": 1,
+          "note": "Surah Al-Jinn: the jinn hearing the Qur’an and submitting, and the heaven barred to them by guards and flames.",
+          "script": "uthmani"
         }
       ]
     },
@@ -423,6 +418,322 @@
           "translation": "Say: I seek refuge in the Lord of mankind, the King of mankind, the God of mankind, from the evil of the retreating whisperer, who whispers into the breasts of mankind, from among jinn and mankind.",
           "repeat": 3,
           "note": "The Prophet ﷺ would recite the Mu'awwidhat into his palms and wipe over his body every night (Sahih al-Bukhari 5017)."
+        }
+      ]
+    },
+    {
+      "id": "module-harq",
+      "title": "Module 5 · Ayatul Harq & Tadmir",
+      "subtitle": "Burning and destruction — for stubborn, entrenched resistance",
+      "icon": "fire",
+      "group": "Intensive",
+      "items": [
+        {
+          "id": "m5-3-181",
+          "reference": "Ali 'Imran 3:181",
+          "arabic": "لَّقَدۡ سَمِعَ ٱللَّهُ قَوۡلَ ٱلَّذِينَ قَالُوٓاْ إِنَّ ٱللَّهَ فَقِيرٞ وَنَحۡنُ أَغۡنِيَآءُۘ سَنَكۡتُبُ مَا قَالُواْ وَقَتۡلَهُمُ ٱلۡأَنۢبِيَآءَ بِغَيۡرِ حَقّٖ وَنَقُولُ ذُوقُواْ عَذَابَ ٱلۡحَرِيقِ",
+          "transliteration": "Laqad samiAAa Allahu qawla allatheena qaloo inna Allaha faqeerun wanahnu aghniyaon sanaktubu ma qaloo waqatlahumu alanbiyaa bighayri haqqin wanaqoolu thooqoo AAathaba alhareeqi",
+          "translation": "Allah has certainly heard the statement of those [Jews] who said, \"Indeed, Allah is poor, while we are rich.\" We will record what they said and their killing of the prophets without right and will say, \"Taste the punishment of the Burning Fire",
+          "repeat": 3,
+          "note": "Taste the punishment of the burning fire. The first of the burning verses.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-4-56",
+          "reference": "An-Nisa 4:56",
+          "arabic": "إِنَّ ٱلَّذِينَ كَفَرُواْ بِـَٔايَٰتِنَا سَوۡفَ نُصۡلِيهِمۡ نَارٗا كُلَّمَا نَضِجَتۡ جُلُودُهُم بَدَّلۡنَٰهُمۡ جُلُودًا غَيۡرَهَا لِيَذُوقُواْ ٱلۡعَذَابَۗ إِنَّ ٱللَّهَ كَانَ عَزِيزًا حَكِيمٗا",
+          "transliteration": "Inna allatheena kafaroo biayatina sawfa nusleehim naran kullama nadijat julooduhum baddalnahum juloodan ghayraha liyathooqoo alAAathaba inna Allaha kana AAazeezan hakeeman",
+          "translation": "Indeed, those who disbelieve in Our verses - We will drive them into a Fire. Every time their skins are roasted through We will replace them with other skins so they may taste the punishment. Indeed, Allah is ever Exalted in Might and Wise",
+          "repeat": 3,
+          "note": "Skins replaced so the punishment is tasted again — recited against entrenched resistance.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-5-37",
+          "reference": "Al-Ma'idah 5:37",
+          "arabic": "يُرِيدُونَ أَن يَخۡرُجُواْ مِنَ ٱلنَّارِ وَمَا هُم بِخَٰرِجِينَ مِنۡهَاۖ وَلَهُمۡ عَذَابٞ مُّقِيمٞ",
+          "transliteration": "Yureedoona an yakhrujoo mina alnnari wama hum bikharijeena minha walahum AAathabun muqeemun",
+          "translation": "They will wish to get out of the Fire, but never are they to emerge therefrom, and for them is an enduring punishment",
+          "repeat": 3,
+          "note": "They will wish to come out of the Fire, and will not.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-8-12-14",
+          "reference": "Al-Anfal 8:12-14",
+          "arabic": "إِذۡ يُوحِي رَبُّكَ إِلَى ٱلۡمَلَـٰٓئِكَةِ أَنِّي مَعَكُمۡ فَثَبِّتُواْ ٱلَّذِينَ ءَامَنُواْۚ سَأُلۡقِي فِي قُلُوبِ ٱلَّذِينَ كَفَرُواْ ٱلرُّعۡبَ فَٱضۡرِبُواْ فَوۡقَ ٱلۡأَعۡنَاقِ وَٱضۡرِبُواْ مِنۡهُمۡ كُلَّ بَنَانٖ ﴿١٢﴾ ذَٰلِكَ بِأَنَّهُمۡ شَآقُّواْ ٱللَّهَ وَرَسُولَهُۥۚ وَمَن يُشَاقِقِ ٱللَّهَ وَرَسُولَهُۥ فَإِنَّ ٱللَّهَ شَدِيدُ ٱلۡعِقَابِ ﴿١٣﴾ ذَٰلِكُمۡ فَذُوقُوهُ وَأَنَّ لِلۡكَٰفِرِينَ عَذَابَ ٱلنَّارِ ﴿١٤﴾",
+          "transliteration": "Ith yoohee rabbuka ila almalaikati annee maAAakum fathabbitoo allatheena amanoo saolqee fee quloobi allatheena kafaroo alrruAAba faidriboo fawqa alaAAnaqi waidriboo minhum kulla bananin Thalika biannahum shaqqoo Allaha warasoolahu waman yushaqiqi Allaha warasoolahu fainna Allaha shadeedu alAAiqabi Thalikum fathooqoohu waanna lilkafireena AAathaba alnnari",
+          "translation": "[Remember] when your Lord inspired to the angels, \"I am with you, so strengthen those who have believed. I will cast terror into the hearts of those who disbelieved, so strike [them] upon the necks and strike from them every fingertip That is because they opposed Allah and His Messenger. And whoever opposes Allah and His Messenger - indeed, Allah is severe in penalty That [is yours], so taste it.\" And indeed for the disbelievers is the punishment of the Fire",
+          "repeat": 3,
+          "note": "Strike above the necks and at every fingertip. Read where an entity is openly defiant.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-8-50",
+          "reference": "Al-Anfal 8:50",
+          "arabic": "وَلَوۡ تَرَىٰٓ إِذۡ يَتَوَفَّى ٱلَّذِينَ كَفَرُواْ ٱلۡمَلَـٰٓئِكَةُ يَضۡرِبُونَ وُجُوهَهُمۡ وَأَدۡبَٰرَهُمۡ وَذُوقُواْ عَذَابَ ٱلۡحَرِيقِ",
+          "transliteration": "Walaw tara ith yatawaffa allatheena kafaroo almalaikatu yadriboona wujoohahum waadbarahum wathooqoo AAathaba alhareeqi",
+          "translation": "And if you could but see when the angels take the souls of those who disbelieved... They are striking their faces and their backs and [saying], \"Taste the punishment of the Burning Fire",
+          "repeat": 3,
+          "note": "The angels striking the faces and backs of those who disbelieved.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-14-15-17",
+          "reference": "Ibrahim 14:15-17",
+          "arabic": "وَٱسۡتَفۡتَحُواْ وَخَابَ كُلُّ جَبَّارٍ عَنِيدٖ ﴿١٥﴾ مِّن وَرَآئِهِۦ جَهَنَّمُ وَيُسۡقَىٰ مِن مَّآءٖ صَدِيدٖ ﴿١٦﴾ يَتَجَرَّعُهُۥ وَلَا يَكَادُ يُسِيغُهُۥ وَيَأۡتِيهِ ٱلۡمَوۡتُ مِن كُلِّ مَكَانٖ وَمَا هُوَ بِمَيِّتٖۖ وَمِن وَرَآئِهِۦ عَذَابٌ غَلِيظٞ ﴿١٧﴾",
+          "transliteration": "Waistaftahoo wakhaba kullu jabbarin AAaneedin Min waraihi jahannamu wayusqa min main sadeedin YatajarraAAuhu wala yakadu yuseeghuhu wayateehi almawtu min kulli makanin wama huwa bimayyitin wamin waraihi AAathabun ghaleethun",
+          "translation": "And they requested victory from Allah, and disappointed, [therefore], was every obstinate tyrant Before him is Hell, and he will be given a drink of purulent water He will gulp it but will hardly [be able to] swallow it. And death will come to him from everywhere, but he is not to die. And before him is a massive punishment",
+          "repeat": 3,
+          "note": "Every obstinate tyrant brought to ruin, given water of pus, death coming from every side.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-22-19-22",
+          "reference": "Al-Hajj 22:19-22",
+          "arabic": "۞هَٰذَانِ خَصۡمَانِ ٱخۡتَصَمُواْ فِي رَبِّهِمۡۖ فَٱلَّذِينَ كَفَرُواْ قُطِّعَتۡ لَهُمۡ ثِيَابٞ مِّن نَّارٖ يُصَبُّ مِن فَوۡقِ رُءُوسِهِمُ ٱلۡحَمِيمُ ﴿١٩﴾ يُصۡهَرُ بِهِۦ مَا فِي بُطُونِهِمۡ وَٱلۡجُلُودُ ﴿٢٠﴾ وَلَهُم مَّقَٰمِعُ مِنۡ حَدِيدٖ ﴿٢١﴾ كُلَّمَآ أَرَادُوٓاْ أَن يَخۡرُجُواْ مِنۡهَا مِنۡ غَمٍّ أُعِيدُواْ فِيهَا وَذُوقُواْ عَذَابَ ٱلۡحَرِيقِ ﴿٢٢﴾",
+          "transliteration": "Hathani khasmani ikhtasamoo fee rabbihim faallatheena kafaroo quttiAAat lahum thiyabun min narin yusabbu min fawqi ruoosihimu alhameemu Yusharu bihi ma fee butoonihim waaljuloodu Walahum maqamiAAu min hadeedin Kullama aradoo an yakhrujoo minha min ghammin oAAeedoo feeha wathooqoo AAathaba alhareeqi",
+          "translation": "These are two adversaries who have disputed over their Lord. But those who disbelieved will have cut out for them garments of fire. Poured upon their heads will be scalding water By which is melted that within their bellies and [their] skins And for [striking] them are maces of iron Every time they want to get out of Hellfire from anguish, they will be returned to it, and [it will be said], \"Taste the punishment of the Burning Fire",
+          "repeat": 3,
+          "note": "Garments of fire, scalding water, hooked rods of iron — the most explicit of the destruction verses.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m5-34-54",
+          "reference": "Saba 34:54",
+          "arabic": "وَحِيلَ بَيۡنَهُمۡ وَبَيۡنَ مَا يَشۡتَهُونَ كَمَا فُعِلَ بِأَشۡيَاعِهِم مِّن قَبۡلُۚ إِنَّهُمۡ كَانُواْ فِي شَكّٖ مُّرِيبِۭ",
+          "transliteration": "Waheela baynahum wabayna ma yashtahoona kama fuAAila biashyaAAihim min qablu innahum kanoo fee shakkin mureebin",
+          "translation": "And prevention will be placed between them and what they desire, as was done with their kind before. Indeed, they were in disquieting denial",
+          "repeat": 3,
+          "note": "A barrier placed between them and what they desire, as was done with their kind before.",
+          "script": "uthmani"
+        }
+      ]
+    },
+    {
+      "id": "module-qital",
+      "title": "Module 6 · Ayatul Qital",
+      "subtitle": "Warfare — where the target manifests outright aggression",
+      "icon": "bolt",
+      "group": "Intensive",
+      "items": [
+        {
+          "id": "m6-2-191-193",
+          "reference": "Al-Baqarah 2:191-193",
+          "arabic": "وَٱقۡتُلُوهُمۡ حَيۡثُ ثَقِفۡتُمُوهُمۡ وَأَخۡرِجُوهُم مِّنۡ حَيۡثُ أَخۡرَجُوكُمۡۚ وَٱلۡفِتۡنَةُ أَشَدُّ مِنَ ٱلۡقَتۡلِۚ وَلَا تُقَٰتِلُوهُمۡ عِندَ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ حَتَّىٰ يُقَٰتِلُوكُمۡ فِيهِۖ فَإِن قَٰتَلُوكُمۡ فَٱقۡتُلُوهُمۡۗ كَذَٰلِكَ جَزَآءُ ٱلۡكَٰفِرِينَ ﴿١٩١﴾ فَإِنِ ٱنتَهَوۡاْ فَإِنَّ ٱللَّهَ غَفُورٞ رَّحِيمٞ ﴿١٩٢﴾ وَقَٰتِلُوهُمۡ حَتَّىٰ لَا تَكُونَ فِتۡنَةٞ وَيَكُونَ ٱلدِّينُ لِلَّهِۖ فَإِنِ ٱنتَهَوۡاْ فَلَا عُدۡوَٰنَ إِلَّا عَلَى ٱلظَّـٰلِمِينَ ﴿١٩٣﴾",
+          "transliteration": "Waoqtuloohum haythu thaqiftumoohum waakhrijoohum min haythu akhrajookum waalfitnatu ashaddu mina alqatli wala tuqatiloohum AAinda almasjidi alharami hatta yuqatilookum feehi fain qatalookum faoqtuloohum kathalika jazao alkafireena Faini intahaw fainna Allaha ghafoorun raheemun Waqatiloohum hatta la takoona fitnatun wayakoona alddeenu lillahi faini intahaw fala AAudwana illa AAala alththalimeena",
+          "translation": "And kill them wherever you overtake them and expel them from wherever they have expelled you, and fitnah is worse than killing. And do not fight them at al-Masjid al- Haram until they fight you there. But if they fight you, then kill them. Such is the recompense of the disbelievers And if they cease, then indeed, Allah is Forgiving and Merciful Fight them until there is no [more] fitnah and [until] worship is [acknowledged to be] for Allah. But if they cease, then there is to be no aggression except against the oppressors",
+          "repeat": 3,
+          "note": "The command to fight those who fight you, until persecution ends and worship is for Allah alone.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m6-2-244",
+          "reference": "Al-Baqarah 2:244",
+          "arabic": "وَقَٰتِلُواْ فِي سَبِيلِ ٱللَّهِ وَٱعۡلَمُوٓاْ أَنَّ ٱللَّهَ سَمِيعٌ عَلِيمٞ",
+          "transliteration": "Waqatiloo fee sabeeli Allahi waiAAlamoo anna Allaha sameeAAun AAaleemun",
+          "translation": "And fight in the cause of Allah and know that Allah is Hearing and Knowing",
+          "repeat": 3,
+          "note": "Fight in the cause of Allah, and know that Allah is Hearing and Knowing.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m6-3-13",
+          "reference": "Ali 'Imran 3:13",
+          "arabic": "قَدۡ كَانَ لَكُمۡ ءَايَةٞ فِي فِئَتَيۡنِ ٱلۡتَقَتَاۖ فِئَةٞ تُقَٰتِلُ فِي سَبِيلِ ٱللَّهِ وَأُخۡرَىٰ كَافِرَةٞ يَرَوۡنَهُم مِّثۡلَيۡهِمۡ رَأۡيَ ٱلۡعَيۡنِۚ وَٱللَّهُ يُؤَيِّدُ بِنَصۡرِهِۦ مَن يَشَآءُۚ إِنَّ فِي ذَٰلِكَ لَعِبۡرَةٗ لِّأُوْلِي ٱلۡأَبۡصَٰرِ",
+          "transliteration": "Qad kana lakum ayatun fee fiatayni iltaqata fiatun tuqatilu fee sabeeli Allahi waokhra kafiratun yarawnahum mithlayhim raya alAAayni waAllahu yuayyidu binasrihi man yashao inna fee thalika laAAibratan liolee alabsari",
+          "translation": "Already there has been for you a sign in the two armies which met - one fighting in the cause of Allah and another of disbelievers. They saw them [to be] twice their [own] number by [their] eyesight. But Allah supports with His victory whom He wills. Indeed in that is a lesson for those of vision",
+          "repeat": 3,
+          "note": "The two forces that met — one fighting for Allah, the other disbelieving, seeing them twice their number.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m6-4-76",
+          "reference": "An-Nisa 4:76",
+          "arabic": "ٱلَّذِينَ ءَامَنُواْ يُقَٰتِلُونَ فِي سَبِيلِ ٱللَّهِۖ وَٱلَّذِينَ كَفَرُواْ يُقَٰتِلُونَ فِي سَبِيلِ ٱلطَّـٰغُوتِ فَقَٰتِلُوٓاْ أَوۡلِيَآءَ ٱلشَّيۡطَٰنِۖ إِنَّ كَيۡدَ ٱلشَّيۡطَٰنِ كَانَ ضَعِيفًا",
+          "transliteration": "Allatheena amanoo yuqatiloona fee sabeeli Allahi waallatheena kafaroo yuqatiloona fee sabeeli alttaghooti faqatiloo awliyaa alshshaytani inna kayda alshshaytani kana daAAeefan",
+          "translation": "Those who believe fight in the cause of Allah, and those who disbelieve fight in the cause of Taghut. So fight against the allies of Satan. Indeed, the plot of Satan has ever been weak",
+          "repeat": 3,
+          "note": "The believers fight in the cause of Allah, the disbelievers in the cause of Taghut — the plot of Shaytan is ever weak.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m6-8-39",
+          "reference": "Al-Anfal 8:39",
+          "arabic": "وَقَٰتِلُوهُمۡ حَتَّىٰ لَا تَكُونَ فِتۡنَةٞ وَيَكُونَ ٱلدِّينُ كُلُّهُۥ لِلَّهِۚ فَإِنِ ٱنتَهَوۡاْ فَإِنَّ ٱللَّهَ بِمَا يَعۡمَلُونَ بَصِيرٞ",
+          "transliteration": "Waqatiloohum hatta la takoona fitnatun wayakoona alddeenu kulluhu lillahi faini intahaw fainna Allaha bima yaAAmaloona baseerun",
+          "translation": "And fight them until there is no fitnah and [until] the religion, all of it, is for Allah. And if they cease - then indeed, Allah is Seeing of what they do",
+          "repeat": 3,
+          "note": "Fight until there is no persecution and the religion is entirely for Allah.",
+          "script": "uthmani"
+        }
+      ]
+    },
+    {
+      "id": "module-sakinah",
+      "title": "Module 7 · Ayatul Sakinah",
+      "subtitle": "Tranquility — read immediately after an intensive session",
+      "icon": "spa",
+      "group": "Intensive",
+      "items": [
+        {
+          "id": "m7-2-248",
+          "reference": "Al-Baqarah 2:248",
+          "arabic": "وَقَالَ لَهُمۡ نَبِيُّهُمۡ إِنَّ ءَايَةَ مُلۡكِهِۦٓ أَن يَأۡتِيَكُمُ ٱلتَّابُوتُ فِيهِ سَكِينَةٞ مِّن رَّبِّكُمۡ وَبَقِيَّةٞ مِّمَّا تَرَكَ ءَالُ مُوسَىٰ وَءَالُ هَٰرُونَ تَحۡمِلُهُ ٱلۡمَلَـٰٓئِكَةُۚ إِنَّ فِي ذَٰلِكَ لَأٓيَةٗ لَّكُمۡ إِن كُنتُم مُّؤۡمِنِينَ",
+          "transliteration": "Waqala lahum nabiyyuhum inna ayata mulkihi an yatiyakumu alttabootu feehi sakeenatun min rabbikum wabaqiyyatun mimma taraka alu moosa waalu haroona tahmiluhu almalaikatu inna fee thalika laayatan lakum in kuntum mumineena",
+          "translation": "And their prophet said to them, \"Indeed, a sign of his kingship is that the chest will come to you in which is assurance from your Lord and a remnant of what the family of Moses and the family of Aaron had left, carried by the angels. Indeed in that is a sign for you, if you are believers",
+          "repeat": 3,
+          "note": "The ark carrying sakinah from your Lord. The first of the tranquility verses.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m7-9-26",
+          "reference": "At-Tawbah 9:26",
+          "arabic": "ثُمَّ أَنزَلَ ٱللَّهُ سَكِينَتَهُۥ عَلَىٰ رَسُولِهِۦ وَعَلَى ٱلۡمُؤۡمِنِينَ وَأَنزَلَ جُنُودٗا لَّمۡ تَرَوۡهَا وَعَذَّبَ ٱلَّذِينَ كَفَرُواْۚ وَذَٰلِكَ جَزَآءُ ٱلۡكَٰفِرِينَ",
+          "transliteration": "Thumma anzala Allahu sakeenatahu AAala rasoolihi waAAala almumineena waanzala junoodan lam tarawha waAAaththaba allatheena kafaroo wathalika jazao alkafireena",
+          "translation": "Then Allah sent down His tranquillity upon His Messenger and upon the believers and sent down soldiers angels whom you did not see and punished those who disbelieved. And that is the recompense of the disbelievers",
+          "repeat": 3,
+          "note": "Allah sent down His sakinah upon His Messenger and upon the believers.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m7-9-40",
+          "reference": "At-Tawbah 9:40",
+          "arabic": "إِلَّا تَنصُرُوهُ فَقَدۡ نَصَرَهُ ٱللَّهُ إِذۡ أَخۡرَجَهُ ٱلَّذِينَ كَفَرُواْ ثَانِيَ ٱثۡنَيۡنِ إِذۡ هُمَا فِي ٱلۡغَارِ إِذۡ يَقُولُ لِصَٰحِبِهِۦ لَا تَحۡزَنۡ إِنَّ ٱللَّهَ مَعَنَاۖ فَأَنزَلَ ٱللَّهُ سَكِينَتَهُۥ عَلَيۡهِ وَأَيَّدَهُۥ بِجُنُودٖ لَّمۡ تَرَوۡهَا وَجَعَلَ كَلِمَةَ ٱلَّذِينَ كَفَرُواْ ٱلسُّفۡلَىٰۗ وَكَلِمَةُ ٱللَّهِ هِيَ ٱلۡعُلۡيَاۗ وَٱللَّهُ عَزِيزٌ حَكِيمٌ",
+          "transliteration": "Illa tansuroohu faqad nasarahu Allahu ith akhrajahu allatheena kafaroo thaniya ithnayni ith huma fee alghari ith yaqoolu lisahibihi la tahzan inna Allaha maAAana faanzala Allahu sakeenatahu AAalayhi waayyadahu bijunoodin lam tarawha wajaAAala kalimata allatheena kafaroo alssufla wakalimatu Allahi hiya alAAulya waAllahu AAazeezun hakeemun",
+          "translation": "If you do not aid the Prophet - Allah has already aided him when those who disbelieved had driven him out [of Makkah] as one of two, when they were in the cave and he said to his companion, \"Do not grieve; indeed Allah is with us.\" And Allah sent down his tranquillity upon him and supported him with angels you did not see and made the word of those who disbelieved the lowest, while the word of Allah - that is the highest. And Allah is Exalted in Might and Wise",
+          "repeat": 7,
+          "note": "'Do not grieve; indeed Allah is with us.' Recited against fear and residual distress.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m7-48-4",
+          "reference": "Al-Fath 48:4",
+          "arabic": "هُوَ ٱلَّذِيٓ أَنزَلَ ٱلسَّكِينَةَ فِي قُلُوبِ ٱلۡمُؤۡمِنِينَ لِيَزۡدَادُوٓاْ إِيمَٰنٗا مَّعَ إِيمَٰنِهِمۡۗ وَلِلَّهِ جُنُودُ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۚ وَكَانَ ٱللَّهُ عَلِيمًا حَكِيمٗا",
+          "transliteration": "Huwa allathee anzala alssakeenata fee quloobi almumineena liyazdadoo eemanan maAAa eemanihim walillahi junoodu alssamawati waalardi wakana Allahu AAaleeman hakeeman",
+          "translation": "It is He who sent down tranquillity into the hearts of the believers that they would increase in faith along with their [present] faith. And to Allah belong the soldiers of the heavens and the earth, and ever is Allah Knowing and Wise",
+          "repeat": 3,
+          "note": "He sent down sakinah into the hearts of the believers, that they would increase in faith.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m7-48-18",
+          "reference": "Al-Fath 48:18",
+          "arabic": "۞لَّقَدۡ رَضِيَ ٱللَّهُ عَنِ ٱلۡمُؤۡمِنِينَ إِذۡ يُبَايِعُونَكَ تَحۡتَ ٱلشَّجَرَةِ فَعَلِمَ مَا فِي قُلُوبِهِمۡ فَأَنزَلَ ٱلسَّكِينَةَ عَلَيۡهِمۡ وَأَثَٰبَهُمۡ فَتۡحٗا قَرِيبٗا",
+          "transliteration": "Laqad radiya Allahu AAani almumineena ith yubayiAAoonaka tahta alshshajarati faAAalima ma fee quloobihim faanzala alsakeenata AAalayhim waathabahum fathan qareeban",
+          "translation": "Certainly was Allah pleased with the believers when they pledged allegiance to you, [O Muhammad], under the tree, and He knew what was in their hearts, so He sent down tranquillity upon them and rewarded them with an imminent conquest",
+          "repeat": 3,
+          "note": "Allah pleased with the believers, sending sakinah upon them.",
+          "script": "uthmani"
+        },
+        {
+          "id": "m7-48-26",
+          "reference": "Al-Fath 48:26",
+          "arabic": "إِذۡ جَعَلَ ٱلَّذِينَ كَفَرُواْ فِي قُلُوبِهِمُ ٱلۡحَمِيَّةَ حَمِيَّةَ ٱلۡجَٰهِلِيَّةِ فَأَنزَلَ ٱللَّهُ سَكِينَتَهُۥ عَلَىٰ رَسُولِهِۦ وَعَلَى ٱلۡمُؤۡمِنِينَ وَأَلۡزَمَهُمۡ كَلِمَةَ ٱلتَّقۡوَىٰ وَكَانُوٓاْ أَحَقَّ بِهَا وَأَهۡلَهَاۚ وَكَانَ ٱللَّهُ بِكُلِّ شَيۡءٍ عَلِيمٗا",
+          "transliteration": "Ith jaAAala allatheena kafaroo fee quloobihimu alhamiyyata hamiyyata aljahiliyyati faanzala Allahu sakeenatahu AAala rasoolihi waAAala almumineena waalzamahum kalimata alttaqwa wakanoo ahaqqa biha waahlaha wakana Allahu bikulli shayin AAaleeman",
+          "translation": "When those who disbelieved had put into their hearts chauvinism - the chauvinism of the time of ignorance. But Allah sent down His tranquillity upon His Messenger and upon the believers and imposed upon them the word of righteousness, and they were more deserving of it and worthy of it. And ever is Allah, of all things, Knowing",
+          "repeat": 3,
+          "note": "Allah sent down His sakinah upon His Messenger and upon the believers, and fastened them to the word of righteousness.",
+          "script": "uthmani"
+        }
+      ]
+    },
+    {
+      "id": "module-shield",
+      "title": "Module 8 · Morning & Evening Shield",
+      "subtitle": "The masnun daily dhikr, with counters",
+      "icon": "wb_sunny",
+      "group": "Daily Practice",
+      "items": [
+        {
+          "id": "m8-tahlil",
+          "reference": "The Shield Against Shaytan",
+          "arabic": "لا إِلهَ إِلاَّ اللهُ وَحْدَهُ لا شَرِيكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+          "transliteration": "Laa ilaaha illallahu wahdahu laa shareeka lah, lahul-mulku wa lahul-hamdu, wa huwa 'alaa kulli shai'in qadeer.",
+          "translation": "There is no god but Allah alone, with no partner. His is the dominion and His is the praise, and He is over all things capable.",
+          "repeat": 10,
+          "note": "Ten times for the standard baseline. One hundred times gives the protection reported for a full day (Sahih al-Bukhari 3293, Sahih Muslim 2691) — tap through ten rounds of ten."
+        },
+        {
+          "id": "m8-earth-sky",
+          "reference": "The Earth and Sky Fortress",
+          "arabic": "بِسْمِ اللهِ الَّذِي لا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلا فِي السَّمَاءِ وَهُوَ السَّمِيعُ العَلِيمُ",
+          "transliteration": "Bismillaahil-ladhee laa yadurru ma'asmihi shai'un fil-ardi wa laa fis-samaa'i wa huwas-samee'ul-'aleem.",
+          "translation": "In the name of Allah, with whose name nothing on earth or in the heavens can cause harm, and He is the All-Hearing, the All-Knowing.",
+          "repeat": 3,
+          "note": "Three times in the morning and three in the evening; nothing harms the one who says it (Abu Dawud 5088, Tirmidhi 3388)."
+        },
+        {
+          "id": "m8-kalimat",
+          "reference": "The Universal Protection Formula",
+          "arabic": "أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+          "transliteration": "A'oodhu bi-kalimaatillaahit-taammaati min sharri maa khalaq.",
+          "translation": "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+          "repeat": 3,
+          "note": "Three times at dawn and dusk. Whoever says it in the evening, no harm will befall him that night (Sahih Muslim 2708, Tirmidhi 3604)."
+        },
+        {
+          "id": "m8-hasbiyallah",
+          "reference": "The Sufficiency Invocation",
+          "arabic": "حَسْبِيَ اللهُ لا إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ العَرْشِ العَظِيمِ",
+          "transliteration": "Hasbiyallaahu laa ilaaha illaa huwa; 'alaihi tawakkaltu wa huwa rabbul-'arshil-'adheem.",
+          "translation": "Allah is sufficient for me; there is no god but Him. Upon Him I rely, and He is the Lord of the Magnificent Throne.",
+          "repeat": 7,
+          "note": "Seven times morning and evening, against severe anxiety and the effects of spellcraft (Abu Dawud 5081)."
+        }
+      ]
+    },
+    {
+      "id": "module-situational",
+      "title": "Module 9 · Situational Routines",
+      "subtitle": "Before sleep, localized pain, and securing the house",
+      "icon": "nights_stay",
+      "group": "Daily Practice",
+      "items": [
+        {
+          "id": "m9-sleep-wudu",
+          "reference": "Before sleep — wudu and dust the bed",
+          "arabic": "",
+          "transliteration": "",
+          "translation": "",
+          "repeat": 3,
+          "note": "Perform wudu, then dust the bed three times with the edge of your garment before lying down (Sahih al-Bukhari 6320)."
+        },
+        {
+          "id": "m9-sleep-recite",
+          "reference": "Before sleep — Ayat al-Kursi and the end of Al-Baqarah",
+          "arabic": "",
+          "transliteration": "",
+          "translation": "",
+          "repeat": 1,
+          "note": "Recite Ayat al-Kursi (2:255) and the closing verses of Al-Baqarah (2:284-286) — both are in Module 1. A guardian from Allah remains over you and no devil approaches until morning (Sahih al-Bukhari 2311, 5009)."
+        },
+        {
+          "id": "m9-sleep-quls",
+          "reference": "Before sleep — the three Quls into the palms",
+          "arabic": "",
+          "transliteration": "",
+          "translation": "",
+          "repeat": 3,
+          "note": "Cup your hands, recite Al-Ikhlas, Al-Falaq and An-Nas into them, blow lightly, and wipe over as much of the body as you can reach, starting with the head and face. Repeat three times (Sahih al-Bukhari 5017)."
+        },
+        {
+          "id": "m9-pain",
+          "reference": "Localized pain — hand on the place that hurts",
+          "arabic": "أَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",
+          "transliteration": "A'oodhu billaahi wa qudratihi min sharri maa ajidu wa uhaadhiru.",
+          "translation": "I seek refuge in Allah and His power from the evil of what I find and what I fear.",
+          "repeat": 7,
+          "note": "Place your right hand on the place that hurts, say \"Bismillah\" three times, then recite this seven times (Sahih Muslim 2202)."
+        },
+        {
+          "id": "m9-home-entry",
+          "reference": "Securing the house at dusk",
+          "arabic": "بِسْمِ اللَّهِ",
+          "transliteration": "Bismillah.",
+          "translation": "In the name of Allah.",
+          "repeat": 1,
+          "note": "At nightfall bring the children in, shut the doors, close the windows and cover vessels — saying \"Bismillah\" each time (Sahih al-Bukhari 3304, Sahih Muslim 2012)."
         }
       ]
     },

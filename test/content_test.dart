@@ -35,9 +35,57 @@ void main() {
     expect(dawah.every((c) => c.items.isNotEmpty), isTrue);
   });
 
-  test('the original ruqyah categories stay ungrouped', () {
+  test('the baseline modules and Sword stay ungrouped, in order', () {
     final top = categories.where((c) => c.group.isEmpty).map((c) => c.id);
-    expect(top, ['common', 'sihr', 'hasad', 'unseen', 'adhkar', 'sword']);
+    expect(top, [
+      'module-general',
+      'module-sihr',
+      'module-ayn',
+      'module-jinn',
+      'sword',
+    ]);
+  });
+
+  test('intensive and daily-practice modules are grouped out of Session', () {
+    Iterable<String> group(String name) =>
+        categories.where((c) => c.group == name).map((c) => c.id);
+
+    expect(group('Intensive'),
+        ['module-harq', 'module-qital', 'module-sakinah']);
+    expect(group('Daily Practice'), ['module-shield', 'module-situational']);
+  });
+
+  test('reused imlaei passages keep their tajweed colouring', () {
+    // These came with the repository as imlaei text and are carried over
+    // verbatim, so the parser still applies to them.
+    final byId = {
+      for (final c in categories)
+        for (final i in c.items) i.id: i,
+    };
+    for (final id in [
+      'm1-fatihah',
+      'm1-ayat-kursi',
+      'm1-ikhlas',
+      'm1-falaq',
+      'm1-nas',
+      'm2-baqarah-102',
+      'm2-araf-117-122',
+      'm3-nisa-54',
+      'm3-qalam-51-52',
+    ]) {
+      expect(byId[id], isNotNull, reason: '$id is missing');
+      expect(byId[id]!.supportsTajweed, isTrue, reason: '$id lost tajweed');
+    }
+  });
+
+  test('module 9 procedural steps carry a note instead of Arabic', () {
+    final situational =
+        categories.firstWhere((c) => c.id == 'module-situational');
+    final stepsWithoutArabic =
+        situational.items.where((i) => i.arabic.isEmpty).toList();
+
+    expect(stepsWithoutArabic, isNotEmpty);
+    expect(stepsWithoutArabic.every((i) => i.note.isNotEmpty), isTrue);
   });
 
   test('every item id is unique across the whole file', () {
@@ -53,12 +101,11 @@ void main() {
     expect(items.every((i) => !i.supportsTajweed), isTrue);
   });
 
-  test('ruqyah items keep the default script and their tajweed colouring', () {
-    final items = [
-      for (final c in categories.where((c) => c.group.isEmpty)) ...c.items
-    ];
-    expect(items.every((i) => i.script.isEmpty), isTrue);
-    expect(items.every((i) => i.supportsTajweed), isTrue);
+  test('the Sword section is untouched imlaei with tajweed', () {
+    final sword = categories.firstWhere((c) => c.id == 'sword');
+    expect(sword.items, hasLength(20));
+    expect(sword.items.every((i) => i.script.isEmpty), isTrue);
+    expect(sword.items.every((i) => i.supportsTajweed), isTrue);
   });
 
   test('every Dawah item carries a note, translation and transliteration', () {

@@ -53,14 +53,16 @@ lib/
     ayat_detail_screen.dart        Full item view with prev/next navigation and repeat counter
     session_screen.dart            Guided checklist across all categories (state not persisted)
     bookmarks_screen.dart          List of bookmarked items
-assets/data/ruqyah.json            All content: {"categories": [...]}, 9 categories, 110 items
-                                   (6 ruqyah categories + the 3 grouped under Dawah)
+assets/data/ruqyah.json            All content: {"categories": [...]}, 13 categories, 137 items
+                                   (Modules 1-4 + Sword top level; Modules 5-7 grouped as
+                                   Intensive, 8-9 as Daily Practice, and 3 under Dawah)
 test/tajweed_test.dart             Unit tests for the tajweed parser
 test/theme_store_test.dart         Unit and widget tests for the appearance setting
 test/qql_helper_test.dart          Integration tests against the real native library
 test/qql_data_test.dart            Asset declaration, unpacking, and an end-to-end query
 test/home_shell_test.dart          Bottom-navigation and category-grouping widget tests
-test/dawah_content_test.dart       Dawah structure, and Arabic checked against sources/
+test/content_test.dart             Module/group structure, tajweed opt-outs, and Arabic
+                                   checked byte-for-byte against sources/
 third_party/qql/                   Vendored QQL: C header, prebuilt Linux .so, licence,
                                    and README.md with provenance and rebuild steps
 android/app/src/main/jniLibs/      QQL native libs, 3 ABIs — built by cargo-ndk, see above
@@ -74,7 +76,7 @@ Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each cate
 
 Two optional fields carry behaviour:
 
-- **`group`** on a category nests it under a menu. Categories sharing a group value are replaced on the home screen by a single card (titled with the group, subtitled with its section titles) that opens `CategoryGroupScreen`, and they are **excluded from the Session checklist**, which is for ruqyah recitation. The Dawah sections use `"group": "Dawah"`.
+- **`group`** on a category nests it under a menu. Categories sharing a group value are replaced on the home screen by a single card (titled with the group, subtitled with its section titles) that opens `CategoryGroupScreen`, and they are **excluded from the Session checklist**. The three groups in use are `Intensive` (Modules 5-7, deployed only against active resistance), `Daily Practice` (Modules 8-9, standalone routines) and `Dawah` (reference material). What is left at top level — Modules 1-4 and Sword — is exactly what a baseline ruqyah session should walk through.
 - **`script`** on an item declares its orthography. `"uthmani"` marks passages taken from the Quran data in `sources/`, which writes sukun as U+06E1 rather than U+0652; those render without tajweed colouring via `RuqyahItem.supportsTajweed`, because the parser targets the imlaei text used everywhere else in the file. Omit it for imlaei content.
 
 ## Architecture and conventions
@@ -131,7 +133,7 @@ The JSON asset is the app's whole database, and three couplings in it are not vi
 
 Prefer editing this file with a script (Python's `json` module round-trips it cleanly with `ensure_ascii=False, indent=2`) over hand-editing Arabic strings, and reuse existing `arabic`/`transliteration`/`translation` values verbatim when a passage already appears elsewhere in the file rather than retyping them.
 
-**Never retype Quranic Arabic.** For new passages, copy them out of `sources/quran-json-arabic/dist/chapters/en/{surah}.json`, which carries text, transliteration and translation per ayah — that is how the Dawah sections were generated. Mark anything taken from there with `"script": "uthmani"`. Multi-ayah passages join verses with an `﴿٢٨٥﴾`-style marker (Arabic-Indic digits) after each verse; single-ayah passages carry no marker. `test/dawah_content_test.dart` re-checks a sample of passages against the source files, so hand-edits to that Arabic will fail the suite. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
+**Never retype Quranic Arabic.** For new passages, copy them out of `sources/quran-json-arabic/dist/chapters/en/{surah}.json`, which carries text, transliteration and translation per ayah — that is how the modules and the Dawah sections were generated. Mark anything taken from there with `"script": "uthmani"`. Where a passage *already exists in this file* as imlaei text, reuse that item verbatim instead, so it keeps its tajweed colouring: nine passages in Modules 1-3 (Al-Fatihah, Ayat al-Kursi, the Mu'awwidhat, 2:102, 7:117-122, 4:54, 68:51-52) are carried over that way, and the whole Sword section is untouched imlaei. Multi-ayah passages join verses with an `﴿٢٨٥﴾`-style marker (Arabic-Indic digits) after each verse; single-ayah passages carry no marker. `test/dawah_content_test.dart` re-checks a sample of passages against the source files, so hand-edits to that Arabic will fail the suite. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
 
 ## Security and content considerations
 

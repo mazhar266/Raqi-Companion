@@ -6,28 +6,44 @@ Everything ships inside the app. There is no backend, no network access, no acco
 
 ## Features
 
-- **Browse by category** — six groups of ruqyah content, each item showing Arabic, transliteration, translation, and a short note on its source or use.
+- **Nine ruqyah modules** — a baseline routine, targeted sets for sihr, evil eye and jinn, intensive arrays for active resistance, and the masnun daily dhikr. Each item shows Arabic, transliteration, translation, and a note on its source or use.
 - **Query tab** — look up any ayah, hadith, or supplication with a compact reference such as `Q:2:1-5,255`, `HM:27:1-3`, or `B:1:1`, covering the whole Quran, Hisnul Muslim, and the nine hadith books. Android only; see below.
 - **Tajweed colouring** — the Arabic is coloured by recitation rule (ghunnah, idgham, ikhfa, iqlab, qalqalah, madd), with a legend explaining each colour.
 - **Repetition counter** — items with a recommended repetition count get a tap counter and a progress bar.
 - **Dawah reference** — a menu of three sections (Jewish friends, Christian friends, and Shaytan), each a list of relevant ayat with a note on how the verse is meant to be used. Reference material, so it stays out of the recitation session.
-- **Guided session** — a checklist across every ruqyah category with overall progress, for working through a full recitation.
+- **Guided session** — a checklist across the baseline modules and Sword with overall progress. The intensive, daily-practice and Dawah sections stay out of it deliberately.
 - **Bookmarks** — saved locally and kept between launches.
 - **Light, dark, or system appearance** — follows your device by default; pick Light or Dark explicitly and the app remembers it.
 
 ## Content
 
+**Core modules** — the baseline a session walks through:
+
 | Section | Items | Contents |
 | --- | --- | --- |
-| Common Ayats | 6 | Al-Fatihah, Ayat al-Kursi, end of Al-Baqarah, the Mu'awwidhat |
-| Ayats Against Sihr (Magic) | 4 | Musa and the magicians, the ayah of Babylon |
-| Hasad & 'Ayn (Envy / Evil Eye) | 4 | Verses and du'as against envy and the evil eye |
-| Verses of the Unseen (Jinn) | 4 | Surah Al-Jinn, the watchers of the heaven, Al-Hashr |
-| Protection Adhkar (Before / After) | 4 | Daily adhkar and the du'a for the sick |
+| Module 1 · General Ruqyah | 7 | Al-Fatihah, 2:1-5, Ayat al-Kursi, 2:284-286, the Mu'awwidhat |
+| Module 2 · Sihr | 5 | Nullifying sorcery and breaking spells |
+| Module 3 · Ayn & Hasad | 4 | Evil eye and envy |
+| Module 4 · Jinn Presence | 5 | Surah Al-Jinn, Al-Ahqaf, Al-Mu'minun |
 | Sword | 20 | Ayat as-Sayf — the sword verses, in order as one full program |
-| **Dawah** → Jewish Friends | 22 | Common ground, the Torah honoured, prophethood |
-| **Dawah** → Christian Friends | 26 | Isa and Maryam, and where the difference lies |
-| **Dawah** → Shaytan | 20 | His strategy, the limits of his power, the refuge |
+
+**Intensive** — used only when an entity shows active resistance, so kept out of the session:
+
+| Section | Items | Contents |
+| --- | --- | --- |
+| Module 5 · Ayatul Harq & Tadmir | 8 | Burning and destruction verses |
+| Module 6 · Ayatul Qital | 5 | Warfare verses, for outright aggression |
+| Module 7 · Ayatul Sakinah | 6 | Tranquility — read straight after an intensive session |
+
+**Daily Practice** and **Dawah**:
+
+| Section | Items | Contents |
+| --- | --- | --- |
+| Module 8 · Morning & Evening Shield | 4 | Masnun dhikr with counters (×10, ×3, ×3, ×7) |
+| Module 9 · Situational Routines | 5 | Before sleep, localized pain, securing the house |
+| Dawah → Jewish Friends | 22 | Common ground, the Torah honoured, prophethood |
+| Dawah → Christian Friends | 26 | Isa and Maryam, and where the difference lies |
+| Dawah → Shaytan | 20 | His strategy, the limits of his power, the refuge |
 
 All of it lives in a single bundled asset, `assets/data/ruqyah.json`.
 

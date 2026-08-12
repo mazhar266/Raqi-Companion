@@ -35,6 +35,14 @@ IconData categoryIcon(String name) {
       return Icons.favorite_outline;
     case 'sword':
       return Icons.security_outlined;
+    case 'fire':
+      return Icons.local_fire_department_outlined;
+    case 'bolt':
+      return Icons.bolt_outlined;
+    case 'spa':
+      return Icons.spa_outlined;
+    case 'nights_stay':
+      return Icons.nights_stay_outlined;
     default:
       return Icons.bookmark_outline;
   }
