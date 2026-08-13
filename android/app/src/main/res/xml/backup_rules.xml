@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android Auto Backup rules for API 30 and below (android:fullBackupContent).
+  API 31+ uses data_extraction_rules.xml instead; keep the two in step.
+
+  Listing only <exclude> means everything else is still backed up, which is
+  what we want: shared_prefs holds the bookmarks, the appearance setting and
+  the user's lists, and all of that is small and worth keeping.
+
+  The exclusion matters. lib/qql/qql_data.dart unpacks ~150 MB of Quran and
+  hadith JSON into files/qql/, and Auto Backup allows 25 MB per app — over
+  that the whole backup fails, so without this the lists would not be backed
+  up either. The directory is rebuilt from bundled assets on first launch, so
+  excluding it loses nothing.
+-->
+<full-backup-content>
+    <exclude domain="file" path="qql/" />
+</full-backup-content>

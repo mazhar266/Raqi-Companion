@@ -78,6 +78,7 @@ test/content_test.dart             Module/group structure, tajweed opt-outs, and
 third_party/qql/                   Vendored QQL: C header, prebuilt Linux .so, licence,
                                    and README.md with provenance and rebuild steps
 android/app/src/main/jniLibs/      QQL native libs, 3 ABIs — built by cargo-ndk, see above
+android/app/src/main/res/xml/      Auto Backup rules; keep both files in step
 sources/                           QQL data (150 MB, 6791 files) — Quran, Hisnul Muslim,
                                    nine hadith books, each in per-chapter and flat form.
                                    Read from the filesystem, NOT the Flutter asset bundle
@@ -189,6 +190,7 @@ Prefer editing this file with a script (Python's `json` module round-trips it cl
 
 - The app is fully offline: no network calls, no permissions beyond defaults, no user data leaves the device. Do not add network permissions or telemetry without an explicit request.
 - The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'`, the appearance setting under `'themeMode'`, and the user's lists under `'userLists'` (a JSON array of `{id, name, queries}`).
+- **Android Auto Backup copies app storage to the user's Google Drive**, and is on by default. That is wanted for `shared_prefs`, but the quota is **25 MB per app** and `QqlData` unpacks ~150 MB into `files/qql/` — over quota the *entire* backup fails, so without an exclusion the lists would not be backed up either. `android/app/src/main/res/xml/backup_rules.xml` (API ≤30) and `data_extraction_rules.xml` (API 31+) exclude that directory; it is regenerable from assets, so nothing is lost. The path in those XML files is a plain string, so `test/backup_rules_test.dart` ties it to `QqlData.directoryName` and fails if either side is renamed. Keep the two rule files in step.
 - **User lists store QQL queries, not resolved text**, so one entry can stand for a whole passage and the text survives a data update. They therefore only resolve where QQL runs, and the Lists tab degrades on web the same way the Query tab does.
 - **List backups carry references only** — names and QQL queries, no Arabic or translations — which is why an export is a couple of kilobytes and stays valid across a data update. `lib/list_backup.dart` is pure and does the encoding, validation and error messages; `list_backup_actions.dart` owns the file dialogs. A malformed file is rejected whole rather than imported in part, and importing reassigns ids so a file restored onto a device that already has lists cannot collide. Bump `backupFormatVersion` only for a breaking shape change — the decoder refuses anything newer than it understands.
 - Android release builds are signed with the debug key — fix the signing config in `android/app/build.gradle.kts` before any real distribution.

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Backup and device-transfer rules for API 31+ (android:dataExtractionRules).
+  backup_rules.xml covers API 30 and below; keep the two in step.
+
+  Both sections exclude the unpacked QQL data for the same reason: it is about
+  150 MB, Auto Backup allows 25 MB per app, and it is regenerable from the
+  bundled assets. Everything else — shared_prefs, holding bookmarks, the
+  appearance setting and the user's lists — is left included.
+
+  device-transfer has no size limit, but copying 150 MB of regenerable JSON
+  across would only make the transfer slower.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="qql/" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="qql/" />
+    </device-transfer>
+</data-extraction-rules>

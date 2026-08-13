@@ -19,6 +19,16 @@ class QqlData {
   /// Paths under this must be preserved exactly.
   static const assetPrefix = 'sources/';
 
+  /// Subdirectory of the application support directory the data unpacks into.
+  ///
+  /// On Android that resolves under `getFilesDir()`, which Android Auto Backup
+  /// copies to the user's Google Drive by default. 150 MB would blow the
+  /// 25 MB per-app quota and take the rest of the backup — the lists and
+  /// bookmarks — down with it, so the Android backup rules exclude this
+  /// directory by name. It is regenerable from assets, so nothing is lost.
+  /// `test/backup_rules_test.dart` fails if the two ever disagree.
+  static const directoryName = 'qql';
+
   /// Bump to force a re-unpack after the bundled data changes.
   ///
   /// 2: added dist/verses and db/by_book for QQL's flat numbering.
@@ -46,7 +56,8 @@ class QqlData {
     }
 
     final root = into ??
-        Directory('${(await getApplicationSupportDirectory()).path}/qql');
+        Directory('${(await getApplicationSupportDirectory()).path}/'
+            '$directoryName');
     final marker = File('${root.path}/$_markerName');
 
     if (await marker.exists() && await marker.readAsString() == dataVersion) {
