@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../theme_store.dart';
 import '../user_lists.dart';
+import 'app_menu.dart';
 import 'list_detail_screen.dart';
 
 /// The user's own lists: create, rename, delete, and open.
 class ListsScreen extends StatelessWidget {
-  const ListsScreen({super.key, required this.store});
+  const ListsScreen({super.key, required this.store, required this.themeStore});
 
   final UserListStore store;
+  final ThemeStore themeStore;
 
   Future<void> _create(BuildContext context) async {
     final name = await _promptForName(context, title: 'New list');
@@ -26,7 +29,10 @@ class ListsScreen extends StatelessWidget {
       builder: (context, _) {
         final lists = store.lists;
         return Scaffold(
-          appBar: AppBar(title: const Text('Lists')),
+          appBar: AppBar(
+            title: const Text('Lists'),
+            actions: [AppMenuButton(themeStore: themeStore)],
+          ),
           floatingActionButton: FloatingActionButton.extended(
             onPressed: () => _create(context),
             icon: const Icon(Icons.add),

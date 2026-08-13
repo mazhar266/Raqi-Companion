@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:raqi_companion/screens/settings_screen.dart';
 import 'package:raqi_companion/theme_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -75,23 +76,13 @@ void main() {
     expect(reloaded.mode, ThemeMode.system);
   });
 
-  testWidgets('picker offers all three modes and applies a choice',
+  testWidgets('settings offers all three modes and applies a choice',
       (tester) async {
     SharedPreferences.setMockInitialValues({});
     final store = ThemeStore();
     await store.load();
 
-    await tester.pumpWidget(MaterialApp(
-      home: Builder(
-        builder: (context) => Scaffold(
-          body: ElevatedButton(
-            onPressed: () => showThemePicker(context, store),
-            child: const Text('open'),
-          ),
-        ),
-      ),
-    ));
-    await tester.tap(find.text('open'));
+    await tester.pumpWidget(MaterialApp(home: SettingsScreen(themeStore: store)));
     await tester.pumpAndSettle();
 
     expect(find.text('Light'), findsOneWidget);

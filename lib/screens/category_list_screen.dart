@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../bookmarks.dart';
 import '../models.dart';
 import '../theme_store.dart';
+import 'app_menu.dart';
 import 'bookmarks_screen.dart';
 import 'category_group_screen.dart';
 import 'item_list_screen.dart';
@@ -65,13 +66,7 @@ class CategoryListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Raqi Companion'),
-        actions: [
-          IconButton(
-            tooltip: 'Appearance',
-            icon: Icon(themeStore.mode.icon),
-            onPressed: () => showThemePicker(context, themeStore),
-          ),
-        ],
+        actions: [AppMenuButton(themeStore: themeStore)],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

@@ -35,6 +35,7 @@ lib/
   bookmarks.dart                   BookmarkStore (ChangeNotifier) backed by shared_preferences
   user_lists.dart                  UserListStore (ChangeNotifier): the user's own lists
   surahs.dart                      Surah metadata and buildQuery() for the visual picker
+  version.dart                     appVersion / appBuildNumber, mirrored from pubspec.yaml
   theme_store.dart                 ThemeStore (ChangeNotifier) for the Light/Dark/System
                                    setting, plus the appearance picker sheet
   tajweed.dart                     Tajweed rule parser (parseTajweed), rule colours,
@@ -50,6 +51,9 @@ lib/
     home_shell.dart                Root screen: bottom NavigationBar over the two tabs
     category_list_screen.dart      Browse tab; also maps category icon names to IconData
     category_group_screen.dart     The sections nested under one group (e.g. Dawah)
+    app_menu.dart                  Overflow menu (Settings, About) on every tab
+    settings_screen.dart           Appearance (theme mode) and the tajweed legend
+    about_screen.dart              Contributor, bundled components, and the version
     lists_screen.dart              Lists tab: create, rename, delete
     list_detail_screen.dart        One list, entries resolved through QQL, reorderable
     add_entry_sheet.dart           Query builder: dropdowns, or a typed reference
@@ -93,7 +97,9 @@ Two optional fields carry behaviour:
 - **No routing package and no named routes.** Navigation uses `Navigator.push(MaterialPageRoute(...))` directly.
 - **Data loading:** `DataService.loadCategories()` reads the JSON asset once via `rootBundle` and caches it in a static field; `main.dart` drives it with a `FutureBuilder`.
 - **Styling:** single theme factory `_theme(Brightness)` in `lib/main.dart` (Material 3, seed color `0xFF6B5D4F`) builds both the light and dark themes; Arabic text is rendered through `arabicText(context, arabic)` in `lib/tajweed.dart`, which applies the shared `arabicStyle(context)` helper, RTL direction, and tajweed colouring. Any new colour must be defined for both brightnesses — read it off the `ColorScheme` where possible, or follow the `TajweedRule` pattern of an explicit light/dark pair.
-- **Theme mode:** `ThemeStore` in `lib/theme_store.dart` holds a `ThemeMode` persisted under the `'themeMode'` key as `ThemeMode.name`; an unrecognised or missing value falls back to `ThemeMode.system`, so the app follows the device until the user picks Light or Dark, and remembers that choice until they change it. The picker (`showThemePicker`) is a bottom sheet reached from the home screen app bar; it uses a `RadioGroup` ancestor because `RadioListTile.groupValue`/`onChanged` are deprecated in this Flutter version.
+- **Theme mode:** `ThemeStore` in `lib/theme_store.dart` holds a `ThemeMode` persisted under the `'themeMode'` key as `ThemeMode.name`; an unrecognised or missing value falls back to `ThemeMode.system`, so the app follows the device until the user picks Light or Dark, and remembers that choice until they change it. The picker lives in `SettingsScreen` and uses a `RadioGroup` ancestor because `RadioListTile.groupValue`/`onChanged` are deprecated in this Flutter version.
+- **Settings and About** are reached from `AppMenuButton`, an overflow menu each tab puts in its own app bar — the tabs keep separate `Scaffold`s, so there is no shared bar to hang it on. Adding a tab means adding the menu to it.
+- **Version:** `lib/version.dart` mirrors `pubspec.yaml` by hand rather than pulling in `package_info_plus`, and `test/version_test.dart` reads the pubspec and fails if the two drift. Bump both together.
 - **Tajweed colouring:** `parseTajweed(String)` in `lib/tajweed.dart` is a pure function splitting vocalised Arabic into `TajweedSegment`s tagged with a `TajweedRule`. It reads the diacritics that are actually written, so it only works on fully vocalised text. It covers the noon sakin/tanwin rules (izhar, idgham with and without ghunnah, iqlab, ikhfa), the meem sakin rules, ghunnah, qalqalah sughra, and madd of 4-6 counts; natural 2-count madd is deliberately left uncoloured. Colours live on the `TajweedRule` enum, one per brightness. Any change to the rules must keep `test/tajweed_test.dart` green — including the round-trip tests over both `assets/data/ruqyah.json` and all 6236 ayat of `sources/`.
 - **Two orthographies.** The parser handles the imlaei text in `ruqyah.json` and the Uthmani text in `sources/`, which spell things differently. The Uthmani conventions were verified against the data and must not be "simplified" away:
   - Sukun is **U+06E1**, not U+0652.
@@ -182,5 +188,5 @@ Prefer editing this file with a script (Python's `json` module round-trips it cl
 - The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'`, the appearance setting under `'themeMode'`, and the user's lists under `'userLists'` (a JSON array of `{id, name, queries}`).
 - **User lists store QQL queries, not resolved text**, so one entry can stand for a whole passage and the text survives a data update. They therefore only resolve where QQL runs, and the Lists tab degrades on web the same way the Query tab does.
 - Android release builds are signed with the debug key — fix the signing config in `android/app/build.gradle.kts` before any real distribution.
-- The vendored QQL library is **GPL-3.0-or-later**. Shipping the app linked against it makes the combined work GPL-3, and this repository still has no `LICENSE` file. See `third_party/qql/README.md`.
+- The vendored QQL library is **GPL-3.0-or-later**. Shipping the app linked against it makes the combined work GPL-3, and this repository still has no `LICENSE` file. The About screen names QQL and its licence, which is the minimum GPL requires of a shipped binary; a `LICENSE` file is still owed. See `third_party/qql/README.md`.
 - `assets/data/ruqyah.json` contains religious content (Quranic verses with translations). Treat its text with care: do not alter Arabic strings, references, or translations unless explicitly asked, and validate the JSON after any edit (it must remain valid UTF-8 and parse cleanly).

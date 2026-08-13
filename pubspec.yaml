@@ -26,6 +26,7 @@ flutter:
   assets:
     - assets/data/ruqyah.json
     - assets/data/surahs.json
+    - assets/icon/app_icon.png
     # QQL data. The native library reads these with std::fs, so they are
     # unpacked to app storage at first launch (lib/qql/qql_data.dart) rather
     # than read from the bundle. Asset directories are not recursive, so every

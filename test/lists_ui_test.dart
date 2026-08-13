@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raqi_companion/screens/add_entry_sheet.dart';
 import 'package:raqi_companion/screens/lists_screen.dart';
+import 'package:raqi_companion/theme_store.dart';
 import 'package:raqi_companion/user_lists.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -16,7 +17,10 @@ void main() {
     final store = UserListStore();
     await store.load();
 
-    await tester.pumpWidget(MaterialApp(home: ListsScreen(store: store)));
+    final themeStore = ThemeStore();
+    await themeStore.load();
+    await tester.pumpWidget(MaterialApp(
+        home: ListsScreen(store: store, themeStore: themeStore)));
     expect(find.text('No lists yet'), findsOneWidget);
 
     await tester.tap(find.text('New list'));
@@ -39,7 +43,10 @@ void main() {
     final list = await store.create('Evening');
     await store.addQuery(list.id, 'Q:2:255');
 
-    await tester.pumpWidget(MaterialApp(home: ListsScreen(store: store)));
+    final themeStore = ThemeStore();
+    await themeStore.load();
+    await tester.pumpWidget(MaterialApp(
+        home: ListsScreen(store: store, themeStore: themeStore)));
     await tester.pump();
 
     expect(find.text('Evening'), findsOneWidget);

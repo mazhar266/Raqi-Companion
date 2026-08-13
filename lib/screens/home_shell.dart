@@ -45,8 +45,8 @@ class _HomeShellState extends State<HomeShell> {
             bookmarks: widget.bookmarks,
             themeStore: widget.themeStore,
           ),
-          ListsScreen(store: widget.userLists),
-          const QqlQueryScreen(),
+          ListsScreen(store: widget.userLists, themeStore: widget.themeStore),
+          QqlQueryScreen(themeStore: widget.themeStore),
         ],
       ),
       bottomNavigationBar: NavigationBar(

@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 import '../qql/qql_data.dart';
 import '../qql/qql_helper.dart';
 import '../tajweed.dart';
+import '../theme_store.dart';
+import 'app_menu.dart';
 
 /// Runs a QQL query and shows the resolved records.
 ///
 /// QQL references look like `Q:2:1-5,255` — source, primary index, then an
 /// optional selector. See third_party/qql/README.md for the full grammar.
 class QqlQueryScreen extends StatefulWidget {
-  const QqlQueryScreen({super.key});
+  const QqlQueryScreen({super.key, required this.themeStore});
+
+  final ThemeStore themeStore;
 
   @override
   State<QqlQueryScreen> createState() => _QqlQueryScreenState();
@@ -110,7 +114,10 @@ class _QqlQueryScreenState extends State<QqlQueryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Query')),
+      appBar: AppBar(
+        title: const Text('Query'),
+        actions: [AppMenuButton(themeStore: widget.themeStore)],
+      ),
       body: switch (_stage) {
         _Stage.unsupported => const _Notice(
             icon: Icons.web_asset_off_outlined,

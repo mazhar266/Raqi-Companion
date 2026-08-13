@@ -14,7 +14,7 @@ Everything ships inside the app. There is no backend, no network access, no acco
 - **Dawah reference** — a menu of three sections (Jewish friends, Christian friends, and Shaytan), each a list of relevant ayat with a note on how the verse is meant to be used. Reference material, so it stays out of the recitation session.
 - **Guided session** — a checklist across the baseline modules and Sword with overall progress. The intensive, daily-practice and Dawah sections stay out of it deliberately.
 - **Bookmarks** — saved locally and kept between launches.
-- **Light, dark, or system appearance** — follows your device by default; pick Light or Dark explicitly and the app remembers it.
+- **Light, dark, or system appearance** — follows your device by default; pick Light or Dark explicitly and the app remembers it. Under **Settings**, in the overflow menu at the top right, alongside **About**.
 
 ## Content
 

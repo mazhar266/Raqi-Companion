@@ -96,6 +96,9 @@ for density, size in ADAPTIVE.items():
     write(inset(size, ADAPTIVE_SCALE, (0, 0, 0, 0)),
           f'android/app/src/main/res/mipmap-{density}/ic_launcher_foreground.png')
 
+print('In-app (About screen):')
+write(full_bleed(256), 'assets/icon/app_icon.png')
+
 print('Web:')
 write(full_bleed(32), 'web/favicon.png')
 write(full_bleed(192), 'web/icons/Icon-192.png')
