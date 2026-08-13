@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sampled from icon/icon.png so the adaptive background and the artwork's
+     own field are the same green and the seam between them is invisible. -->
+<resources>
+    <color name="ic_launcher_background">#0A342B</color>
+</resources>

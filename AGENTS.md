@@ -69,6 +69,8 @@ android/app/src/main/jniLibs/      QQL native libs, 3 ABIs — built by cargo-nd
 sources/                           QQL data (150 MB, 6791 files) — Quran, Hisnul Muslim,
                                    nine hadith books, each in per-chapter and flat form.
                                    Read from the filesystem, NOT the Flutter asset bundle
+icon/icon.png                      Source app icon (1254px). The single source of truth
+tool/generate_icons.py             Regenerates every launcher/web icon from it
 web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
@@ -97,6 +99,32 @@ Two optional fields carry behaviour:
 - **Language:** all code, comments, and UI strings are in English; content data includes Arabic and transliteration.
 - **Linting:** `analysis_options.yaml` includes `package:flutter_lints/flutter.yaml` with no overrides. Code currently passes `flutter analyze` with zero issues — keep it that way.
 - **Dependency policy:** the app is intentionally dependency-light. Confirm a package is truly needed before adding one, and pin it in `pubspec.yaml`.
+
+## App icon
+
+`icon/icon.png` is the only file to edit. Everything else is generated — never hand-edit
+the mipmaps or `web/icons/`:
+
+```bash
+python3 tool/generate_icons.py     # needs Pillow; no Flutter/Gradle involvement
+```
+
+It writes three shapes, because one image cannot serve all of them:
+
+- **Legacy Android mipmaps** (`mipmap-{m,h,xh,xxh,xxxh}dpi/ic_launcher.png`) and the plain
+  web icons — the artwork full-bleed, keeping its own rounded corners. Used below API 26.
+- **Adaptive foreground** (`ic_launcher_foreground.png` + `mipmap-anydpi-v26/ic_launcher.xml`)
+  — used from API 26. Launcher masks only guarantee the central 66%, and this artwork's
+  wordmark runs close to its edge, so the foreground insets the artwork to 74% over
+  `@color/ic_launcher_background`. That colour is sampled from the artwork's own border
+  ring, and the artwork's edge is feathered, so the two greens join invisibly.
+  Deliberately **no `<monochrome>` layer**: Android tints it by alpha alone and this
+  foreground is a near-solid square, so a themed icon would render as a blob.
+- **Web maskable icons** — the same treatment against the more generous 80% maskable
+  safe zone.
+
+`flutter_launcher_icons` is deliberately not used; the script is a few lines of Pillow and
+keeps the dependency list where it is.
 
 ## Build and run commands
 

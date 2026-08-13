@@ -70,6 +70,15 @@ flutter build web && rm -rf build/web/assets/sources   # output in build/web
 
 > Android release builds are currently signed with the debug key. Set a real signing config in `android/app/build.gradle.kts` before distributing.
 
+## App icon
+
+`icon/icon.png` is the source. After changing it, regenerate the Android launcher icons
+and the web icons (needs Pillow):
+
+```bash
+python3 tool/generate_icons.py
+```
+
 ## Development
 
 ```bash
