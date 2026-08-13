@@ -7,7 +7,7 @@ Everything ships inside the app. There is no backend, no network access, no acco
 ## Features
 
 - **Nine ruqyah modules** — a baseline routine, targeted sets for sihr, evil eye and jinn, intensive arrays for active resistance, and the masnun daily dhikr. Each item shows Arabic, transliteration, translation, and a note on its source or use.
-- **Query tab** — look up any ayah, hadith, or supplication with a compact reference such as `Q:2:1-5,255`, `HM:27:1-3`, or `B:1:1`, covering the whole Quran, Hisnul Muslim, and the nine hadith books. Android only; see below.
+- **Query tab** — look up any ayah, hadith, or supplication with a compact reference such as `Q:2:1-5,255`, `HM:27:1-3`, or `B:1:1`, covering the whole Quran, Hisnul Muslim, and the nine hadith books. Doubling the colon numbers across the whole book instead, so `B::6018` is Bukhari hadith 6018 as it is normally cited. Android only; see below.
 - **Tajweed colouring** — the Arabic is coloured by recitation rule (ghunnah, idgham, ikhfa, iqlab, qalqalah, madd), with a legend explaining each colour.
 - **Repetition counter** — items with a recommended repetition count get a tap counter and a progress bar.
 - **Dawah reference** — a menu of three sections (Jewish friends, Christian friends, and Shaytan), each a list of relevant ayat with a note on how the verse is meant to be used. Reference material, so it stays out of the recitation session.
@@ -65,8 +65,8 @@ flutter build web && rm -rf build/web/assets/sources   # output in build/web
 ```
 
 > The `rm` is not optional housekeeping. Flutter cannot declare assets per platform, so
-> the web build bundles 64 MB of query data that a browser can never read — it triples the
-> deploy artifact. Browsers never request the files, so users download nothing extra.
+> the web build bundles 150 MB of query data that a browser can never read. Browsers never
+> request the files, so users download nothing extra — but the deploy artifact balloons.
 
 > Android release builds are currently signed with the debug key. Set a real signing config in `android/app/build.gradle.kts` before distributing.
 

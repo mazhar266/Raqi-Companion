@@ -66,8 +66,9 @@ test/content_test.dart             Module/group structure, tajweed opt-outs, and
 third_party/qql/                   Vendored QQL: C header, prebuilt Linux .so, licence,
                                    and README.md with provenance and rebuild steps
 android/app/src/main/jniLibs/      QQL native libs, 3 ABIs — built by cargo-ndk, see above
-sources/                           QQL data (64 MB) — Quran, Hisnul Muslim, nine hadith
-                                   books. Read from the filesystem, NOT a Flutter asset
+sources/                           QQL data (150 MB, 6791 files) — Quran, Hisnul Muslim,
+                                   nine hadith books, each in per-chapter and flat form.
+                                   Read from the filesystem, NOT the Flutter asset bundle
 web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
@@ -90,7 +91,8 @@ Two optional fields carry behaviour:
 - **QQL (`lib/qql/`):** a vendored Rust library reached over `dart:ffi`, resolving references like `Q:2:1-5,255` against the JSON in `sources/`. It is **not wired into any screen yet** — the app's own content still comes entirely from `assets/data/ruqyah.json`. Three things constrain how it can be used:
   - **No web.** `dart:ffi` does not exist there. `lib/qql/qql_helper.dart` conditionally exports the FFI implementation or a stub, so the app still compiles for web; guard call sites with `QqlHelper.isSupported` rather than catching. Never import `qql_helper_io.dart` or `qql_helper_web.dart` directly, and never import `vendor/qql.dart` outside `qql_helper_io.dart` — any of those breaks the web build.
   - **Data must be unpacked before use.** The library reads with `std::fs` and cannot see the asset bundle, so `QqlData.ensureUnpacked()` copies `sources/` to app storage on first launch and returns the path for `QqlHelper.open`. Bump `QqlData.dataVersion` when the bundled data changes. Asset directories are not recursive — every leaf directory is listed in `pubspec.yaml`, and `test/qql_data_test.dart` guards the counts.
-  - **The web build bundles the 64 MB of data pointlessly** (no per-platform assets in Flutter); strip `build/web/assets/sources/` after building. See `third_party/qql/README.md`.
+  - **Two numbering forms.** `B:1:1` counts within a chapter; `B::6018` counts across the whole book, which is what ordinary citations mean. Each form reads from its own data directory, so both are vendored. `QqlRecord.isBookNumbering` distinguishes them, and `reference` formats accordingly — never print a flat number as `chapter:number`.
+  - **The web build bundles the 150 MB of data pointlessly** (no per-platform assets in Flutter); strip `build/web/assets/sources/` after building. See `third_party/qql/README.md`.
   - **`dispose()` is mandatory.** The context is native memory with no finalizer.
 - **Language:** all code, comments, and UI strings are in English; content data includes Arabic and transliteration.
 - **Linting:** `analysis_options.yaml` includes `package:flutter_lints/flutter.yaml` with no overrides. Code currently passes `flutter analyze` with zero issues — keep it that way.

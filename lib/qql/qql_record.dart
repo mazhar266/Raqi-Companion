@@ -53,16 +53,28 @@ class QqlRecord {
   int? get number => extra['number'] as int?;
   String? get narrator => extra['narrator'] as String?;
 
-  /// A human-readable citation, shaped to the source.
+  /// True when the record was addressed by book-wide numbering (`SOURCE::n`)
+  /// rather than by position within a chapter.
   ///
-  /// Quran records read `Al-Ikhlas 112:1`; everything else falls back to the
-  /// collection name with whatever chapter and item numbers are present.
+  /// In that form [number] counts across the whole collection — `B::100` is
+  /// hadith 100 of Sahih al-Bukhari, not the 100th of its chapter — so it must
+  /// not be printed as `chapter:number`. Records still report the chapter they
+  /// belong to.
+  bool get isBookNumbering => extra['numbering'] == 'book';
+
+  /// A human-readable citation, shaped to the source and numbering form.
+  ///
+  /// Quran records read `Al-Ikhlas 112:1` whichever form addressed them, since
+  /// surah:ayah is the citation people expect. Hadith and supplications read
+  /// `Sahih al-Bukhari 100` under book-wide numbering and
+  /// `Sahih al-Bukhari 1:1` within a chapter.
   String get reference {
     if (surah != null) {
       final name = extra['surah_name_en'] as String?;
       final base = name == null ? 'Surah $surah' : '$name $surah';
       return ayah == null ? base : '$base:$ayah';
     }
+    if (isBookNumbering && number != null) return '$collection $number';
     if (chapter == null) return collection;
     return number == null
         ? '$collection $chapter'

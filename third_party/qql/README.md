@@ -1,8 +1,23 @@
 # QQL — vendored
 
-Copied from `~/Projects/QQ Lang` (<https://github.com/mazhar266/QQ-Lang>), version **0.1.0**, commit **e1846b4**.
+Copied from `~/Projects/QQ Lang` (<https://github.com/mazhar266/QQ-Lang>), version **0.1.0**, commit **3669756**.
 
 QQL parses compact references to Islamic texts — `Q:2:1-5,255`, `HM:27:1-3`, `B:1:1` — and resolves them against local JSON data. Upstream is a Rust crate with a C ABI; what lives here is the C header, one prebuilt native library, and the Dart FFI binding.
+
+## Numbering: two forms
+
+Every source addresses items two ways, and the difference matters when formatting a citation:
+
+| Form | Meaning | Example |
+| --- | --- | --- |
+| `SOURCE:primary:n` | position **within** the chapter or surah | `B:1:1` — first hadith of chapter 1 |
+| `SOURCE::n` | position **across the whole book** | `B::6018` — Bukhari hadith 6018 |
+
+The flat form is what ordinary citations mean. Records resolved that way carry
+`"numbering": "book"`, surfaced as `QqlRecord.isBookNumbering`, and `QqlRecord.reference`
+uses it to avoid printing `6018` as if it were an item within a chapter. Quran records keep
+`surah:ayah` either way, since that is the citation people expect. Bounds are the whole
+collection: 1–6236 for the Quran, 1–7277 for Bukhari, 1–267 for Hisnul Muslim.
 
 ## What is vendored
 
@@ -18,15 +33,19 @@ The Dart binding sits in `lib/qql/vendor/` rather than here because Dart cannot 
 
 ## Data
 
-`sources/` at the repository root holds the subset of the upstream data submodules that QQL actually reads, 64 MB in total:
+`sources/` at the repository root holds the subset of the upstream data submodules that QQL actually reads — 150 MB across 6,791 files:
 
-| Directory | Size | Enables |
-| --- | --- | --- |
-| `quran-json-arabic/dist/chapters/en/` | 3.3 MB | `Q:` — 114 surahs, Arabic + English |
-| `Hisn-Muslim-Json/husn_en.json` | 288 KB | `HM:` / `HISN:` — Hisnul Muslim |
-| `hadith-json/db/by_chapter/the_9_books/` | 61 MB | `B: M: AD: T: N: IM:` and the rest of the nine books |
+| Directory | Size | Files | Enables |
+| --- | --- | --- | --- |
+| `quran-json-arabic/dist/chapters/en/` | 3.3 MB | 115 | `Q:2:255` — per-surah |
+| `quran-json-arabic/dist/verses/` | 27 MB | 6236 | `Q::100` — flat, one file per ayah |
+| `Hisn-Muslim-Json/husn_en.json` | 288 KB | 1 | `HM:` / `HISN:`, both forms |
+| `hadith-json/db/by_chapter/the_9_books/` | 61 MB | 429 | `B:1:1` — per-chapter |
+| `hadith-json/db/by_book/the_9_books/` | 60 MB | 9 | `B::6018` — flat, whole-book |
 
-Not vendored: the ten other Quran translation languages, and the `by_book` hadith files (a second copy of the same hadith under book-global numbering). Upstream is 256 MB in full.
+Each numbering form reads from its own directory, so dropping one silently disables that
+form while the other keeps working. Not vendored: the ten other Quran translation
+languages. Upstream is 256 MB in full.
 
 The paths are hard-coded in the resolvers (`src/sources/quran.rs`, `hadith.rs`, `hisnul.rs`), so the directory layout under `sources/` must be preserved exactly.
 
@@ -78,16 +97,18 @@ Two things to know when changing the data:
 - **Bump `QqlData.dataVersion`** after changing the bundled files, or existing installs
   keep their old unpacked copy.
 
-Cost: the release APK goes from 47.7 MB to **66.4 MB** (JSON compresses well, so 64 MB of
-data adds ~19 MB).
+Cost: the release APK is **90.0 MB**, of which ~64 MB is this data (150 MB on disk, JSON
+compresses well). First launch unpacks 6,791 files, dominated by the 6,236 single-ayah
+files — the Query tab shows a progress count while it runs, but it is not instant on a
+slow device.
 
 ### The web build carries this data pointlessly
 
 Flutter has no per-platform asset declaration, so `flutter build web` also bundles all
-64 MB into `build/web/assets/sources/` even though the web build can never read it. The
+150 MB into `build/web/assets/sources/` even though the web build can never read it. The
 files are served individually and are never actually requested by a browser, so users
-download nothing extra — but the deploy artifact grows from 41 MB to 105 MB. Strip it
-after building:
+download nothing extra — but the deploy artifact grows by that much. Strip it after
+building:
 
 ```bash
 flutter build web && rm -rf build/web/assets/sources

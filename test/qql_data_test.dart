@@ -21,13 +21,16 @@ void main() {
     // Asset directories are not recursive, so a missing pubspec entry shows up
     // here as a whole collection quietly vanishing.
     expect(assets, isNotEmpty, reason: 'no sources/ assets declared');
-    expect(assets.where((k) => k.contains('quran-json-arabic')), hasLength(115));
+    expect(assets.where((k) => k.contains('chapters/en')), hasLength(115));
     expect(assets.where((k) => k.contains('Hisn-Muslim-Json')), hasLength(1));
     expect(
-      assets.where((k) => k.contains('hadith-json')),
+      assets.where((k) => k.contains('by_chapter')),
       hasLength(429),
       reason: 'expected all nine hadith book directories',
     );
+    // Needed by QQL's flat numbering — SOURCE::n.
+    expect(assets.where((k) => k.contains('dist/verses')), hasLength(6236));
+    expect(assets.where((k) => k.contains('by_book')), hasLength(9));
   });
 
   group('unpacking', () {
@@ -67,6 +70,15 @@ void main() {
             .existsSync(),
         isTrue,
       );
+      expect(
+        File('$path/hadith-json/db/by_book/the_9_books/bukhari.json')
+            .existsSync(),
+        isTrue,
+      );
+      expect(
+        File('$path/quran-json-arabic/dist/verses/100.json').existsSync(),
+        isTrue,
+      );
     });
 
     test('is a no-op once the marker matches', () async {
@@ -88,6 +100,9 @@ void main() {
       expect(qql.query('Q:112:1').single.reference, 'Al-Ikhlas 112:1');
       expect(qql.query('B:1:1').single.collection, 'Sahih al-Bukhari');
       expect(qql.query('HM:27:1').single.source, 'HM');
+      // Flat numbering needs dist/verses and db/by_book to have unpacked too.
+      expect(qql.query('Q::100').single.reference, 'Al-Baqarah 2:93');
+      expect(qql.query('B::6018').single.reference, 'Sahih al-Bukhari 6018');
     },
         skip: Platform.isLinux && File(_libraryPath).existsSync()
             ? null

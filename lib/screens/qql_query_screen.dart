@@ -18,7 +18,16 @@ class QqlQueryScreen extends StatefulWidget {
 enum _Stage { preparing, ready, unsupported, failed }
 
 class _QqlQueryScreenState extends State<QqlQueryScreen> {
-  static const _examples = ['Q:2:255', 'Q:112', 'Q:2:1-5,255', 'HM:27:1-3', 'B:1:1'];
+  // A mix of the chapter form and the flat book-wide form (SOURCE::n).
+  static const _examples = [
+    'Q:2:255',
+    'Q:112',
+    'Q:2:1-5,255',
+    'HM:27:1-3',
+    'B:1:1',
+    'B::6018',
+    'Q::100',
+  ];
 
   final _controller = TextEditingController();
   final _scrollController = ScrollController();
@@ -198,8 +207,10 @@ class _QqlQueryScreenState extends State<QqlQueryScreen> {
         icon: Icons.search,
         title: 'Enter a query',
         detail: 'source : primary : selector — for example Q:2:1-5,255 for '
-            'Surah 2 ayat 1 to 5 plus ayah 255. Sources include Q (Quran), '
-            'HM (Hisnul Muslim) and B, M, AD, T, N, IM (hadith).',
+            'Surah 2 ayat 1 to 5 plus ayah 255. Double the colon to number '
+            'across the whole book instead: B::6018 is Bukhari hadith 6018. '
+            'Sources include Q (Quran), HM (Hisnul Muslim) and '
+            'B, M, AD, T, N, IM (hadith).',
       );
     }
     if (records.isEmpty) {

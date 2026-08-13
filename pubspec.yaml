@@ -30,7 +30,11 @@ flutter:
     # than read from the bundle. Asset directories are not recursive, so every
     # leaf directory has to be listed.
     - sources/quran-json-arabic/dist/chapters/en/
+    # One file per ayah, for the flat Quran form (Q::100).
+    - sources/quran-json-arabic/dist/verses/
     - sources/Hisn-Muslim-Json/
+    # Whole-book files, for the flat hadith form (B::6018).
+    - sources/hadith-json/db/by_book/the_9_books/
     - sources/hadith-json/db/by_chapter/the_9_books/abudawud/
     - sources/hadith-json/db/by_chapter/the_9_books/ahmed/
     - sources/hadith-json/db/by_chapter/the_9_books/bukhari/

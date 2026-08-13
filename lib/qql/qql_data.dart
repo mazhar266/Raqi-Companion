@@ -20,7 +20,9 @@ class QqlData {
   static const assetPrefix = 'sources/';
 
   /// Bump to force a re-unpack after the bundled data changes.
-  static const dataVersion = '1';
+  ///
+  /// 2: added dist/verses and db/by_book for QQL's flat numbering.
+  static const dataVersion = '2';
 
   static const _markerName = '.qql-data-version';
 

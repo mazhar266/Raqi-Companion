@@ -73,6 +73,60 @@ void main() {
       expect(qql.query('Q:114'), hasLength(6));
     });
 
+    group('flat book-wide numbering', () {
+      test('Q::n counts across the whole mushaf', () {
+        final record = qql.query('Q::100').single;
+
+        expect(record.isBookNumbering, isTrue);
+        expect(record.number, 100);
+        // The 100th ayah of the mushaf is Al-Baqarah 2:93.
+        expect(record.surah, 2);
+        expect(record.ayah, 93);
+        // Quran citations stay surah:ayah whichever form addressed them.
+        expect(record.reference, 'Al-Baqarah 2:93');
+      });
+
+      test('B::n uses traditional hadith citation numbering', () {
+        final record = qql.query('B::6018').single;
+
+        expect(record.isBookNumbering, isTrue);
+        expect(record.number, 6018);
+        // Must not read as chapter:number — 6018 counts across the book.
+        expect(record.reference, 'Sahih al-Bukhari 6018');
+        expect(record.chapter, isNotNull);
+      });
+
+      test('HM::n works across Hisnul Muslim', () {
+        final record = qql.query('HM::75').single;
+        expect(record.isBookNumbering, isTrue);
+        expect(record.reference, 'Hisnul Muslim 75');
+      });
+
+      test('ranges and lists work in the flat form', () {
+        expect(qql.query('Q::1-7'), hasLength(7));
+        expect(qql.query('B::1-3,10'), hasLength(4));
+      });
+
+      test('the chapter form keeps its own numbering', () {
+        final record = qql.query('B:1:1').single;
+        expect(record.isBookNumbering, isFalse);
+        expect(record.reference, 'Sahih al-Bukhari 1:1');
+      });
+
+      test('both forms mix in one query and stay distinguishable', () {
+        final records = qql.query('B:1:1;B::100;');
+        expect(records.map((r) => r.isBookNumbering), [false, true]);
+      });
+
+      test('out of range reports the collection bounds', () {
+        expect(
+          () => qql.query('Q::6237'),
+          throwsA(isA<QqlQueryException>()
+              .having((e) => e.message, 'message', contains('6236'))),
+        );
+      });
+    });
+
     test('a malformed query throws QqlQueryException with its position', () {
       expect(
         () => qql.query('Q:'),
