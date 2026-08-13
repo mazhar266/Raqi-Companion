@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:raqi_companion/screens/about_screen.dart';
 import 'package:raqi_companion/screens/app_menu.dart';
 import 'package:raqi_companion/theme_store.dart';
+import 'package:raqi_companion/user_lists.dart';
 import 'package:raqi_companion/version.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -57,13 +58,17 @@ void main() {
   testWidgets('the overflow menu opens Settings and About', (tester) async {
     SharedPreferences.setMockInitialValues({});
     final themeStore = ThemeStore();
+    final userLists = UserListStore();
     await themeStore.load();
+    await userLists.load();
 
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Home'),
-          actions: [AppMenuButton(themeStore: themeStore)],
+          actions: [
+            AppMenuButton(themeStore: themeStore, userLists: userLists)
+          ],
         ),
       ),
     ));

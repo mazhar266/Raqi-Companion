@@ -131,6 +131,31 @@ class UserListStore extends ChangeNotifier {
     await _save();
   }
 
+  /// Adds lists read from a backup, giving each a fresh id so a file restored
+  /// onto a device that already has lists cannot collide with them.
+  ///
+  /// With [replace] the existing lists are dropped first. Returns how many
+  /// were added.
+  Future<int> importLists(
+    List<({String name, List<String> queries})> incoming, {
+    required bool replace,
+  }) async {
+    // Ids are microsecond timestamps, so nudge each one to keep them distinct
+    // within a single import.
+    final base = DateTime.now().microsecondsSinceEpoch;
+    final restored = [
+      for (final (index, entry) in incoming.indexed)
+        UserList(
+          id: '${base + index}',
+          name: entry.name,
+          queries: entry.queries,
+        )
+    ];
+    _lists = replace ? restored : [..._lists, ...restored];
+    await _save();
+    return restored.length;
+  }
+
   Future<void> moveQuery(String id, int from, int to) async {
     _lists = [
       for (final l in _lists)

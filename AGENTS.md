@@ -20,7 +20,8 @@ All content ships in a single bundled JSON asset (`assets/data/ruqyah.json`); th
 
 - **Flutter 3.44.9 (stable channel)** / **Dart SDK `>=3.0.0 <4.0.0`** (see `pubspec.yaml`).
 - **Platforms enabled:** Android and Web only (see `.metadata` migration list and the `android/` and `web/` directories). There are no `ios/`, `linux/`, `macos/`, or `windows/` runners.
-- **Runtime dependencies:** `shared_preferences` (^2.2.3), `ffi` (^2.1.0, required by the vendored QQL binding) and `path_provider` (^2.1.0, locates the directory QQL data is unpacked into), plus the Flutter SDK.
+- **Runtime dependencies:** `shared_preferences` (^2.2.3), `ffi` (^2.1.0, required by the vendored QQL binding), `path_provider` (^2.1.0, locates the directory QQL data is unpacked into) and `file_picker` (list export/restore), plus the Flutter SDK.
+- **`file_picker` is pinned to a prerelease on purpose.** The current stable, 11.0.3, applies its own Kotlin Gradle Plugin; Flutter 3.44 uses built-in Kotlin and rejects it, so the plugin's Kotlin never compiles and `assembleRelease` fails with `cannot find symbol: FilePickerPlugin`. 12.0.0-beta has migrated and builds. Move to 12.x stable once it ships, and do not "tidy" the constraint back to `^11`.
 - **Dev dependencies:** `flutter_test` (SDK), `flutter_lints` (^3.0.0).
 - **Android:** Gradle Kotlin DSL (`android/build.gradle.kts`, `android/app/build.gradle.kts`), Java/Kotlin 17, `applicationId = com.example.raqi_companion`, namespace `com.example.raqi_companion`. Release builds currently sign with the debug key (marked TODO in `android/app/build.gradle.kts`).
 
@@ -36,6 +37,7 @@ lib/
   user_lists.dart                  UserListStore (ChangeNotifier): the user's own lists
   surahs.dart                      Surah metadata and buildQuery() for the visual picker
   version.dart                     appVersion / appBuildNumber, mirrored from pubspec.yaml
+  list_backup.dart                 Export/restore format for user lists (pure, no I/O)
   theme_store.dart                 ThemeStore (ChangeNotifier) for the Light/Dark/System
                                    setting, plus the appearance picker sheet
   tajweed.dart                     Tajweed rule parser (parseTajweed), rule colours,
@@ -52,7 +54,8 @@ lib/
     category_list_screen.dart      Browse tab; also maps category icon names to IconData
     category_group_screen.dart     The sections nested under one group (e.g. Dawah)
     app_menu.dart                  Overflow menu (Settings, About) on every tab
-    settings_screen.dart           Appearance (theme mode) and the tajweed legend
+    settings_screen.dart           Appearance, tajweed legend, and list export/restore
+    list_backup_actions.dart       The file dialogs and merge/replace prompt
     about_screen.dart              Contributor, bundled components, and the version
     lists_screen.dart              Lists tab: create, rename, delete
     list_detail_screen.dart        One list, entries resolved through QQL, reorderable
@@ -187,6 +190,7 @@ Prefer editing this file with a script (Python's `json` module round-trips it cl
 - The app is fully offline: no network calls, no permissions beyond defaults, no user data leaves the device. Do not add network permissions or telemetry without an explicit request.
 - The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'`, the appearance setting under `'themeMode'`, and the user's lists under `'userLists'` (a JSON array of `{id, name, queries}`).
 - **User lists store QQL queries, not resolved text**, so one entry can stand for a whole passage and the text survives a data update. They therefore only resolve where QQL runs, and the Lists tab degrades on web the same way the Query tab does.
+- **List backups carry references only** — names and QQL queries, no Arabic or translations — which is why an export is a couple of kilobytes and stays valid across a data update. `lib/list_backup.dart` is pure and does the encoding, validation and error messages; `list_backup_actions.dart` owns the file dialogs. A malformed file is rejected whole rather than imported in part, and importing reassigns ids so a file restored onto a device that already has lists cannot collide. Bump `backupFormatVersion` only for a breaking shape change — the decoder refuses anything newer than it understands.
 - Android release builds are signed with the debug key — fix the signing config in `android/app/build.gradle.kts` before any real distribution.
 - The vendored QQL library is **GPL-3.0-or-later**. Shipping the app linked against it makes the combined work GPL-3, and this repository still has no `LICENSE` file. The About screen names QQL and its licence, which is the minimum GPL requires of a shipped binary; a `LICENSE` file is still owed. See `third_party/qql/README.md`.
 - `assets/data/ruqyah.json` contains religious content (Quranic verses with translations). Treat its text with care: do not alter Arabic strings, references, or translations unless explicitly asked, and validate the JSON after any edit (it must remain valid UTF-8 and parse cleanly).

@@ -44,9 +44,11 @@ class _HomeShellState extends State<HomeShell> {
             categories: widget.categories,
             bookmarks: widget.bookmarks,
             themeStore: widget.themeStore,
+            userLists: widget.userLists,
           ),
           ListsScreen(store: widget.userLists, themeStore: widget.themeStore),
-          QqlQueryScreen(themeStore: widget.themeStore),
+          QqlQueryScreen(
+              themeStore: widget.themeStore, userLists: widget.userLists),
         ],
       ),
       bottomNavigationBar: NavigationBar(

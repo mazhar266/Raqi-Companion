@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme_store.dart';
+import '../user_lists.dart';
 import 'about_screen.dart';
 import 'settings_screen.dart';
 
@@ -9,9 +10,14 @@ import 'settings_screen.dart';
 /// Each tab keeps its own `Scaffold` and app bar, so this is a shared widget
 /// rather than one menu on a shared bar.
 class AppMenuButton extends StatelessWidget {
-  const AppMenuButton({super.key, required this.themeStore});
+  const AppMenuButton({
+    super.key,
+    required this.themeStore,
+    required this.userLists,
+  });
 
   final ThemeStore themeStore;
+  final UserListStore userLists;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,7 @@ class AppMenuButton extends StatelessWidget {
       onSelected: (value) {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (_) => value == 'settings'
-              ? SettingsScreen(themeStore: themeStore)
+              ? SettingsScreen(themeStore: themeStore, userLists: userLists)
               : const AboutScreen(),
         ));
       },

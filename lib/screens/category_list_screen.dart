@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../bookmarks.dart';
 import '../models.dart';
 import '../theme_store.dart';
+import '../user_lists.dart';
 import 'app_menu.dart';
 import 'bookmarks_screen.dart';
 import 'category_group_screen.dart';
@@ -53,12 +54,14 @@ class CategoryListScreen extends StatelessWidget {
   final List<Category> categories;
   final BookmarkStore bookmarks;
   final ThemeStore themeStore;
+  final UserListStore userLists;
 
   const CategoryListScreen({
     super.key,
     required this.categories,
     required this.bookmarks,
     required this.themeStore,
+    required this.userLists,
   });
 
   @override
@@ -66,7 +69,9 @@ class CategoryListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Raqi Companion'),
-        actions: [AppMenuButton(themeStore: themeStore)],
+        actions: [
+          AppMenuButton(themeStore: themeStore, userLists: userLists)
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

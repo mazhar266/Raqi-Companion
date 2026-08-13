@@ -4,6 +4,7 @@ import '../qql/qql_data.dart';
 import '../qql/qql_helper.dart';
 import '../tajweed.dart';
 import '../theme_store.dart';
+import '../user_lists.dart';
 import 'app_menu.dart';
 
 /// Runs a QQL query and shows the resolved records.
@@ -11,9 +12,14 @@ import 'app_menu.dart';
 /// QQL references look like `Q:2:1-5,255` — source, primary index, then an
 /// optional selector. See third_party/qql/README.md for the full grammar.
 class QqlQueryScreen extends StatefulWidget {
-  const QqlQueryScreen({super.key, required this.themeStore});
+  const QqlQueryScreen({
+    super.key,
+    required this.themeStore,
+    required this.userLists,
+  });
 
   final ThemeStore themeStore;
+  final UserListStore userLists;
 
   @override
   State<QqlQueryScreen> createState() => _QqlQueryScreenState();
@@ -116,7 +122,10 @@ class _QqlQueryScreenState extends State<QqlQueryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Query'),
-        actions: [AppMenuButton(themeStore: widget.themeStore)],
+        actions: [
+          AppMenuButton(
+              themeStore: widget.themeStore, userLists: widget.userLists)
+        ],
       ),
       body: switch (_stage) {
         _Stage.unsupported => const _Notice(

@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../tajweed.dart';
 import '../theme_store.dart';
+import '../user_lists.dart';
+import 'list_backup_actions.dart';
 
-/// App settings. Appearance today; the sections are here so more can be added
-/// without another navigation level.
+/// App settings: appearance, reading aids, and list backup.
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key, required this.themeStore});
+  const SettingsScreen({
+    super.key,
+    required this.themeStore,
+    this.userLists,
+  });
 
   final ThemeStore themeStore;
+
+  /// Null hides the backup section — used where settings is shown without the
+  /// rest of the app around it.
+  final UserListStore? userLists;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +55,37 @@ class SettingsScreen extends StatelessWidget {
               subtitle: const Text('What each colour in the Arabic means'),
               onTap: () => showTajweedLegend(context),
             ),
+            if (userLists != null) ...[
+              const Divider(height: 32),
+              const _SectionHeader('Your lists'),
+              AnimatedBuilder(
+                animation: userLists!,
+                builder: (context, _) {
+                  final count = userLists!.lists.length;
+                  return Column(
+                    children: [
+                      ListTile(
+                        leading: const Icon(Icons.upload_file_outlined),
+                        title: const Text('Export to a file'),
+                        subtitle: Text(count == 0
+                            ? 'Nothing to export yet'
+                            : 'Saves the $count list${count == 1 ? '' : 's'} '
+                                'as JSON — references only, no text'),
+                        enabled: count > 0,
+                        onTap: () => exportLists(context, userLists!),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.restore_page_outlined),
+                        title: const Text('Restore from a file'),
+                        subtitle:
+                            const Text('Read lists back from an exported JSON'),
+                        onTap: () => importLists(context, userLists!),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ],
             const SizedBox(height: 24),
           ],
         ),

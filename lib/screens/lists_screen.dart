@@ -31,7 +31,7 @@ class ListsScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text('Lists'),
-            actions: [AppMenuButton(themeStore: themeStore)],
+            actions: [AppMenuButton(themeStore: themeStore, userLists: store)],
           ),
           floatingActionButton: FloatingActionButton.extended(
             onPressed: () => _create(context),
