@@ -98,6 +98,83 @@ void main() {
     });
   });
 
+  group('uthmani script', () {
+    // The Quran data in sources/ writes several marks differently from the
+    // imlaei text above, and spells some rulings out. Passages are read from
+    // the data rather than typed, so they are exactly what the app renders.
+    String ayah(int surah, int number) {
+      final chapter = jsonDecode(
+        File('sources/quran-json-arabic/dist/chapters/en/$surah.json')
+            .readAsStringSync(),
+      ) as Map<String, dynamic>;
+      return (chapter['verses'] as List)
+          .cast<Map<String, dynamic>>()
+          .firstWhere((v) => v['id'] == number)['text'] as String;
+    }
+
+    List<(String, TajweedRule)> rulesIn(int surah, int number) =>
+        coloured(ayah(surah, number));
+
+    test('the sukun sign is U+06E1, so izhar stays uncoloured', () {
+      // مِنۡ عَاصِمٖ — noon carries the sukun sign before a throat letter.
+      expect(coloured('مِنۡ عَاصِمٖ'), isEmpty);
+    });
+
+    test('a bare noon is sakin, giving ikhfa and idgham', () {
+      expect(coloured('مِن شَفِيعٍ'), [('ن', TajweedRule.ikhfa)]);
+      expect(coloured('مَن يَشَآءُ').first.$2, TajweedRule.idghamGhunnah);
+    });
+
+    test('iqlab is read from the small meem the mushaf writes', () {
+      // مِنۢ بَعۡدِ — no lookahead needed, the sign says it outright.
+      expect(coloured('مِنۢ بَعۡدِ').first.$2, TajweedRule.iqlab);
+    });
+
+    test('the open tanwin forms are recognised as tanwin', () {
+      // 2:255: سِنَةٞ وَلَا (dammatan + waw), نَوۡمٞ لَّهُۥ (+ lam),
+      // بِشَيۡءٖ مِّنۡ (kasratan + meem).
+      final rules = rulesIn(2, 255).map((e) => e.$2).toList();
+      expect(rules, contains(TajweedRule.idghamGhunnah));
+      expect(rules, contains(TajweedRule.idghamNoGhunnah));
+    });
+
+    test('recognises the same rules as the imlaei text of a passage', () {
+      final rules = rulesIn(2, 102).map((e) => e.$2).toSet();
+      expect(rules, contains(TajweedRule.ghunnah));
+      expect(rules, contains(TajweedRule.ikhfa));
+      expect(rules, contains(TajweedRule.qalqalah));
+      expect(rules, contains(TajweedRule.ikhfaShafawi));
+      expect(rules, contains(TajweedRule.madd));
+    });
+
+    test('the maddah sign marks a long madd', () {
+      // 1:7 ٱلضَّآلِّينَ — the only rule in that ayah.
+      expect(rulesIn(1, 7).map((e) => e.$2), [TajweedRule.madd]);
+    });
+
+    test('every ayah of the Quran data parses and round-trips', () {
+      var checked = 0;
+      var coloured = 0;
+      for (var surah = 1; surah <= 114; surah++) {
+        final chapter = jsonDecode(
+          File('sources/quran-json-arabic/dist/chapters/en/$surah.json')
+              .readAsStringSync(),
+        ) as Map<String, dynamic>;
+        for (final v in (chapter['verses'] as List).cast<Map>()) {
+          final text = v['text'] as String;
+          final segments = parseTajweed(text);
+          expect(segments.map((s) => s.text).join(), text,
+              reason: 'round-trip failed at $surah:${v['id']}');
+          checked++;
+          if (segments.any((s) => s.rule != null)) coloured++;
+        }
+      }
+      expect(checked, 6236);
+      // A parser that silently matched nothing would still round-trip.
+      expect(coloured / checked, greaterThan(0.9));
+    });
+  });
+
   group('segmentation', () {
     test('segments concatenate back to the input', () {
       const text = 'وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾';

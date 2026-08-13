@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../bookmarks.dart';
 import '../models.dart';
 import '../theme_store.dart';
+import '../user_lists.dart';
 import 'category_list_screen.dart';
+import 'lists_screen.dart';
 import 'qql_query_screen.dart';
 
 /// Root screen: a bottom navigation bar over the browse and query tabs.
@@ -17,11 +19,13 @@ class HomeShell extends StatefulWidget {
     required this.categories,
     required this.bookmarks,
     required this.themeStore,
+    required this.userLists,
   });
 
   final List<Category> categories;
   final BookmarkStore bookmarks;
   final ThemeStore themeStore;
+  final UserListStore userLists;
 
   @override
   State<HomeShell> createState() => _HomeShellState();
@@ -41,6 +45,7 @@ class _HomeShellState extends State<HomeShell> {
             bookmarks: widget.bookmarks,
             themeStore: widget.themeStore,
           ),
+          ListsScreen(store: widget.userLists),
           const QqlQueryScreen(),
         ],
       ),
@@ -52,6 +57,11 @@ class _HomeShellState extends State<HomeShell> {
             icon: Icon(Icons.menu_book_outlined),
             selectedIcon: Icon(Icons.menu_book),
             label: 'Browse',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.playlist_play_outlined),
+            selectedIcon: Icon(Icons.playlist_play),
+            label: 'Lists',
           ),
           NavigationDestination(
             icon: Icon(Icons.search_outlined),

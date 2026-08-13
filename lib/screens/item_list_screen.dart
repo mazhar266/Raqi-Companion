@@ -71,9 +71,7 @@ class ItemListScreen extends StatelessWidget {
                         if (item.arabic.isNotEmpty) ...[
                           const SizedBox(height: 8),
                           arabicText(context, item.arabic,
-                              size: 20,
-                              maxLines: 2,
-                              tajweed: item.supportsTajweed),
+                              size: 20, maxLines: 2),
                         ] else if (item.note.isNotEmpty) ...[
                           const SizedBox(height: 6),
                           Text(item.note,

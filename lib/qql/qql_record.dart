@@ -53,6 +53,11 @@ class QqlRecord {
   int? get number => extra['number'] as int?;
   String? get narrator => extra['narrator'] as String?;
 
+  /// True for Quranic text, which is the only material the tajweed rules
+  /// apply to. Hadith and supplications are Arabic but are not recited under
+  /// them.
+  bool get isQuran => source == 'Q';
+
   /// True when the record was addressed by book-wide numbering (`SOURCE::n`)
   /// rather than by position within a chapter.
   ///

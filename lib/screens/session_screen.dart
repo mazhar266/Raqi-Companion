@@ -81,9 +81,7 @@ class _SessionScreenState extends State<SessionScreen> {
                         subtitle: item.arabic.isEmpty
                             ? null
                             : arabicText(context, item.arabic,
-                                size: 16,
-                                maxLines: 1,
-                                tajweed: item.supportsTajweed),
+                                size: 16, maxLines: 1),
                       ),
                     );
                   }),

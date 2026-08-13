@@ -74,8 +74,7 @@ class _AyatDetailScreenState extends State<AyatDetailScreen> {
               children: [
                 // Module 9's procedural steps carry no Arabic of their own.
                 if (item.arabic.isNotEmpty)
-                  arabicText(context, item.arabic,
-                      tajweed: item.supportsTajweed),
+                  arabicText(context, item.arabic),
                 if (item.transliteration.isNotEmpty) ...[
                   const SizedBox(height: 20),
                   Text(item.transliteration,

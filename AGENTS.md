@@ -6,7 +6,7 @@ Guidance for AI coding agents working on this repository. Assumes no prior knowl
 
 **raqi_companion** ("Raqi Companion") is an offline Flutter app providing Quranic ayats and adhkar for ruqyah shari'ah. It is a read-only content browser with:
 
-- Two bottom-navigation tabs: **Browse** (the ruqyah content) and **Query** (a QQL console).
+- Three bottom-navigation tabs: **Browse** (the ruqyah content), **Lists** (user-built sequences) and **Query** (a QQL console).
 - A category list of ruqyah content groups.
 - Per-category item lists showing Arabic text with a bookmark toggle.
 - A detail screen per item with Arabic, transliteration, translation, an optional note, and a tap counter for repetitions (`repeat` field).
@@ -33,6 +33,8 @@ lib/
   models.dart                      RuqyahItem and Category data classes with fromJson factories
   data_service.dart                DataService: loads/caches assets/data/ruqyah.json, findItem lookup
   bookmarks.dart                   BookmarkStore (ChangeNotifier) backed by shared_preferences
+  user_lists.dart                  UserListStore (ChangeNotifier): the user's own lists
+  surahs.dart                      Surah metadata and buildQuery() for the visual picker
   theme_store.dart                 ThemeStore (ChangeNotifier) for the Light/Dark/System
                                    setting, plus the appearance picker sheet
   tajweed.dart                     Tajweed rule parser (parseTajweed), rule colours,
@@ -48,6 +50,9 @@ lib/
     home_shell.dart                Root screen: bottom NavigationBar over the two tabs
     category_list_screen.dart      Browse tab; also maps category icon names to IconData
     category_group_screen.dart     The sections nested under one group (e.g. Dawah)
+    lists_screen.dart              Lists tab: create, rename, delete
+    list_detail_screen.dart        One list, entries resolved through QQL, reorderable
+    add_entry_sheet.dart           Query builder: dropdowns, or a typed reference
     qql_query_screen.dart          Query tab: a QQL input, submit, and the results
     item_list_screen.dart          Items of one category with bookmark toggles
     ayat_detail_screen.dart        Full item view with prev/next navigation and repeat counter
@@ -80,7 +85,7 @@ Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each cate
 Two optional fields carry behaviour:
 
 - **`group`** on a category nests it under a menu. Categories sharing a group value are replaced on the home screen by a single card (titled with the group, subtitled with its section titles) that opens `CategoryGroupScreen`, and they are **excluded from the Session checklist**. The three groups in use are `Intensive` (Modules 5-7, deployed only against active resistance), `Daily Practice` (Modules 8-9, standalone routines) and `Dawah` (reference material). What is left at top level — Modules 1-4 and Sword — is exactly what a baseline ruqyah session should walk through.
-- **`script`** on an item declares its orthography. `"uthmani"` marks passages taken from the Quran data in `sources/`, which writes sukun as U+06E1 rather than U+0652; those render without tajweed colouring via `RuqyahItem.supportsTajweed`, because the parser targets the imlaei text used everywhere else in the file. Omit it for imlaei content.
+- **`script`** on an item records its orthography: `"uthmani"` for passages taken from the Quran data in `sources/`, omitted for imlaei. Informational only — the parser handles both — but it tells you which source file to re-check a passage against.
 
 ## Architecture and conventions
 
@@ -89,7 +94,13 @@ Two optional fields carry behaviour:
 - **Data loading:** `DataService.loadCategories()` reads the JSON asset once via `rootBundle` and caches it in a static field; `main.dart` drives it with a `FutureBuilder`.
 - **Styling:** single theme factory `_theme(Brightness)` in `lib/main.dart` (Material 3, seed color `0xFF6B5D4F`) builds both the light and dark themes; Arabic text is rendered through `arabicText(context, arabic)` in `lib/tajweed.dart`, which applies the shared `arabicStyle(context)` helper, RTL direction, and tajweed colouring. Any new colour must be defined for both brightnesses — read it off the `ColorScheme` where possible, or follow the `TajweedRule` pattern of an explicit light/dark pair.
 - **Theme mode:** `ThemeStore` in `lib/theme_store.dart` holds a `ThemeMode` persisted under the `'themeMode'` key as `ThemeMode.name`; an unrecognised or missing value falls back to `ThemeMode.system`, so the app follows the device until the user picks Light or Dark, and remembers that choice until they change it. The picker (`showThemePicker`) is a bottom sheet reached from the home screen app bar; it uses a `RadioGroup` ancestor because `RadioListTile.groupValue`/`onChanged` are deprecated in this Flutter version.
-- **Tajweed colouring:** `parseTajweed(String)` in `lib/tajweed.dart` is a pure function splitting vocalised Arabic into `TajweedSegment`s tagged with a `TajweedRule`. It reads the diacritics that are actually written, so it only works on fully vocalised text. It covers the noon sakin/tanwin rules (izhar, idgham with and without ghunnah, iqlab, ikhfa), the meem sakin rules, ghunnah, qalqalah sughra, and madd of 4-6 counts; natural 2-count madd is deliberately left uncoloured. Colours live on the `TajweedRule` enum, one per brightness. Any change to the rules must keep `test/tajweed_test.dart` green — including the round-trip test asserting that segments reassemble the input exactly.
+- **Tajweed colouring:** `parseTajweed(String)` in `lib/tajweed.dart` is a pure function splitting vocalised Arabic into `TajweedSegment`s tagged with a `TajweedRule`. It reads the diacritics that are actually written, so it only works on fully vocalised text. It covers the noon sakin/tanwin rules (izhar, idgham with and without ghunnah, iqlab, ikhfa), the meem sakin rules, ghunnah, qalqalah sughra, and madd of 4-6 counts; natural 2-count madd is deliberately left uncoloured. Colours live on the `TajweedRule` enum, one per brightness. Any change to the rules must keep `test/tajweed_test.dart` green — including the round-trip tests over both `assets/data/ruqyah.json` and all 6236 ayat of `sources/`.
+- **Two orthographies.** The parser handles the imlaei text in `ruqyah.json` and the Uthmani text in `sources/`, which spell things differently. The Uthmani conventions were verified against the data and must not be "simplified" away:
+  - Sukun is **U+06E1**, not U+0652.
+  - Tanwin has an *open* form — **U+0657 fathatan, U+065E dammatan, U+0656 kasratan** — despite Unicode names that describe the glyph rather than the role. These outnumber the standard codepoints roughly 3:1, so missing them blinds the parser to most tanwin.
+  - Iqlab is spelled out by a **small meem (U+06E2/U+06ED)** over the noon, and is read directly rather than inferred.
+  - A bare noon means ikhfa or idgham; a noon carrying the sukun sign means izhar.
+- **Where colouring is applied:** everywhere for the app's own content, and for QQL results **only when `QqlRecord.isQuran`**. Hadith and supplications are Arabic but are not recited under these rules, so colouring them would misrepresent them.
 - **QQL (`lib/qql/`):** a vendored Rust library reached over `dart:ffi`, resolving references like `Q:2:1-5,255` against the JSON in `sources/`. It is **not wired into any screen yet** — the app's own content still comes entirely from `assets/data/ruqyah.json`. Three things constrain how it can be used:
   - **No web.** `dart:ffi` does not exist there. `lib/qql/qql_helper.dart` conditionally exports the FFI implementation or a stub, so the app still compiles for web; guard call sites with `QqlHelper.isSupported` rather than catching. Never import `qql_helper_io.dart` or `qql_helper_web.dart` directly, and never import `vendor/qql.dart` outside `qql_helper_io.dart` — any of those breaks the web build.
   - **Data must be unpacked before use.** The library reads with `std::fs` and cannot see the asset bundle, so `QqlData.ensureUnpacked()` copies `sources/` to app storage on first launch and returns the path for `QqlHelper.open`. Bump `QqlData.dataVersion` when the bundled data changes. Asset directories are not recursive — every leaf directory is listed in `pubspec.yaml`, and `test/qql_data_test.dart` guards the counts.
@@ -168,7 +179,8 @@ Prefer editing this file with a script (Python's `json` module round-trips it cl
 ## Security and content considerations
 
 - The app is fully offline: no network calls, no permissions beyond defaults, no user data leaves the device. Do not add network permissions or telemetry without an explicit request.
-- The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'` and the appearance setting under `'themeMode'`.
+- The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'`, the appearance setting under `'themeMode'`, and the user's lists under `'userLists'` (a JSON array of `{id, name, queries}`).
+- **User lists store QQL queries, not resolved text**, so one entry can stand for a whole passage and the text survives a data update. They therefore only resolve where QQL runs, and the Lists tab degrades on web the same way the Query tab does.
 - Android release builds are signed with the debug key — fix the signing config in `android/app/build.gradle.kts` before any real distribution.
 - The vendored QQL library is **GPL-3.0-or-later**. Shipping the app linked against it makes the combined work GPL-3, and this repository still has no `LICENSE` file. See `third_party/qql/README.md`.
 - `assets/data/ruqyah.json` contains religious content (Quranic verses with translations). Treat its text with care: do not alter Arabic strings, references, or translations unless explicitly asked, and validate the JSON after any edit (it must remain valid UTF-8 and parse cleanly).

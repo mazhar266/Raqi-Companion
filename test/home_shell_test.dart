@@ -7,6 +7,7 @@ import 'package:raqi_companion/bookmarks.dart';
 import 'package:raqi_companion/models.dart';
 import 'package:raqi_companion/screens/home_shell.dart';
 import 'package:raqi_companion/theme_store.dart';
+import 'package:raqi_companion/user_lists.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -36,14 +37,17 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     final bookmarks = BookmarkStore();
     final themeStore = ThemeStore();
+    final userLists = UserListStore();
     await bookmarks.load();
     await themeStore.load();
+    await userLists.load();
 
     await tester.pumpWidget(MaterialApp(
       home: HomeShell(
         categories: categories,
         bookmarks: bookmarks,
         themeStore: themeStore,
+        userLists: userLists,
       ),
     ));
     // Not pumpAndSettle: the query tab shows a progress spinner while it

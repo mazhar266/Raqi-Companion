@@ -270,10 +270,11 @@ class _RecordCard extends StatelessWidget {
             ),
             if (record.arabic.isNotEmpty) ...[
               const SizedBox(height: 10),
-              // Uncoloured: this data is Uthmani orthography (sukun as U+06E1),
-              // while the tajweed parser targets the imlaei text in
-              // assets/data/ruqyah.json.
-              arabicText(context, record.arabic, size: 22, tajweed: false),
+              // Tajweed colouring only for the Quran. Hadith and supplication
+              // texts are Arabic but are not recited under these rules, and
+              // colouring them would imply otherwise.
+              arabicText(context, record.arabic,
+                  size: 22, tajweed: record.isQuran),
             ],
             if (record.narrator != null) ...[
               const SizedBox(height: 10),

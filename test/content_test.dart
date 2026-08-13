@@ -55,9 +55,7 @@ void main() {
     expect(group('Daily Practice'), ['module-shield', 'module-situational']);
   });
 
-  test('reused imlaei passages keep their tajweed colouring', () {
-    // These came with the repository as imlaei text and are carried over
-    // verbatim, so the parser still applies to them.
+  test('reused imlaei passages are carried over verbatim', () {
     final byId = {
       for (final c in categories)
         for (final i in c.items) i.id: i,
@@ -74,7 +72,7 @@ void main() {
       'm3-qalam-51-52',
     ]) {
       expect(byId[id], isNotNull, reason: '$id is missing');
-      expect(byId[id]!.supportsTajweed, isTrue, reason: '$id lost tajweed');
+      expect(byId[id]!.script, isEmpty, reason: '$id is no longer imlaei');
     }
   });
 
@@ -93,19 +91,17 @@ void main() {
     expect(ids.toSet(), hasLength(ids.length));
   });
 
-  test('Dawah items are marked uthmani and opt out of tajweed', () {
+  test('Dawah items record that they came from the Quran data', () {
     final items = [
       for (final c in categories.where((c) => c.group == 'Dawah')) ...c.items
     ];
     expect(items.every((i) => i.script == 'uthmani'), isTrue);
-    expect(items.every((i) => !i.supportsTajweed), isTrue);
   });
 
-  test('the Sword section is untouched imlaei with tajweed', () {
+  test('the Sword section is untouched imlaei', () {
     final sword = categories.firstWhere((c) => c.id == 'sword');
     expect(sword.items, hasLength(20));
     expect(sword.items.every((i) => i.script.isEmpty), isTrue);
-    expect(sword.items.every((i) => i.supportsTajweed), isTrue);
   });
 
   test('every Dawah item carries a note, translation and transliteration', () {

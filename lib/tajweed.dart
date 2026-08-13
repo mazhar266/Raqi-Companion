@@ -112,7 +112,38 @@ const int _damma = 0x064F;
 const int _kasra = 0x0650;
 const int _shadda = 0x0651;
 const int _sukun = 0x0652;
+const int _maddahAbove = 0x0653;
 const int _superscriptAlef = 0x0670;
+
+// The "open" tanwin forms. Their Unicode names describe the glyph, not the
+// role: verified against this data's own transliterations, U+0657 spells
+// fathatan (jameeAAan), U+065E dammatan (sharabun) and U+0656 kasratan
+// (rajulin). They outnumber the stacked forms above roughly three to one, so
+// missing them would blind the parser to most tanwin in the Uthmani text.
+const int _fathatanOpen = 0x0657;
+const int _dammatanOpen = 0x065E;
+const int _kasratanOpen = 0x0656;
+
+// Uthmani script marks. The imlaei text in assets/data/ruqyah.json uses the
+// codepoints above; the Quran data in sources/ writes several of them
+// differently, and spells out some rulings the imlaei text leaves implicit.
+//
+// The conventions, verified against the data:
+//   izhar   noon carries the sukun sign      مِنۡ عَاصِمٖ
+//   iqlab   noon carries a small meem        مِنۢ بَعۡدِ
+//   ikhfa   noon carries nothing             مِن شَفِيعٍ
+//   idgham  noon carries nothing             مَن يَشَآء
+const int _sukunUthmani = 0x06E1; // small high dotless head of khah
+const int _iqlabMeemHigh = 0x06E2;
+const int _iqlabMeemLow = 0x06ED;
+const int _smallHighMadda = 0x06E4;
+const int _smallWaw = 0x06E5;
+const int _smallYeh = 0x06E6;
+const int _smallHighYeh = 0x06E7;
+const int _smallHighNoon = 0x06E8;
+// Zeros marking a letter that is written but not pronounced.
+const int _silentRoundZero = 0x06DF;
+const int _silentRectZero = 0x06E0;
 
 /// ي ن م و — merge into, keeping the nasal sound.
 const Set<int> _idghamGhunnahLetters = {_ya, _noon, _meem, _waw};
@@ -157,10 +188,25 @@ bool _isLetter(int c) =>
     (c >= 0x0641 && c <= 0x064A) ||
     c == _alefWasla;
 
-/// Harakat, tanwin, shadda, sukun and the superscript alef. Deliberately
-/// excludes the Quranic annotation signs at 0x06D6-0x06ED (waqf marks),
-/// which are treated as separators.
-bool _isMark(int c) => (c >= 0x064B && c <= 0x065F) || c == _superscriptAlef;
+/// Marks that attach to the preceding letter.
+///
+/// Covers the imlaei set (harakat, tanwin, shadda, sukun, superscript alef)
+/// plus the Uthmani signs that behave the same way. The remaining Quranic
+/// annotation signs in 0x06D6-0x06ED are waqf and sajdah marks that stand on
+/// their own, and stay separators.
+bool _isMark(int c) =>
+    (c >= 0x064B && c <= 0x065F) ||
+    c == _superscriptAlef ||
+    c == _sukunUthmani ||
+    c == _iqlabMeemHigh ||
+    c == _iqlabMeemLow ||
+    c == _smallHighMadda ||
+    c == _smallWaw ||
+    c == _smallYeh ||
+    c == _smallHighYeh ||
+    c == _smallHighNoon ||
+    c == _silentRoundZero ||
+    c == _silentRectZero;
 
 /// One base letter plus the diacritics attached to it, or a single
 /// non-letter character (space, waqf mark, ayah number, punctuation).
@@ -185,14 +231,40 @@ class _Unit {
 
   bool get hasShadda => has(_shadda);
 
-  bool get hasTanwin => has(_fathatan) || has(_dammatan) || has(_kasratan);
+  bool get hasTanwin =>
+      has(_fathatan) ||
+      has(_dammatan) ||
+      has(_kasratan) ||
+      has(_fathatanOpen) ||
+      has(_dammatanOpen) ||
+      has(_kasratanOpen);
 
-  /// True for an explicit sukun and for a bare consonant: in fully vocalised
-  /// text an unmarked letter carries no vowel.
-  bool get isSakin => has(_sukun) || marks.isEmpty;
+  bool get hasSukun => has(_sukun) || has(_sukunUthmani);
+
+  /// The Uthmani small meem written over a noon sakin or tanwin, which is the
+  /// mushaf spelling iqlab out rather than leaving it to be inferred.
+  bool get hasIqlabMark => has(_iqlabMeemHigh) || has(_iqlabMeemLow);
+
+  /// A letter written but not pronounced, marked with one of the small zeros.
+  bool get isSilent => has(_silentRoundZero) || has(_silentRectZero);
 
   bool get isVowelled =>
       has(_fatha) || has(_damma) || has(_kasra) || hasTanwin || hasShadda;
+
+  /// True for an explicit sukun and for a consonant carrying no vowel at all:
+  /// in fully vocalised text that means the same thing. Uthmani leaves the
+  /// noon bare for ikhfa and idgham, so this has to cover both.
+  bool get isSakin => hasSukun || !isVowelled;
+
+  /// The Uthmani maddah, and the marks standing in for a written madd letter
+  /// (small waw and yeh, subscript alef, inverted damma).
+  bool get hasMaddahSign => has(_maddahAbove) || has(_smallHighMadda);
+
+  /// The superscript alef, and the small waw and yeh that stand in for the
+  /// lengthened vowel of a pronoun (madd silah). Deliberately not the
+  /// subscript alef or inverted damma — in this text those are tanwin.
+  bool get hasMaddLetterMark =>
+      has(_superscriptAlef) || has(_smallWaw) || has(_smallYeh);
 }
 
 List<_Unit> _tokenize(String text) {
@@ -242,6 +314,8 @@ int _nextLetterIndex(List<_Unit> units, int from) {
   for (var k = from; k < units.length; k++) {
     final u = units[k];
     if (!u.isLetter) continue;
+    // Uthmani marks unpronounced letters explicitly.
+    if (u.isSilent) continue;
     final silentAlef =
         u.base == _alef || u.base == _alefWasla || u.base == _alefMaqsura;
     if (silentAlef && !u.isVowelled) continue;
@@ -262,7 +336,7 @@ int _prevLetterIndex(List<_Unit> units, int from) {
 /// carrying the superscript alef.
 bool _isMaddLetter(List<_Unit> units, int i) {
   final u = units[i];
-  if (u.has(_superscriptAlef)) return true;
+  if (u.hasMaddLetterMark) return true;
   final p = _prevLetterIndex(units, i - 1);
   if (p == -1) return false;
   final prev = units[p];
@@ -291,11 +365,25 @@ List<TajweedSegment> parseTajweed(String text) {
 
   for (var i = 0; i < units.length; i++) {
     final u = units[i];
-    if (!u.isLetter) continue;
+    if (!u.isLetter || u.isSilent) continue;
 
     // Ghunnah — a doubled noon or meem, regardless of what follows.
     if ((u.base == _noon || u.base == _meem) && u.hasShadda) {
       rules[i] = TajweedRule.ghunnah;
+      continue;
+    }
+
+    // Iqlab spelled out by the mushaf. Trusted over the lookahead below,
+    // which cannot see it when the ب falls in the next word.
+    if (u.hasIqlabMark) {
+      rules[i] = TajweedRule.iqlab;
+      continue;
+    }
+
+    // A maddah sign is the mushaf marking a madd longer than two counts, so
+    // it needs no structural inference.
+    if (u.hasMaddahSign) {
+      rules[i] = TajweedRule.madd;
       continue;
     }
 

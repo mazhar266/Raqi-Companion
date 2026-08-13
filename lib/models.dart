@@ -7,10 +7,12 @@ class RuqyahItem {
   final int repeat;
   final String note;
 
-  /// Orthography of [arabic]. Empty (the default) means the imlaei text the
-  /// tajweed parser is written for; `'uthmani'` marks passages sourced from
-  /// the Quran data in `sources/`, which spell some marks differently and so
-  /// are rendered without tajweed colouring.
+  /// Orthography of [arabic]: empty for imlaei, `'uthmani'` for passages
+  /// sourced from the Quran data in `sources/`.
+  ///
+  /// Informational. The tajweed parser handles both, so this no longer gates
+  /// colouring — it records where the text came from, which matters when
+  /// re-checking a passage against its source.
   final String script;
 
   const RuqyahItem({
@@ -23,9 +25,6 @@ class RuqyahItem {
     required this.note,
     this.script = '',
   });
-
-  /// Whether tajweed colouring can be trusted for this item's [arabic].
-  bool get supportsTajweed => script != 'uthmani';
 
   factory RuqyahItem.fromJson(Map<String, dynamic> json) => RuqyahItem(
         id: json['id'] as String,
