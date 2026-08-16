@@ -88,6 +88,7 @@ tool/generate_icons.py             Regenerates every launcher/web icon from it
 assets/fonts/                      Eight Quranic typefaces, selectable in Settings
 tool/check_font_coverage.py        Verifies a font can draw every mark the app renders
 tool/font_coverage.json            Its report; test/fonts_test.dart asserts against it
+tool/resync_quran_text.py          Refetches every Quranic ayah in ruqyah.json from sources/
 web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
@@ -97,7 +98,7 @@ Data model (`assets/data/ruqyah.json`, mirrored by `lib/models.dart`): each cate
 Two optional fields carry behaviour:
 
 - **`group`** on a category nests it under a menu. Categories sharing a group value are replaced on the home screen by a single card (titled with the group, subtitled with its section titles) that opens `CategoryGroupScreen`, and they are **excluded from the Session checklist**. The three groups in use are `Intensive` (Modules 5-7, deployed only against active resistance), `Daily Practice` (Modules 8-9, standalone routines) and `Dawah` (reference material). What is left at top level — Modules 1-4 and Sword — is exactly what a baseline ruqyah session should walk through.
-- **`script`** on an item records its orthography: `"uthmani"` for passages taken from the Quran data in `sources/`, omitted for imlaei. Informational only — the parser handles both — but it tells you which source file to re-check a passage against.
+- **`script`** on an item marks it as Quranic text taken from `sources/`: `"uthmani"` on all 128 such items, omitted on the nine sunnah duas. It is what `tool/resync_quran_text.py` and `test/content_test.dart` use to decide which items to re-check against the Quran data.
 
 ## Architecture and conventions
 
@@ -191,7 +192,20 @@ The JSON asset is the app's whole database, and three couplings in it are not vi
 
 Prefer editing this file with a script (Python's `json` module round-trips it cleanly with `ensure_ascii=False, indent=2`) over hand-editing Arabic strings, and reuse existing `arabic`/`transliteration`/`translation` values verbatim when a passage already appears elsewhere in the file rather than retyping them.
 
-**Never retype Quranic Arabic.** For new passages, copy them out of `sources/quran-json-arabic/dist/chapters/en/{surah}.json`, which carries text, transliteration and translation per ayah — that is how the modules and the Dawah sections were generated. Mark anything taken from there with `"script": "uthmani"`. Where a passage *already exists in this file* as imlaei text, reuse that item verbatim instead, so it keeps its tajweed colouring: nine passages in Modules 1-3 (Al-Fatihah, Ayat al-Kursi, the Mu'awwidhat, 2:102, 7:117-122, 4:54, 68:51-52) are carried over that way, and the whole Sword section is untouched imlaei. Multi-ayah passages join verses with an `﴿٢٨٥﴾`-style marker (Arabic-Indic digits) after each verse; single-ayah passages carry no marker. `test/dawah_content_test.dart` re-checks a sample of passages against the source files, so hand-edits to that Arabic will fail the suite. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
+**Never retype Quranic Arabic, and never hand-edit it.** Every Quranic ayah in this file is generated from `sources/quran-json-arabic/dist/chapters/en/{surah}.json` by `tool/resync_quran_text.py`, so the whole file is one orthography — Uthmani, with the madd signs and open tanwin forms the imlaei text lacked. All 128 Quranic items carry `"script": "uthmani"`.
+
+To change a passage, edit its `reference` and re-run the tool:
+
+```bash
+python3 tool/resync_quran_text.py            # report what would change
+python3 tool/resync_quran_text.py --write    # apply
+```
+
+It parses the range out of `reference`, refetches, and **verifies** before replacing: the existing and fetched text are compared with diacritics and alefs stripped, and anything below a similarity floor is reported and skipped rather than silently overwritten. It rewrites `arabic` and `script` only — the hand-written `transliteration`, `translation`, `note` and `repeat` survive, since orthography does not affect them.
+
+`test/content_test.dart` then re-checks **every** Quranic item against the source byte for byte, so a hand-edit or a reference that stops naming the passage it holds fails the suite.
+
+The only nine items that are not Quranic — the four masnun duas in Module 8 and the five Module 9 routines — have no counterpart in the Quran data and are left alone; the test pins that list exactly. Multi-ayah passages join verses with an `﴿٢٨٥﴾`-style marker (Arabic-Indic digits) after each verse; single-ayah passages carry no marker. `test/dawah_content_test.dart` re-checks a sample of passages against the source files, so hand-edits to that Arabic will fail the suite. After any edit, confirm the file still parses, that item ids are still unique, and that `flutter test` passes — `test/tajweed_test.dart` parses every ayat in the asset and asserts the tajweed segmentation reassembles each one exactly.
 
 ## Security and content considerations
 
