@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'arabic_fonts.dart';
 import 'bookmarks.dart';
 import 'data_service.dart';
 import 'models.dart';
@@ -22,6 +23,7 @@ class _RuqyahAppState extends State<RuqyahApp> {
   final BookmarkStore bookmarks = BookmarkStore();
   final ThemeStore themeStore = ThemeStore();
   final UserListStore userLists = UserListStore();
+  final ArabicFontStore arabicFonts = ArabicFontStore();
   late final Future<List<Category>> future;
 
   @override
@@ -31,6 +33,7 @@ class _RuqyahAppState extends State<RuqyahApp> {
     bookmarks.load();
     themeStore.load();
     userLists.load();
+    arabicFonts.load();
   }
 
   ThemeData _theme(Brightness brightness) {
@@ -55,9 +58,13 @@ class _RuqyahAppState extends State<RuqyahApp> {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: Listenable.merge([bookmarks, themeStore, userLists]),
+      animation: Listenable.merge([bookmarks, themeStore, userLists, arabicFonts]),
       builder: (context, _) {
-        return MaterialApp(
+        // Above MaterialApp so every route, dialog and sheet inherits it.
+        return ArabicFontScope(
+          font: arabicFonts.font,
+          scale: arabicFonts.scale,
+          child: MaterialApp(
           title: 'Raqi Companion',
           debugShowCheckedModeBanner: false,
           theme: _theme(Brightness.light),
@@ -66,7 +73,8 @@ class _RuqyahAppState extends State<RuqyahApp> {
           home: FutureBuilder<List<Category>>(
             future: future,
             builder: (context, snapshot) {
-              if (!snapshot.hasData || !bookmarks.loaded || !themeStore.loaded || !userLists.loaded) {
+              if (!snapshot.hasData || !bookmarks.loaded || !themeStore.loaded || !userLists.loaded ||
+                  !arabicFonts.loaded) {
                 return const Scaffold(
                   body: Center(child: CircularProgressIndicator()),
                 );
@@ -76,8 +84,10 @@ class _RuqyahAppState extends State<RuqyahApp> {
                 bookmarks: bookmarks,
                 themeStore: themeStore,
                 userLists: userLists,
+                arabicFonts: arabicFonts,
               );
             },
+            ),
           ),
         );
       },
@@ -86,12 +96,27 @@ class _RuqyahAppState extends State<RuqyahApp> {
 }
 
 /// Shared Arabic text style used across screens.
-TextStyle arabicStyle(BuildContext context, {double size = 26}) {
+///
+/// The family and size both come from [ArabicFontScope], so the Settings
+/// choices reach every Arabic string without being threaded through each
+/// widget. [size] is the call site's own base — the setting scales it, which
+/// keeps the relative sizes across screens intact. The fallbacks only catch
+/// codepoints the chosen face lacks; see `tool/check_font_coverage.py`.
+///
+/// Pass `scaled: false` to ignore the size setting, which the font previews
+/// in Settings do so the list stays scannable at any scale.
+TextStyle arabicStyle(
+  BuildContext context, {
+  double size = 26,
+  bool scaled = true,
+}) {
   final dark = Theme.of(context).brightness == Brightness.dark;
+  final scale = scaled ? ArabicFontScope.scaleOf(context) : 1.0;
   return TextStyle(
-    fontSize: size,
+    fontSize: size * scale,
     height: 1.8,
-    fontFamilyFallback: const ['Amiri', 'Scheherazade New', 'serif'],
+    fontFamily: ArabicFontScope.fontOf(context).family,
+    fontFamilyFallback: const ['Hafs', 'Amiri', 'Scheherazade New', 'serif'],
     color: dark ? const Color(0xFFEDE6DA) : const Color(0xFF3B332A),
   );
 }

@@ -51,3 +51,32 @@ flutter:
     - sources/hadith-json/db/by_chapter/the_9_books/muslim/
     - sources/hadith-json/db/by_chapter/the_9_books/nasai/
     - sources/hadith-json/db/by_chapter/the_9_books/tirmidhi/
+
+  # Quranic Arabic typefaces, selectable in Settings. Arabic text only — the
+  # interface font is untouched. Run tool/check_font_coverage.py after adding
+  # one: most Arabic fonts lack the Quranic marks this app renders.
+  fonts:
+    - family: Hafs
+      fonts:
+        - asset: assets/fonts/Hafs.ttf
+    - family: AlMajeed
+      fonts:
+        - asset: assets/fonts/AlMajeed.ttf
+    - family: AlQalam
+      fonts:
+        - asset: assets/fonts/AlQalam.ttf
+    - family: PdmsSaleem
+      fonts:
+        - asset: assets/fonts/PdmsSaleem.ttf
+    - family: Muhammadi
+      fonts:
+        - asset: assets/fonts/Muhammadi.ttf
+    - family: AlMushaf
+      fonts:
+        - asset: assets/fonts/AlMushaf.ttf
+    - family: Nabi
+      fonts:
+        - asset: assets/fonts/Nabi.ttf
+    - family: Neirizi
+      fonts:
+        - asset: assets/fonts/Neirizi.ttf

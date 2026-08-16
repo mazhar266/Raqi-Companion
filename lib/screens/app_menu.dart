@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../arabic_fonts.dart';
 import '../theme_store.dart';
 import '../user_lists.dart';
 import 'about_screen.dart';
@@ -14,10 +15,12 @@ class AppMenuButton extends StatelessWidget {
     super.key,
     required this.themeStore,
     required this.userLists,
+    required this.arabicFonts,
   });
 
   final ThemeStore themeStore;
   final UserListStore userLists;
+  final ArabicFontStore arabicFonts;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,10 @@ class AppMenuButton extends StatelessWidget {
       onSelected: (value) {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (_) => value == 'settings'
-              ? SettingsScreen(themeStore: themeStore, userLists: userLists)
+              ? SettingsScreen(
+                  themeStore: themeStore,
+                  userLists: userLists,
+                  arabicFonts: arabicFonts)
               : const AboutScreen(),
         ));
       },

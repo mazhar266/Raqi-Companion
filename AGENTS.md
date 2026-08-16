@@ -23,7 +23,7 @@ All content ships in a single bundled JSON asset (`assets/data/ruqyah.json`); th
 - **Runtime dependencies:** `shared_preferences` (^2.2.3), `ffi` (^2.1.0, required by the vendored QQL binding), `path_provider` (^2.1.0, locates the directory QQL data is unpacked into) and `file_picker` (list export/restore), plus the Flutter SDK.
 - **`file_picker` is pinned to a prerelease on purpose.** The current stable, 11.0.3, applies its own Kotlin Gradle Plugin; Flutter 3.44 uses built-in Kotlin and rejects it, so the plugin's Kotlin never compiles and `assembleRelease` fails with `cannot find symbol: FilePickerPlugin`. 12.0.0-beta has migrated and builds. Move to 12.x stable once it ships, and do not "tidy" the constraint back to `^11`.
 - **Dev dependencies:** `flutter_test` (SDK), `flutter_lints` (^3.0.0).
-- **Android:** Gradle Kotlin DSL (`android/build.gradle.kts`, `android/app/build.gradle.kts`), Java/Kotlin 17, `applicationId = com.example.raqi_companion`, namespace `com.example.raqi_companion`. Release builds currently sign with the debug key (marked TODO in `android/app/build.gradle.kts`).
+- **Android:** Gradle Kotlin DSL (`android/build.gradle.kts`, `android/app/build.gradle.kts`), Java/Kotlin 17, `applicationId = raqi.mazhar.fi`, namespace `raqi.mazhar.fi` (the Kotlin source lives at `android/app/src/main/kotlin/raqi/mazhar/fi/`). Release builds currently sign with the debug key (marked TODO in `android/app/build.gradle.kts`).
 
 ## Repository layout
 
@@ -36,6 +36,7 @@ lib/
   bookmarks.dart                   BookmarkStore (ChangeNotifier) backed by shared_preferences
   user_lists.dart                  UserListStore (ChangeNotifier): the user's own lists
   surahs.dart                      Surah metadata and buildQuery() for the visual picker
+  arabic_fonts.dart                Bundled typefaces, size, ArabicFontStore, ArabicFontScope
   version.dart                     appVersion / appBuildNumber, mirrored from pubspec.yaml
   list_backup.dart                 Export/restore format for user lists (pure, no I/O)
   theme_store.dart                 ThemeStore (ChangeNotifier) for the Light/Dark/System
@@ -54,7 +55,7 @@ lib/
     category_list_screen.dart      Browse tab; also maps category icon names to IconData
     category_group_screen.dart     The sections nested under one group (e.g. Dawah)
     app_menu.dart                  Overflow menu (Settings, About) on every tab
-    settings_screen.dart           Appearance, tajweed legend, and list export/restore
+    settings_screen.dart           Appearance, Arabic font and size, tajweed, list backup
     list_backup_actions.dart       The file dialogs and merge/replace prompt
     about_screen.dart              Contributor, bundled components, and the version
     lists_screen.dart              Lists tab: create, rename, delete
@@ -84,6 +85,9 @@ sources/                           QQL data (150 MB, 6791 files) — Quran, Hisn
                                    Read from the filesystem, NOT the Flutter asset bundle
 icon/icon.png                      Source app icon (1254px). The single source of truth
 tool/generate_icons.py             Regenerates every launcher/web icon from it
+assets/fonts/                      Eight Quranic typefaces, selectable in Settings
+tool/check_font_coverage.py        Verifies a font can draw every mark the app renders
+tool/font_coverage.json            Its report; test/fonts_test.dart asserts against it
 web/                               Web runner (index.html, manifest, icons)
 android/                           Android runner (Gradle Kotlin DSL)
 ```
@@ -110,6 +114,9 @@ Two optional fields carry behaviour:
   - Tanwin has an *open* form — **U+0657 fathatan, U+065E dammatan, U+0656 kasratan** — despite Unicode names that describe the glyph rather than the role. These outnumber the standard codepoints roughly 3:1, so missing them blinds the parser to most tanwin.
   - Iqlab is spelled out by a **small meem (U+06E2/U+06ED)** over the noon, and is read directly rather than inferred.
   - A bare noon means ikhfa or idgham; a noon carrying the sukun sign means izhar.
+- **Arabic typeface and size:** eight Quranic faces ship in `assets/fonts/`, chosen in Settings and persisted under `'arabicFont'`, alongside a size multiplier under `'arabicFontScale'` (0.8–2.0, default 1.0). Both apply to Arabic only — `arabicStyle()` reads them from `ArabicFontScope`, an inherited widget above `MaterialApp`, rather than taking them as parameters through a dozen call sites. The interface font and size are untouched.
+- **The size is a multiplier, not a point size.** Call sites already pass their own base (26 in the detail view, 22 for QQL results, 20 in lists, 16 in the session), so scaling preserves that hierarchy instead of flattening it. `arabicStyle(context, scaled: false)` opts out; the font previews in Settings use it so the list stays scannable at any size. The stored value is clamped on read as well as write, so a hand-edited preference cannot make the app unreadable.
+- **Adding a font means running `tool/check_font_coverage.py` first.** Most Arabic faces lack the Quranic marks this app renders; of the eight bundled, seven cannot draw the open dammatan (U+065E, 1,887 occurrences) and two also miss the open fathatan (U+0657, 3,017). Hafs is the default because it is the only one covering every *combining* mark. Missing standalone glyphs (the ﴿ ﴾ markers, ﷺ) are fine — they come from a fallback face and still look right; a missing combining mark is positioned by the fallback's metrics and lands wrong. `test/fonts_test.dart` enforces both that the default has no combining-mark gaps and that any font which does says so in the note shown in Settings.
 - **Where colouring is applied:** everywhere for the app's own content, and for QQL results **only when `QqlRecord.isQuran`**. Hadith and supplications are Arabic but are not recited under these rules, so colouring them would misrepresent them.
 - **QQL (`lib/qql/`):** a vendored Rust library reached over `dart:ffi`, resolving references like `Q:2:1-5,255` against the JSON in `sources/`. It is **not wired into any screen yet** — the app's own content still comes entirely from `assets/data/ruqyah.json`. Three things constrain how it can be used:
   - **No web.** `dart:ffi` does not exist there. `lib/qql/qql_helper.dart` conditionally exports the FFI implementation or a stub, so the app still compiles for web; guard call sites with `QqlHelper.isSupported` rather than catching. Never import `qql_helper_io.dart` or `qql_helper_web.dart` directly, and never import `vendor/qql.dart` outside `qql_helper_io.dart` — any of those breaks the web build.
@@ -189,7 +196,7 @@ Prefer editing this file with a script (Python's `json` module round-trips it cl
 ## Security and content considerations
 
 - The app is fully offline: no network calls, no permissions beyond defaults, no user data leaves the device. Do not add network permissions or telemetry without an explicit request.
-- The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'`, the appearance setting under `'themeMode'`, and the user's lists under `'userLists'` (a JSON array of `{id, name, queries}`).
+- The only persisted state is in local `shared_preferences`: bookmarks under `'bookmarks'`, the appearance setting under `'themeMode'`, the user's lists under `'userLists'` (a JSON array of `{id, name, queries}`), and the Arabic typeface and size under `'arabicFont'` / `'arabicFontScale'`.
 - **Android Auto Backup copies app storage to the user's Google Drive**, and is on by default. That is wanted for `shared_prefs`, but the quota is **25 MB per app** and `QqlData` unpacks ~150 MB into `files/qql/` — over quota the *entire* backup fails, so without an exclusion the lists would not be backed up either. `android/app/src/main/res/xml/backup_rules.xml` (API ≤30) and `data_extraction_rules.xml` (API 31+) exclude that directory; it is regenerable from assets, so nothing is lost. The path in those XML files is a plain string, so `test/backup_rules_test.dart` ties it to `QqlData.directoryName` and fails if either side is renamed. Keep the two rule files in step.
 - **User lists store QQL queries, not resolved text**, so one entry can stand for a whole passage and the text survives a data update. They therefore only resolve where QQL runs, and the Lists tab degrades on web the same way the Query tab does.
 - **List backups carry references only** — names and QQL queries, no Arabic or translations — which is why an export is a couple of kilobytes and stays valid across a data update. `lib/list_backup.dart` is pure and does the encoding, validation and error messages; `list_backup_actions.dart` owns the file dialogs. A malformed file is rejected whole rather than imported in part, and importing reassigns ids so a file restored onto a device that already has lists cannot collide. Bump `backupFormatVersion` only for a breaking shape change — the decoder refuses anything newer than it understands.

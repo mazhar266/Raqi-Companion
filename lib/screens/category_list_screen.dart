@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../arabic_fonts.dart';
 import '../bookmarks.dart';
 import '../models.dart';
 import '../theme_store.dart';
@@ -55,6 +56,7 @@ class CategoryListScreen extends StatelessWidget {
   final BookmarkStore bookmarks;
   final ThemeStore themeStore;
   final UserListStore userLists;
+  final ArabicFontStore arabicFonts;
 
   const CategoryListScreen({
     super.key,
@@ -62,6 +64,7 @@ class CategoryListScreen extends StatelessWidget {
     required this.bookmarks,
     required this.themeStore,
     required this.userLists,
+    required this.arabicFonts,
   });
 
   @override
@@ -70,7 +73,10 @@ class CategoryListScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Raqi Companion'),
         actions: [
-          AppMenuButton(themeStore: themeStore, userLists: userLists)
+          AppMenuButton(
+              themeStore: themeStore,
+              userLists: userLists,
+              arabicFonts: arabicFonts)
         ],
       ),
       body: ListView(

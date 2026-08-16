@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../qql/qql_data.dart';
 import '../qql/qql_helper.dart';
 import '../tajweed.dart';
+import '../arabic_fonts.dart';
 import '../theme_store.dart';
 import '../user_lists.dart';
 import 'app_menu.dart';
@@ -16,10 +17,12 @@ class QqlQueryScreen extends StatefulWidget {
     super.key,
     required this.themeStore,
     required this.userLists,
+    required this.arabicFonts,
   });
 
   final ThemeStore themeStore;
   final UserListStore userLists;
+  final ArabicFontStore arabicFonts;
 
   @override
   State<QqlQueryScreen> createState() => _QqlQueryScreenState();
@@ -124,7 +127,9 @@ class _QqlQueryScreenState extends State<QqlQueryScreen> {
         title: const Text('Query'),
         actions: [
           AppMenuButton(
-              themeStore: widget.themeStore, userLists: widget.userLists)
+              themeStore: widget.themeStore,
+              userLists: widget.userLists,
+              arabicFonts: widget.arabicFonts)
         ],
       ),
       body: switch (_stage) {

@@ -1,0 +1,70 @@
+{
+  "required": 88,
+  "fonts": {
+    "AlMajeed.ttf": {
+      "glyphs": 603,
+      "missing": [
+        "U+065C",
+        "U+065E"
+      ]
+    },
+    "AlMushaf.ttf": {
+      "glyphs": 320,
+      "missing": [
+        "U+065E",
+        "U+06E5",
+        "U+06E9"
+      ]
+    },
+    "AlQalam.ttf": {
+      "glyphs": 603,
+      "missing": [
+        "U+065C",
+        "U+065E"
+      ]
+    },
+    "Hafs.ttf": {
+      "glyphs": 607,
+      "missing": [
+        "U+FD3E",
+        "U+FD3F",
+        "U+FDFA"
+      ]
+    },
+    "Muhammadi.ttf": {
+      "glyphs": 999,
+      "missing": [
+        "U+065C",
+        "U+065E",
+        "U+FDFA"
+      ]
+    },
+    "Nabi.ttf": {
+      "glyphs": 1352,
+      "missing": [
+        "U+0657",
+        "U+065C",
+        "U+065E",
+        "U+06EC",
+        "U+FDFA"
+      ]
+    },
+    "Neirizi.ttf": {
+      "glyphs": 573,
+      "missing": [
+        "U+0657",
+        "U+065C",
+        "U+065E",
+        "U+06EC",
+        "U+FDFA"
+      ]
+    },
+    "PdmsSaleem.ttf": {
+      "glyphs": 812,
+      "missing": [
+        "U+065C",
+        "U+065E"
+      ]
+    }
+  }
+}

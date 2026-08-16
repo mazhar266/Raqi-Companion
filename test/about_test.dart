@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raqi_companion/screens/about_screen.dart';
 import 'package:raqi_companion/screens/app_menu.dart';
+import 'package:raqi_companion/arabic_fonts.dart';
 import 'package:raqi_companion/theme_store.dart';
 import 'package:raqi_companion/user_lists.dart';
 import 'package:raqi_companion/version.dart';
@@ -58,8 +59,10 @@ void main() {
   testWidgets('the overflow menu opens Settings and About', (tester) async {
     SharedPreferences.setMockInitialValues({});
     final themeStore = ThemeStore();
+    final arabicFonts = ArabicFontStore();
     final userLists = UserListStore();
     await themeStore.load();
+    await arabicFonts.load();
     await userLists.load();
 
     await tester.pumpWidget(MaterialApp(
@@ -67,7 +70,10 @@ void main() {
         appBar: AppBar(
           title: const Text('Home'),
           actions: [
-            AppMenuButton(themeStore: themeStore, userLists: userLists)
+            AppMenuButton(
+                themeStore: themeStore,
+                userLists: userLists,
+                arabicFonts: arabicFonts)
           ],
         ),
       ),

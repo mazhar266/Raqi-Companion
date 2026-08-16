@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../arabic_fonts.dart';
 import '../bookmarks.dart';
 import '../models.dart';
 import '../theme_store.dart';
@@ -20,12 +21,14 @@ class HomeShell extends StatefulWidget {
     required this.bookmarks,
     required this.themeStore,
     required this.userLists,
+    required this.arabicFonts,
   });
 
   final List<Category> categories;
   final BookmarkStore bookmarks;
   final ThemeStore themeStore;
   final UserListStore userLists;
+  final ArabicFontStore arabicFonts;
 
   @override
   State<HomeShell> createState() => _HomeShellState();
@@ -45,10 +48,16 @@ class _HomeShellState extends State<HomeShell> {
             bookmarks: widget.bookmarks,
             themeStore: widget.themeStore,
             userLists: widget.userLists,
+            arabicFonts: widget.arabicFonts,
           ),
-          ListsScreen(store: widget.userLists, themeStore: widget.themeStore),
+          ListsScreen(
+              store: widget.userLists,
+              themeStore: widget.themeStore,
+              arabicFonts: widget.arabicFonts),
           QqlQueryScreen(
-              themeStore: widget.themeStore, userLists: widget.userLists),
+              themeStore: widget.themeStore,
+              userLists: widget.userLists,
+              arabicFonts: widget.arabicFonts),
         ],
       ),
       bottomNavigationBar: NavigationBar(

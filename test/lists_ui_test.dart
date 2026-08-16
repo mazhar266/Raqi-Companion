@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raqi_companion/screens/add_entry_sheet.dart';
 import 'package:raqi_companion/screens/lists_screen.dart';
+import 'package:raqi_companion/arabic_fonts.dart';
 import 'package:raqi_companion/theme_store.dart';
 import 'package:raqi_companion/user_lists.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,9 +19,12 @@ void main() {
     await store.load();
 
     final themeStore = ThemeStore();
+    final arabicFonts = ArabicFontStore();
     await themeStore.load();
+    await arabicFonts.load();
     await tester.pumpWidget(MaterialApp(
-        home: ListsScreen(store: store, themeStore: themeStore)));
+        home: ListsScreen(
+            store: store, themeStore: themeStore, arabicFonts: arabicFonts)));
     expect(find.text('No lists yet'), findsOneWidget);
 
     await tester.tap(find.text('New list'));
@@ -44,9 +48,12 @@ void main() {
     await store.addQuery(list.id, 'Q:2:255');
 
     final themeStore = ThemeStore();
+    final arabicFonts = ArabicFontStore();
     await themeStore.load();
+    await arabicFonts.load();
     await tester.pumpWidget(MaterialApp(
-        home: ListsScreen(store: store, themeStore: themeStore)));
+        home: ListsScreen(
+            store: store, themeStore: themeStore, arabicFonts: arabicFonts)));
     await tester.pump();
 
     expect(find.text('Evening'), findsOneWidget);
