@@ -118,6 +118,54 @@ void main() {
         expect(records.map((r) => r.isBookNumbering), [false, true]);
       });
 
+    });
+
+    group('shorthand grammar', () {
+      test('an omitted source means the Quran', () {
+        final record = qql.query('2:255').single;
+        expect(record.source, 'Q');
+        expect(record.reference, 'Al-Baqarah 2:255');
+      });
+
+      test('a bare number is a whole surah', () {
+        expect(qql.query('1'), hasLength(7));
+      });
+
+      test('commas group several primaries under one source', () {
+        // All of Surah 1, then Surah 2 ayah 255.
+        final records = qql.query('1,2:255');
+        expect(records, hasLength(8));
+        expect(records.last.reference, 'Al-Baqarah 2:255');
+
+        // Two groups, each with its own selector.
+        final grouped = qql.query('q:1:2,3,2:3,4-6');
+        expect(grouped.map((r) => '${r.surah}:${r.ayah}'),
+            ['1:2', '1:3', '2:3', '2:4', '2:5', '2:6']);
+      });
+
+      test('a stated source carries forward until another replaces it', () {
+        final sameSource = qql.query('b:1:1;3');
+        expect(sameSource.every((r) => r.source == 'B'), isTrue);
+
+        final switched = qql.query('b:1:1;q:3');
+        expect(switched.first.source, 'B');
+        expect(switched.last.source, 'Q');
+      });
+
+      test('a range cannot be a primary, so the ambiguity is a syntax error',
+          () {
+        // Both readings are writable — Q:1:1-5;3 and Q:1:1-5,3 — so the
+        // grammar refuses to guess between them.
+        expect(() => qql.query('Q:1:1-5:3'),
+            throwsA(isA<QqlQueryException>()));
+      });
+
+      test('the two unambiguous forms differ as documented', () {
+        // ;3 starts a new primary, ,3 adds to the selector.
+        expect(qql.query('Q:1:1-5;3'), hasLength(5 + 200));
+        expect(qql.query('Q:1:1-5,3'), hasLength(5));
+      });
+
       test('out of range reports the collection bounds', () {
         expect(
           () => qql.query('Q::6237'),

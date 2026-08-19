@@ -62,7 +62,6 @@ class _RuqyahAppState extends State<RuqyahApp> {
       builder: (context, _) {
         // Above MaterialApp so every route, dialog and sheet inherits it.
         return ArabicFontScope(
-          font: arabicFonts.font,
           scale: arabicFonts.scale,
           child: MaterialApp(
           title: 'Raqi Companion',
@@ -97,14 +96,14 @@ class _RuqyahAppState extends State<RuqyahApp> {
 
 /// Shared Arabic text style used across screens.
 ///
-/// The family and size both come from [ArabicFontScope], so the Settings
-/// choices reach every Arabic string without being threaded through each
-/// widget. [size] is the call site's own base — the setting scales it, which
-/// keeps the relative sizes across screens intact. The fallbacks only catch
-/// codepoints the chosen face lacks; see `tool/check_font_coverage.py`.
+/// The family is fixed ([arabicFontFamily]); the size comes from
+/// [ArabicFontScope], so the Settings choice reaches every Arabic string
+/// without being threaded through each widget. [size] is the call site's own
+/// base — the setting scales it, which keeps the relative sizes across
+/// screens intact. The fallbacks only catch codepoints the face lacks; see
+/// `tool/check_font_coverage.py`.
 ///
-/// Pass `scaled: false` to ignore the size setting, which the font previews
-/// in Settings do so the list stays scannable at any scale.
+/// Pass `scaled: false` to ignore the size setting.
 TextStyle arabicStyle(
   BuildContext context, {
   double size = 26,
@@ -115,7 +114,7 @@ TextStyle arabicStyle(
   return TextStyle(
     fontSize: size * scale,
     height: 1.8,
-    fontFamily: ArabicFontScope.fontOf(context).family,
+    fontFamily: arabicFontFamily,
     fontFamilyFallback: const ['Hafs', 'Amiri', 'Scheherazade New', 'serif'],
     color: dark ? const Color(0xFFEDE6DA) : const Color(0xFF3B332A),
   );

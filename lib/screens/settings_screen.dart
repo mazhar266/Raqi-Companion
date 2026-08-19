@@ -7,8 +7,7 @@ import '../theme_store.dart';
 import '../user_lists.dart';
 import 'list_backup_actions.dart';
 
-/// App settings: appearance, the Arabic typeface, reading aids, and list
-/// backup.
+/// App settings: appearance, Arabic size, reading aids, and list backup.
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({
     super.key,
@@ -19,7 +18,8 @@ class SettingsScreen extends StatelessWidget {
 
   final ThemeStore themeStore;
 
-  /// Null hides the font section — used where settings is shown standalone.
+  /// Null hides the Arabic size section — used where settings is shown
+  /// standalone.
   final ArabicFontStore? arabicFonts;
 
   /// Null hides the backup section — used where settings is shown without the
@@ -55,37 +55,6 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             if (arabicFonts != null) ...[
-              const Divider(height: 32),
-              const _SectionHeader('Arabic font'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
-                child: Text(
-                  'Applies to Arabic text only. The rest of the interface is '
-                  'unchanged.',
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Theme.of(context).colorScheme.onSurfaceVariant),
-                ),
-              ),
-              AnimatedBuilder(
-                animation: arabicFonts!,
-                builder: (context, _) => RadioGroup<String>(
-                  groupValue: arabicFonts!.font.id,
-                  onChanged: (id) {
-                    if (id != null) arabicFonts!.setFont(ArabicFont.byId(id));
-                  },
-                  child: Column(
-                    children: [
-                      for (final font in ArabicFont.all)
-                        _FontOption(
-                          font: font,
-                          selected: font.id == arabicFonts!.font.id,
-                          onTap: () => arabicFonts!.setFont(font),
-                        ),
-                    ],
-                  ),
-                ),
-              ),
               const Divider(height: 32),
               const _SectionHeader('Arabic size'),
               AnimatedBuilder(
@@ -236,72 +205,6 @@ class _SizeControl extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-/// One typeface, previewed in itself.
-///
-/// A font name is not something you can judge — the preview renders the same
-/// ayah in each face, so the choice is made by eye. Al-Ikhlas 112:1 is short
-/// and carries a shadda, a sukun and a dammatan, which is where these faces
-/// differ most.
-class _FontOption extends StatelessWidget {
-  const _FontOption({
-    required this.font,
-    required this.selected,
-    required this.onTap,
-  });
-
-  static const _sample = 'قُلْ هُوَ اللَّهُ أَحَدٌ';
-
-  final ArabicFont font;
-  final bool selected;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Value is the font id; the RadioGroup ancestor holds the
-            // selection, since Radio.groupValue is deprecated.
-            Radio<String>(value: font.id),
-            const SizedBox(width: 4),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(font.label,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: selected ? scheme.primary : null,
-                      )),
-                  if (font.note.isNotEmpty)
-                    Text(font.note,
-                        style: TextStyle(
-                            fontSize: 11, color: scheme.onSurfaceVariant)),
-                  const SizedBox(height: 6),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Text(
-                      _sample,
-                      textAlign: TextAlign.right,
-                      style: arabicStyle(context, size: 26, scaled: false)
-                          .copyWith(fontFamily: font.family),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

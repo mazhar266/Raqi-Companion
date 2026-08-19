@@ -1,8 +1,27 @@
 # QQL — vendored
 
-Copied from `~/Projects/QQ Lang` (<https://github.com/mazhar266/QQ-Lang>), version **0.1.0**, commit **3669756**.
+Copied from `~/Projects/QQ Lang` (<https://github.com/mazhar266/QQ-Lang>), version **0.1.0**, commit **4c953a5**.
 
 QQL parses compact references to Islamic texts — `Q:2:1-5,255`, `HM:27:1-3`, `B:1:1` — and resolves them against local JSON data. Upstream is a Rust crate with a C ABI; what lives here is the C header, one prebuilt native library, and the Dart FFI binding.
+
+## Shorthand
+
+The source code is optional, and a stated one carries forward:
+
+```text
+2:255            no source — a bare reference means the Quran
+1                the whole of Al-Fatihah
+1,2:255          commas group primaries: all of Surah 1, then Surah 2 ayah 255
+q:1:2,3,2:3,4-6  two groups under one source
+b:1:1;3          the source carries forward — Bukhari twice
+b:1:1;q:3        …until another code replaces it
+```
+
+The rule for groups is that **an integer followed by `:` starts a new primary**.
+A range is never a primary, so `Q:1:1-5:3` is a syntax error rather than a
+second reading — both things it could mean are writable and they differ:
+`Q:1:1-5;3` is Surah 1 ayat 1–5 then all of Surah 3, `Q:1:1-5,3` is ayat 1–5
+plus ayah 3.
 
 ## Numbering: two forms
 

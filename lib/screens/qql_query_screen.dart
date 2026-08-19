@@ -31,15 +31,18 @@ class QqlQueryScreen extends StatefulWidget {
 enum _Stage { preparing, ready, unsupported, failed }
 
 class _QqlQueryScreenState extends State<QqlQueryScreen> {
-  // A mix of the chapter form and the flat book-wide form (SOURCE::n).
+  // The short forms first — a bare reference means the Quran — then the
+  // explicit, grouped and book-wide forms.
   static const _examples = [
-    'Q:2:255',
-    'Q:112',
+    '2:255',
+    '1',
+    '1,2:255',
     'Q:2:1-5,255',
+    'q:1:2,3,2:3,4-6',
     'HM:27:1-3',
     'B:1:1',
+    'b:1:1;3',
     'B::6018',
-    'Q::100',
   ];
 
   final _controller = TextEditingController();
@@ -227,11 +230,12 @@ class _QqlQueryScreenState extends State<QqlQueryScreen> {
       return const _Notice(
         icon: Icons.search,
         title: 'Enter a query',
-        detail: 'source : primary : selector — for example Q:2:1-5,255 for '
-            'Surah 2 ayat 1 to 5 plus ayah 255. Double the colon to number '
-            'across the whole book instead: B::6018 is Bukhari hadith 6018. '
-            'Sources include Q (Quran), HM (Hisnul Muslim) and '
-            'B, M, AD, T, N, IM (hadith).',
+        detail: 'A bare reference means the Quran, so 2:255 is Ayat al-Kursi '
+            'and 1 is all of Al-Fatihah. Add a source to go elsewhere — '
+            'B:1:1, HM:27:1-3 — and it carries forward until another one '
+            'replaces it, so b:1:1;3 is Bukhari twice. Commas group: '
+            '1,2:255 is all of Surah 1 then Surah 2 ayah 255. Double the '
+            'colon to number across a whole book: B::6018.',
       );
     }
     if (records.isEmpty) {
