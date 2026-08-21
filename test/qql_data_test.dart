@@ -21,7 +21,8 @@ void main() {
     // Asset directories are not recursive, so a missing pubspec entry shows up
     // here as a whole collection quietly vanishing.
     expect(assets, isNotEmpty, reason: 'no sources/ assets declared');
-    expect(assets.where((k) => k.contains('chapters/en')), hasLength(115));
+    // 114 surahs — the generated directory carries no index file.
+    expect(assets.where((k) => k.contains('quran/chapters')), hasLength(114));
     expect(assets.where((k) => k.contains('Hisn-Muslim-Json')), hasLength(1));
     expect(
       assets.where((k) => k.contains('by_chapter')),
@@ -29,7 +30,7 @@ void main() {
       reason: 'expected all nine hadith book directories',
     );
     // Needed by QQL's flat numbering — SOURCE::n.
-    expect(assets.where((k) => k.contains('dist/verses')), hasLength(6236));
+    expect(assets.where((k) => k.contains('quran/verses')), hasLength(6236));
     expect(assets.where((k) => k.contains('by_book')), hasLength(9));
   });
 
@@ -61,7 +62,7 @@ void main() {
 
       // The resolvers hard-code these paths relative to the data directory.
       expect(
-        File('$path/quran-json-arabic/dist/chapters/en/112.json').existsSync(),
+        File('$path/quran/chapters/112.json').existsSync(),
         isTrue,
       );
       expect(File('$path/Hisn-Muslim-Json/husn_en.json').existsSync(), isTrue);
@@ -76,7 +77,7 @@ void main() {
         isTrue,
       );
       expect(
-        File('$path/quran-json-arabic/dist/verses/100.json').existsSync(),
+        File('$path/quran/verses/100.json').existsSync(),
         isTrue,
       );
     });

@@ -36,9 +36,10 @@ flutter:
     # unpacked to app storage at first launch (lib/qql/qql_data.dart) rather
     # than read from the bundle. Asset directories are not recursive, so every
     # leaf directory has to be listed.
-    - sources/quran-json-arabic/dist/chapters/en/
+    - sources/quran/chapters/
     # One file per ayah, for the flat Quran form (Q::100).
-    - sources/quran-json-arabic/dist/verses/
+    - sources/quran/verses/
+    - sources/quran/TANZIL-LICENSE.txt
     - sources/Hisn-Muslim-Json/
     # Whole-book files, for the flat hadith form (B::6018).
     - sources/hadith-json/db/by_book/the_9_books/

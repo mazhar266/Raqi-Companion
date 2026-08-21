@@ -2,7 +2,7 @@
 
 The app originally shipped imlaei Arabic, which omits the Uthmani madd signs
 and the open tanwin forms. This replaces the `arabic` of every Quranic item
-with the Uthmani text from sources/quran-json-arabic, so the whole file is one
+with the Uthmani text from sources/quran, so the whole file is one
 orthography and the tajweed parser and the Quranic fonts both see what they
 expect.
 
@@ -30,7 +30,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'assets/data/ruqyah.json')
-QURAN = os.path.join(ROOT, 'sources/quran-json-arabic/dist/chapters/en/{}.json')
+QURAN = os.path.join(ROOT, 'sources/quran/chapters/{}.json')
 
 # Below this, the fetched ayah is probably not the one the item holds.
 SIMILARITY_FLOOR = 0.70

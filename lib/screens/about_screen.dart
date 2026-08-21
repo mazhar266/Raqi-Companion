@@ -24,7 +24,8 @@ class AboutScreen extends StatelessWidget {
   /// Bundled third-party work. QQL is GPL-3, which obliges the app to say so.
   static const _components = [
     ('QQL — Quran Query Language', 'GPL-3.0-or-later'),
-    ('quran-json-arabic', 'Quran text, translation and transliteration'),
+    ('Tanzil Uthmani', 'Quran text — tanzil.net'),
+    ('quran-json-arabic', 'Translation and transliteration'),
     ('hadith-json', 'The nine hadith collections'),
     ('Hisn-Muslim-Json', 'Hisnul Muslim'),
   ];

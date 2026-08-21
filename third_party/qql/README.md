@@ -1,6 +1,6 @@
 # QQL — vendored
 
-Copied from `~/Projects/QQ Lang` (<https://github.com/mazhar266/QQ-Lang>), version **0.1.0**, commit **4c953a5**.
+Copied from `~/Projects/QQ Lang` (<https://github.com/mazhar266/QQ-Lang>), version **0.1.0**, commit **4c953a5** (plus the Tanzil Quran rebuild).
 
 QQL parses compact references to Islamic texts — `Q:2:1-5,255`, `HM:27:1-3`, `B:1:1` — and resolves them against local JSON data. Upstream is a Rust crate with a C ABI; what lives here is the C header, one prebuilt native library, and the Dart FFI binding.
 
@@ -52,19 +52,30 @@ The Dart binding sits in `lib/qql/vendor/` rather than here because Dart cannot 
 
 ## Data
 
-`sources/` at the repository root holds the subset of the upstream data submodules that QQL actually reads — 150 MB across 6,791 files:
+**`sources/quran/` is generated, not vendored.** QQ Lang builds it with
+`scripts/build-quran.py`: the Arabic comes from Tanzil's Uthmani text, and the surah
+names, English translation and per-ayah transliteration from the `quran-json-arabic`
+submodule. That split exists because the submodule spells three marks with codepoints
+that mean something else in Unicode — `U+0657 INVERTED DAMMA` for an open fathatan,
+`U+065E` for a dammatan, `U+0656` for a kasratan — so a font following Unicode drew
+2:286's `إِصْرًا` with a damma above the reh, reading *isru* rather than *isran*.
+Tanzil uses the standard marks and carries pause and silence signs the submodule omits.
+Rebuild it in QQ Lang, then re-vendor here; do not hand-edit.
+
+`sources/` at the repository root holds the subset of the upstream data submodules that QQL actually reads — 125 MB across 6,789 files:
 
 | Directory | Size | Files | Enables |
 | --- | --- | --- | --- |
-| `quran-json-arabic/dist/chapters/en/` | 3.3 MB | 115 | `Q:2:255` — per-surah |
-| `quran-json-arabic/dist/verses/` | 27 MB | 6236 | `Q::100` — flat, one file per ayah |
+| `quran/chapters/` | 3.3 MB | 114 | `Q:2:255` — per-surah |
+| `quran/verses/` | 2.6 MB | 6236 | `Q::100` — flat, one file per ayah |
 | `Hisn-Muslim-Json/husn_en.json` | 288 KB | 1 | `HM:` / `HISN:`, both forms |
 | `hadith-json/db/by_chapter/the_9_books/` | 61 MB | 429 | `B:1:1` — per-chapter |
 | `hadith-json/db/by_book/the_9_books/` | 60 MB | 9 | `B::6018` — flat, whole-book |
 
 Each numbering form reads from its own directory, so dropping one silently disables that
-form while the other keeps working. Not vendored: the ten other Quran translation
-languages. Upstream is 256 MB in full.
+form while the other keeps working. The Quran directory carries only the English
+translation; the submodule ships ten languages per ayah, which made the equivalent
+directory 14 MB rather than 2.6 MB.
 
 The paths are hard-coded in the resolvers (`src/sources/quran.rs`, `hadith.rs`, `hisnul.rs`), so the directory layout under `sources/` must be preserved exactly.
 
@@ -116,15 +127,15 @@ Two things to know when changing the data:
 - **Bump `QqlData.dataVersion`** after changing the bundled files, or existing installs
   keep their old unpacked copy.
 
-Cost: the release APK is **90.0 MB**, of which ~64 MB is this data (150 MB on disk, JSON
-compresses well). First launch unpacks 6,791 files, dominated by the 6,236 single-ayah
+Cost: the release APK is **86.6 MB**, of which ~57 MB is this data (125 MB on disk, JSON
+compresses well). First launch unpacks 6,789 files, dominated by the 6,236 single-ayah
 files — the Query tab shows a progress count while it runs, but it is not instant on a
 slow device.
 
 ### The web build carries this data pointlessly
 
 Flutter has no per-platform asset declaration, so `flutter build web` also bundles all
-150 MB into `build/web/assets/sources/` even though the web build can never read it. The
+125 MB into `build/web/assets/sources/` even though the web build can never read it. The
 files are served individually and are never actually requested by a browser, so users
 download nothing extra — but the deploy artifact grows by that much. Strip it after
 building:
@@ -139,4 +150,6 @@ iOS would use `libqql.a` instead; there is no iOS runner in this repo.
 
 QQL is **GPL-3.0-or-later** (see `LICENSE.md`). Distributing Raqi Companion linked against it means the combined work is GPL-3 as well. Both projects are authored by the same person, so this is a choice rather than an obstacle — but Raqi Companion has no `LICENSE` file yet, and needs one before release.
 
-The bundled data carries its own upstream licences: `sources/quran-json-arabic/LICENSE.txt`, and the terms of the `hadith-json` and `Hisn-Muslim-Json` repositories.
+The bundled data carries its own upstream licences: `sources/quran/TANZIL-LICENSE.txt` for
+the Quran text, and the terms of the `quran-json-arabic`, `hadith-json` and
+`Hisn-Muslim-Json` repositories for everything else.

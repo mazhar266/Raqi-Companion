@@ -104,7 +104,7 @@ void main() {
     // the data rather than typed, so they are exactly what the app renders.
     String ayah(int surah, int number) {
       final chapter = jsonDecode(
-        File('sources/quran-json-arabic/dist/chapters/en/$surah.json')
+        File('sources/quran/chapters/$surah.json')
             .readAsStringSync(),
       ) as Map<String, dynamic>;
       return (chapter['verses'] as List)
@@ -157,7 +157,7 @@ void main() {
       var coloured = 0;
       for (var surah = 1; surah <= 114; surah++) {
         final chapter = jsonDecode(
-          File('sources/quran-json-arabic/dist/chapters/en/$surah.json')
+          File('sources/quran/chapters/$surah.json')
               .readAsStringSync(),
         ) as Map<String, dynamic>;
         for (final v in (chapter['verses'] as List).cast<Map>()) {
@@ -172,6 +172,84 @@ void main() {
       expect(checked, 6236);
       // A parser that silently matched nothing would still round-trip.
       expect(coloured / checked, greaterThan(0.9));
+    });
+  });
+
+  group('open tanwin normalisation', () {
+    String ayah(int surah, int number) {
+      final chapter = jsonDecode(
+        File('sources/quran/chapters/$surah.json')
+            .readAsStringSync(),
+      ) as Map<String, dynamic>;
+      return (chapter['verses'] as List)
+          .cast<Map<String, dynamic>>()
+          .firstWhere((v) => v['id'] == number)['text'] as String;
+    }
+
+    test('2:286 reads isran — the data carries a real fathatan', () {
+      // The original bug: the previous dataset wrote U+0657 INVERTED DAMMA
+      // here, which a font following Unicode draws as a damma above the reh.
+      // sources/quran is built from Tanzil, which uses the standard mark.
+      final word = ayah(2, 286)
+          .split(' ')
+          .firstWhere((w) => w.contains('\u0635') && w.contains('\u0631'));
+
+      expect(word.codeUnits, contains(0x064B), reason: 'should be a fathatan');
+      expect(word.codeUnits, isNot(contains(0x0657)));
+      // Nothing left for the guard to do.
+      expect(normalizeQuranicMarks(word), word);
+    });
+
+    test('maps all three open forms and nothing else', () {
+      expect(normalizeQuranicMarks('\u0631\u0657').codeUnits.last, 0x064B);
+      expect(normalizeQuranicMarks('\u0631\u065E').codeUnits.last, 0x064C);
+      expect(normalizeQuranicMarks('\u0631\u0656').codeUnits.last, 0x064D);
+      // Untouched: the standard tanwin, and every other mark.
+      const untouched = '\u0631\u064B\u0651\u0652\u06E1\u0670\u06E2';
+      expect(normalizeQuranicMarks(untouched), untouched);
+    });
+
+    test('length is preserved, so tajweed offsets still line up', () {
+      for (final ref in [[2, 286], [1, 7], [112, 4], [55, 33]]) {
+        final text = ayah(ref[0], ref[1]);
+        final fixed = normalizeQuranicMarks(text);
+        expect(fixed.length, text.length);
+        expect(parseTajweed(fixed).map((s) => s.text).join(), fixed);
+      }
+    });
+
+    test('the tajweed rules survive normalisation', () {
+      // 2:286 has tanwin followed by kaf — ikhfa — and it must still fire
+      // once the mark has been rewritten.
+      final before = coloured(ayah(2, 286)).map((e) => e.$2).toList();
+      final after = coloured(normalizeQuranicMarks(ayah(2, 286)))
+          .map((e) => e.$2)
+          .toList();
+      expect(after, before);
+      expect(after, contains(TajweedRule.ikhfa));
+    });
+
+    test('the Quran data needs no rewriting at all', () {
+      // The normaliser stays as a guard — QQL can be pointed at user-defined
+      // JSON sources, which may still carry the misused codepoints — but the
+      // bundled text must never need it.
+      var rewritten = 0;
+      for (var surah = 1; surah <= 114; surah++) {
+        final chapter = jsonDecode(
+          File('sources/quran/chapters/$surah.json')
+              .readAsStringSync(),
+        ) as Map<String, dynamic>;
+        for (final v in (chapter['verses'] as List).cast<Map>()) {
+          final fixed = normalizeQuranicMarks(v['text'] as String);
+          for (final cp in const [0x0657, 0x065E, 0x0656]) {
+            expect(fixed.codeUnits, isNot(contains(cp)));
+          }
+          if (fixed != v['text']) rewritten++;
+        }
+      }
+      expect(rewritten, 0,
+          reason: 'sources/quran should already use standard marks; '
+              'rebuild it with QQ Lang scripts/build-quran.py');
     });
   });
 

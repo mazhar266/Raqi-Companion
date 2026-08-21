@@ -43,7 +43,7 @@ def required_codepoints():
             for item in category['items']:
                 scan(item['arabic'])
 
-    quran = os.path.join(ROOT, 'sources/quran-json-arabic/dist/chapters/en/*.json')
+    quran = os.path.join(ROOT, 'sources/quran/chapters/*.json')
     for path in glob.glob(quran):
         with open(path, encoding='utf-8') as f:
             data = json.load(f)

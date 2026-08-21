@@ -32,7 +32,8 @@ class QqlData {
   /// Bump to force a re-unpack after the bundled data changes.
   ///
   /// 2: added dist/verses and db/by_book for QQL's flat numbering.
-  static const dataVersion = '2';
+  /// 3: Quran text moved to sources/quran/, rebuilt from Tanzil's Uthmani.
+  static const dataVersion = '3';
 
   static const _markerName = '.qql-data-version';
 

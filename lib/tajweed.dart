@@ -473,6 +473,41 @@ List<TextSpan> tajweedSpans(BuildContext context, String arabic) {
 
 /// Right-to-left Arabic text in the shared [arabicStyle], tajweed-coloured
 /// unless [tajweed] is false.
+/// The open tanwin, rewritten to codepoints fonts actually draw as tanwin.
+///
+/// The bundled Quran data spells the open (staggered) tanwin with three
+/// codepoints that mean something else in Unicode:
+///
+/// | in the data | Unicode says | the data means |
+/// | --- | --- | --- |
+/// | `U+0657` | inverted damma | open fathatan |
+/// | `U+065E` | fatha with two dots | open dammatan |
+/// | `U+0656` | subscript alef | open kasratan |
+///
+/// A font that follows Unicode draws them literally, so `إِصۡرٗا` in 2:286
+/// renders with a damma above the reh and reads as *isru* instead of *isran*.
+/// Checked against the data's own transliterations, U+0657 ends a word
+/// transliterated `-an` in 2680 of 2680 cases, U+0656 `-in` in 99.8% and
+/// U+065E `-un` in 97.7%, so the intent is not in doubt.
+///
+/// Unicode does have real open tanwin at U+08F0-U+08F2, but almost no font
+/// ships those glyphs — the bundled face does not — so this maps to the plain
+/// tanwin instead. That loses the staggered shape the printed mushaf uses to
+/// mark idgham and ikhfa, and keeps the reading correct, which matters more.
+///
+/// One character in, one out, so offsets into the string are unchanged and
+/// the tajweed segments still line up.
+String normalizeQuranicMarks(String text) {
+  const replacements = {
+    0x0657: _fathatan,
+    0x065E: _dammatan,
+    0x0656: _kasratan,
+  };
+  if (!text.codeUnits.any(replacements.containsKey)) return text;
+  return String.fromCharCodes(
+      text.codeUnits.map((c) => replacements[c] ?? c));
+}
+
 Widget arabicText(
   BuildContext context,
   String arabic, {
@@ -480,12 +515,16 @@ Widget arabicText(
   int? maxLines,
   bool tajweed = true,
 }) {
+  // Every Arabic string in the app goes through here, so this is the one
+  // place the open-tanwin codepoints need correcting — the app's own content
+  // and QQL results alike.
+  final text = normalizeQuranicMarks(arabic);
   return Directionality(
     textDirection: TextDirection.rtl,
     child: Text.rich(
       TextSpan(
-        children: tajweed ? tajweedSpans(context, arabic) : null,
-        text: tajweed ? null : arabic,
+        children: tajweed ? tajweedSpans(context, text) : null,
+        text: tajweed ? null : text,
       ),
       textAlign: TextAlign.right,
       maxLines: maxLines,
